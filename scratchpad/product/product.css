@@ -1,0 +1,309 @@
+/* =============================================================
+   Product — page sections (shared styles live in ../shared/base.css)
+   Measured from the live site: scratchpad/out/product
+   ============================================================= */
+
+/* ── Hero: title, product cards, intro, product image ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding: 200px 100px 100px;
+  background: linear-gradient(0deg, var(--color-white) 0%, var(--color-lilac) 100%);
+  overflow: hidden;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero__intro {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 1.83333;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Product cards ── */
+.product-cards {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.product-card {
+  --card-bg: var(--color-white);
+  --card-accent: var(--color-label);
+  --card-text: var(--color-heading);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 0 0;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%), var(--card-bg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.product-card--navy {
+  --card-bg: var(--color-navy);
+  --card-accent: var(--color-mint);
+  --card-text: var(--color-lilac);
+}
+
+.product-card--purple {
+  --card-bg: var(--color-label);
+  --card-accent: var(--color-mint);
+  --card-text: var(--color-white);
+}
+
+/* The label wraps to two lines inside a 21px-high row and overflows it evenly, as on the live site */
+.product-card__label-row {
+  display: flex;
+  align-items: center;
+  height: 21px;
+}
+
+.product-card__label {
+  flex: none;
+  width: 174px;
+  color: var(--card-accent);
+}
+
+.product-card__title { color: var(--card-text); }
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: none;
+  width: 320px;
+  list-style: none;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--card-text);
+}
+
+.checklist svg {
+  flex: none;
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+  color: var(--card-accent);
+}
+
+.product-card .button { width: 100%; }
+
+/* ── Timeline ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 100px;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.timeline__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.timeline__image {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.timeline__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.timeline__note {
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Key features (layout in ../shared/base.css; this page uses the light blue background) ── */
+.features { background: var(--color-sky); }
+
+/* ── FAQ ── */
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 100px;
+  background: rgba(42, 19, 160, 0.1);
+  overflow: hidden;
+}
+
+.faq__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.faq-item {
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--color-lilac);
+}
+
+/* The question row is 24px high; two-line questions on mobile overflow it, as on the live site */
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 24px;
+}
+
+.faq-item__question span {
+  max-width: 90%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+/* Closed shows "+" (the × rotated 45°); open shows × */
+.faq-item__icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--color-body);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.faq-item.is-open .faq-item__icon { transform: none; }
+
+.faq-item__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s;
+}
+
+.faq-item.is-open .faq-item__answer { grid-template-rows: 1fr; }
+
+.faq-item__answer > p {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-item.is-open .faq-item__answer > p { padding-top: 14px; }
+
+/* ── Statement ── */
+.statement {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  background: var(--color-label);
+  overflow: hidden;
+}
+
+.statement__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.statement__text { color: var(--color-white); }
+
+/* ── Tablet (810–1199px) ── */
+@media (max-width: 1199px) {
+  .hero { padding: 200px 50px 100px; }
+
+  .product-cards { flex-direction: column; }
+  .product-card { flex: none; }
+
+  .timeline,
+  .faq,
+  .statement { padding: 100px 50px; }
+
+  .faq { gap: 80px; }
+  .faq-item__question span { color: #000; }
+}
+
+/* ── Mobile (<810px) ── */
+@media (max-width: 809px) {
+  .hero {
+    gap: 50px;
+    padding: 150px 20px 50px;
+  }
+
+  .checklist li { font-size: 16px; }
+
+  /* On mobile the timeline sits directly under the product image, without the booking note */
+  .timeline { padding: 0 20px 50px; }
+  .timeline__image { height: 130px; }
+  .timeline__note { display: none; }
+
+  .faq {
+    gap: 50px;
+    padding: 50px 20px;
+  }
+
+  .faq-item__question span { font-size: 16px; }
+
+  .statement { padding: 50px 20px; }
+}

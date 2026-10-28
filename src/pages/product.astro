@@ -1,366 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import Features from '../components/Features.astro';
+import { url } from '../lib/url';
+import '../styles/product.css';
+
+const cards = [
+  {
+    variant: 'light', label: 'Heating with locally produced hydrogen', title: 'Power to Heat', link: 'power-to-heat',
+    points: ['Seasonal heat storage', 'Can reach high temperatures', 'Can replace or be mixed with gas', 'Almost no energy loss'],
+  },
+  {
+    variant: 'navy', label: 'Driving a vehicle on your own hydrogen', title: 'Power to Drive', link: 'power-to-drive',
+    points: ['Produce your own fuel', '50% cheaper than diesel', '€3/kg hydrogen', 'Easy refuelling'],
+  },
+  {
+    variant: 'purple', label: 'A year round green electricity', title: 'Power to Power', link: 'power-to-power',
+    points: ['Day & night electricity storage', 'Seasonal electricity storage', 'Linked to day-ahead market', 'Overcoming grid congestion'],
+  },
+];
+
+const features = [
+  { icon: 'laptop', size: 'wide' as const, title: 'Personalised smart energy management', text: "Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs." },
+  { icon: 'battery', title: 'Battery included', text: 'We use a battery as a short term buffer for electricity. It allows us to react in seconds. And when the sun has gone your electrolyzer can keep on running on the green energy stored in the battery.' },
+  { icon: 'cylinder', title: 'Local storage', text: 'The hydrogen produced by the electrolyzer is stored in gas bundles at 35 bar. If you add our compressor, it can be stored at up to 300 bar, allowing almost ten times as much energy to be stored in the same tanks.' },
+  { icon: 'thermometer', size: 'wide' as const, title: 'Mannaging heat', text: 'When converting betweem electricity and hydrogen, heat is released. This heat is often considered as "energy loss." In our system, the released heat is recovered and stored to deliver hot&nbsp; water at around 55 °C to your home or business.' },
+  { icon: 'money', size: 'full' as const, title: 'Good for profit and enviroment', text: 'Because all the hydrogen is produced locally, we can predict your energy needs and choose the perfect moments to produce it. Our battery can react in milliseconds, ensuring you never buy electricity at high prices instead, you use your own abundant solar energy. The energy used is green, affordable, and local. We produce hydrogen for around €3 per kilogram. While the current price at commercial fuel stations is around&nbsp; €20 per kilogram.' },
+];
+
+const faq = [
+  { question: 'Is converting electricity into hydrogen an efficient process?', answer: 'Often this is seen as an inefficient process, but the "loss\'\' of energy is mostly heat.<br>In the solution of Hermanos energy, the waste heat is stored and used, for example for your daily warm showers or heating in the winter. By using heat and electricity there is not much energy loss.' },
+  { question: 'Is storing energy with hydrogen better than a battery?', answer: 'Hydrogen is not per se a better way of storing energy than a battery, but it has some different characteristics. Battery storage is a very good solution for short-term storage for example using your solar energy during the night in the summer. Hydrogen is one of the most cost-efficient methods to do seasonal storage and it can be used to heat your house Hermanos Energy is offering a combination of hydrogen storage, thermal storage, and battery storage to make sure you can use the full-year green energy. Look at or power to power product to find out more.' },
+  { question: 'Is hydrogen storage a safe solution?', answer: 'Hydrogen is in terms of risk comparable with natural gas, although it has some different safety characteristics. Natural gas is heavier than air and will stay in your house or farm when there is a leakage, hydrogen is the lightest of all elements and will much easier disappear.' },
+  { question: 'Where is the hydrogen stored?', answer: 'The hydrogen is stored in gas bundels, we advise you to keep those outside. But the electrolyzer whic makes the hydrogen is best placed inside a well ventilated room, where rain or frost can not influence it.' },
+  { question: 'Can I use the hydrogen to replace my natural gas needs?', answer: 'Yes, hydrogen is a very good solution for all your heating needs. With the solution that Hermanos Energy is offering you can use your solar energy from the summer to heat your house in the winter. This is one of the most environmentally friendly ways of heating your house. Heat pumps are usually used when there is only energy produced with fossil fuels available. Take a look at our power to heat product page to find out more.' },
+];
 ---
 
 <Layout
   title="Product — Hermanos Energy"
-  description="Hermanos Energy's hydrogen energy storage products: Power to Heat, Power to Drive, and Power to Power."
-  pageCSS="product.css"
-  activeNav="product"
->
+  description="The energy storage solution for local storage at farms and small and midsize companies."
+  current="product"
+  icons={['check', 'laptop', 'battery', 'cylinder', 'thermometer', 'money']}>
 
-  <!-- ══════════════════════════════════════════════
-       SECTION 1 — THREE PRODUCTS + BODY TEXT
-  ══════════════════════════════════════════════ -->
-  <section class="pp-cards-section">
-    <div class="container">
+  <!-- ── Hero: title, product cards, intro, product image ── -->
+  <section class="hero">
+    <div class="hero__text reveal">
+      <h1 class="page-title">Our three products.</h1>
+      <p class="page-subtitle">The energy storage solution for local storage at farms and small and midsize companies.</p>
+    </div>
 
-      <!-- Section header -->
-      <div class="pp-cards-header">
-        <h1 class="pp-cards-title" data-i18n="product_page.three.title">Our three products.</h1>
-        <p class="pp-cards-subtitle" data-i18n="product_page.three.subtitle">The energy storage solution for local storage at farms and small and midsize companies.</p>
-      </div>
-
-      <!-- Three cards -->
-      <div class="pp-cards">
-
-        <!-- Power to Heat — light card -->
-        <div class="pp-card pp-card--light">
-          <div class="pp-card-inner">
-            <div class="pp-card-top">
-              <p class="pp-card-label" data-i18n="product_page.three.heat.label">Heating with locally produced hydrogen</p>
-              <h2 class="pp-card-title" data-i18n="product_page.three.heat.title">Power to Heat</h2>
-            </div>
-            <ul class="pp-card-features">
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.heat.f1">Seasonal heat storage</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.heat.f2">Can reach high temperatures</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.heat.f3">Can replace or be mixed with gas</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.heat.f4">Almost no energy loss</span>
-              </li>
-            </ul>
-            <a href={`${base}power-to-heat`} class="pp-card-btn pp-card-btn--outline">Learn more</a>
+    <div class="product-cards reveal">
+      {cards.map((card) => (
+        <article class={`product-card product-card--${card.variant} reveal`}>
+          <div class="product-card__label-row">
+            <p class="label product-card__label">{card.label}</p>
           </div>
-        </div>
+          <h2 class="title product-card__title">{card.title}</h2>
+          <ul class="checklist">
+            {card.points.map((point) => <li><svg><use href="#icon-check" /></svg>{point}</li>)}
+          </ul>
+          <a class="button button--white button--shadow" href={url(card.link)} target="_blank">Learn more</a>
+        </article>
+      ))}
+    </div>
 
-        <!-- Power to Drive — dark featured card -->
-        <div class="pp-card pp-card--dark">
-          <div class="pp-card-inner">
-            <div class="pp-card-top">
-              <p class="pp-card-label" data-i18n="product_page.three.drive.label">Driving a vehicle on your own hydrogen</p>
-              <h2 class="pp-card-title" data-i18n="product_page.three.drive.title">Power to Drive</h2>
-            </div>
-            <ul class="pp-card-features">
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.drive.f1">Produce your own fuel</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.drive.f2">50% cheaper than diesel</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.drive.f3">€3/kg hydrogen</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.drive.f4">Easy refuelling</span>
-              </li>
-            </ul>
-            <a href={`${base}power-to-drive`} class="pp-card-btn pp-card-btn--white">Learn more</a>
-          </div>
-        </div>
+    <p class="body-text hero__intro">The production of green electricity is rapidly increasing, but the yield is variable. Therefore, the bottleneck is no longer production but rather the storage of electricity. To create a buffer that balances production and consumption, storage is crucial.<br><br>As owners of solar panels have experienced, there has been no good and affordable solution for the storage problem until now. We offer energy storage solutions for agricultural businesses, and other small and medium-sized enterprises.<br><br>We create and store hydrogen locally. Our software monitors grid prices, as well as your own energy consumption and electricity production. This allows you to optimize the use of your green electricity by converting it to hydrogen during peak production times.<br>We often produce hydrogen when energy is free or when electricity prices are negative. That’s why our hydrogen is always green and very affordable. You can use it as a replacement for natural gas in any heating application, as fuel for a vehicle, or store it and convert it back into electricity when needed.<br><br>Whatever your choice, we provide a plug-and-play installation that covers the full cycle: locally produced, locally stored, and locally used. Everything is fully automated with software monitoring every step and ensuring the system is optimized for your needs.</p>
 
-        <!-- Power to Power — light card -->
-        <div class="pp-card pp-card--light">
-          <div class="pp-card-inner">
-            <div class="pp-card-top">
-              <p class="pp-card-label" data-i18n="product_page.three.power.label">A year round green electricity</p>
-              <h2 class="pp-card-title" data-i18n="product_page.three.power.title">Power to Power</h2>
-            </div>
-            <ul class="pp-card-features">
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.power.f1">Day &amp; night electricity storage</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.power.f2">Seasonal electricity storage</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.power.f3">Linked to day-ahead market</span>
-              </li>
-              <li class="pp-card-feature">
-                <span class="pp-check-icon">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#3EFF52"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#0d0630" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span data-i18n="product_page.three.power.f4">Overcoming grid congestion</span>
-              </li>
-            </ul>
-            <a href={`${base}power-to-power`} class="pp-card-btn pp-card-btn--outline">Learn more</a>
-          </div>
-        </div>
-
-      </div><!-- /.pp-cards -->
-
-      <!-- Body text -->
-      <div class="pp-body-text-block">
-        <p class="pp-body-text" data-i18n="product_page.body.p1">The production of green electricity is rapidly increasing, but the yield is variable. Therefore, the bottleneck is no longer production but rather the storage of electricity. To create a buffer that balances production and consumption, storage is crucial.</p>
-        <p class="pp-body-text" data-i18n="product_page.body.p2">As owners of solar panels have experienced, there has been no good and affordable solution for the storage problem until now. We offer energy storage solutions for agricultural businesses, and other small and medium-sized enterprises.</p>
-        <p class="pp-body-text" data-i18n="product_page.body.p3">We create and store hydrogen locally. Our software monitors grid prices, as well as your own energy consumption and electricity production. This allows you to optimize the use of your green electricity by converting it to hydrogen during peak production times.</p>
-        <p class="pp-body-text" data-i18n="product_page.body.p4">We often produce hydrogen when energy is free or when electricity prices are negative. That's why our hydrogen is always green and very affordable. You can use it as a replacement for natural gas in any heating application, as fuel for a vehicle, or store it and convert it back into electricity when needed.</p>
-        <p class="pp-body-text" data-i18n="product_page.body.p5">Whatever your choice, we provide a plug-and-play installation that covers the full cycle: locally produced, locally stored, and locally used. Everything is fully automated.</p>
-      </div>
-
+    <div class="hero__image reveal">
+      <img src={url('images/product/products.png')} alt="Power to heat, Power to drive and Power to power units" width="1866" height="1171">
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       SECTION 2 — PRODUCT IMAGE
-  ══════════════════════════════════════════════ -->
-  <section class="pp-product-image">
-    <img src={`${base}assets/images/product/hero.avif`} alt="Hermanos Energy hydrogen system" />
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       SECTION 3 — SEAMLESS SOLUTIONS
-  ══════════════════════════════════════════════ -->
-  <section class="pp-seamless">
-    <div class="container">
-      <div class="pp-seamless-inner">
-        <h2 class="pp-seamless-title" data-i18n="product_page.seamless.title">Seamless energy solutions, tailored to you</h2>
-        <p class="pp-seamless-subtitle" data-i18n="product_page.seamless.subtitle">Every energy challenge is unique, and so is the approach to solving it. Our structured yet flexible process ensures a smooth transition to clean energy, from understanding your needs to delivering a customized solution. Explore the timeline below to see how we turn your energy goals into reality.</p>
-
-        <!-- Timeline -->
-        <div class="pp-timeline">
-          <div class="pp-timeline-track">
-            <div class="pp-timeline-line"></div>
-            <div class="pp-timeline-step">
-              <div class="pp-timeline-dot">1</div>
-              <p class="pp-timeline-label">Today</p>
-            </div>
-            <div class="pp-timeline-step">
-              <div class="pp-timeline-dot">2</div>
-              <p class="pp-timeline-label">1–2 weeks</p>
-            </div>
-            <div class="pp-timeline-step">
-              <div class="pp-timeline-dot">3</div>
-              <p class="pp-timeline-label">4–5 weeks</p>
-            </div>
-            <div class="pp-timeline-step">
-              <div class="pp-timeline-dot">4</div>
-              <p class="pp-timeline-label">In 8 weeks</p>
-            </div>
-            <div class="pp-timeline-step">
-              <div class="pp-timeline-dot">5</div>
-              <p class="pp-timeline-label">Within 3 months of signing</p>
-            </div>
-          </div>
-        </div>
-
+  <!-- ── Timeline ── -->
+  <section class="timeline">
+    <div class="timeline__inner">
+      <h2 class="title timeline__title">Seamless energy solutions, tailored to you</h2>
+      <p class="body-text">Every energy challenge is unique, and so is the approach to solving it. Our structured yet flexible process ensures a smooth transition to clean energy, from understanding your needs to delivering a customized solution. Explore the timeline below to see how we turn your energy goals into reality.</p>
+      <div class="timeline__image reveal">
+        <img src={url('images/product/timeline.png')} alt="Timeline: 1 Today, 2 In 2 weeks, 3 In 6 weeks, 4 In 7 weeks, 5 Within 3 months of signing" width="3840" height="920">
       </div>
     </div>
-
-    <!-- Notice bar -->
-    <div class="pp-notice-bar">
-      <div class="container">
-        <p class="pp-notice-text" data-i18n="product_page.notice">Due to high demand, we are working with building slots. We are fully booked for 2025, contact us to discuss possibilities for 2026 and to reserve a slot.</p>
-        <a href={`${base}contact`} class="pp-notice-cta" data-i18n="product_page.notice_cta">Contact us</a>
-      </div>
-    </div>
+    <p class="body-text timeline__note">Due to high demand, we are working with building slots. We are fully booked for 2025, contact us to discuss possibilities for 2026 and to reserve a slot.</p>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       SECTION 4 — KEY FEATURES
-  ══════════════════════════════════════════════ -->
-  <section class="pp-features">
-    <div class="container">
-      <p class="pp-small-label" data-i18n="product_page.features.label">Key features</p>
-      <h2 class="pp-features-title" data-i18n="product_page.features.title">This is what all our products have in common.</h2>
+  <Features heading="This is what all our products have in common." items={features} />
 
-      <div class="pp-feature-cards">
-
-        <div class="pp-feature-card">
-          <div class="pp-feature-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h4l3-8 4 16 3-8h4" stroke="#220e87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="pp-feature-card-title" data-i18n="product_page.features.c1.title">Personalised smart energy management</h3>
-          <p class="pp-feature-card-body" data-i18n="product_page.features.c1.body">Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs.</p>
-        </div>
-
-        <div class="pp-feature-card">
-          <div class="pp-feature-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="18" height="11" rx="2" stroke="#220e87" stroke-width="1.5"/><path d="M20 10h2v5h-2" stroke="#220e87" stroke-width="1.5" stroke-linecap="round"/><path d="M6 11h6" stroke="#220e87" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="pp-feature-card-title" data-i18n="product_page.features.c2.title">Battery included</h3>
-          <p class="pp-feature-card-body" data-i18n="product_page.features.c2.body">We use a battery as a short term buffer for electricity. It allows us to react in seconds. And when the sun has gone your electrolyzer can keep on running on the green energy stored in the battery.</p>
-        </div>
-
-        <div class="pp-feature-card">
-          <div class="pp-feature-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#220e87"/></svg>
-          </div>
-          <h3 class="pp-feature-card-title" data-i18n="product_page.features.c3.title">Local storage</h3>
-          <p class="pp-feature-card-body" data-i18n="product_page.features.c3.body">The hydrogen produced by the electrolyzer is stored in gas bundles at 35 bar. If you add our compressor, it can be stored at up to 300 bar, allowing almost ten times as much energy to be stored in the same tanks.</p>
-        </div>
-
-        <div class="pp-feature-card">
-          <div class="pp-feature-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z" stroke="#220e87" stroke-width="1.5"/><path d="M8.5 9.5c0-1.93 1.57-3.5 3.5-3.5" stroke="#220e87" stroke-width="1.5" stroke-linecap="round"/><path d="M12 22v-4M8 20h8" stroke="#220e87" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="pp-feature-card-title" data-i18n="product_page.features.c4.title">Managing heat</h3>
-          <p class="pp-feature-card-body" data-i18n="product_page.features.c4.body">When converting between electricity and hydrogen, heat is released. This heat is often considered as 'energy loss.' In our system, the released heat is recovered and stored to deliver hot water at around 55 °C to your home or business.</p>
-        </div>
-
-      </div>
+  <!-- ── FAQ ── -->
+  <section class="faq">
+    <div class="faq__intro reveal">
+      <p class="label">FAQ</p>
+      <h2 class="heading">Got questions?</h2>
     </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════════
-       SECTION 5 — FAQ
-  ══════════════════════════════════════════════ -->
-  <section class="pp-faq">
-    <div class="container">
-      <p class="pp-small-label" data-i18n="product_page.faq.label">FAQ</p>
-      <h2 class="pp-faq-title" data-i18n="product_page.faq.title">Got questions?</h2>
-
-      <div class="pp-faq-list">
-
-        <div class="pp-faq-item pp-faq-item--open">
-          <button class="pp-faq-btn" aria-expanded="true">
-            <span data-i18n="product_page.faq.q1">Is converting electricity into hydrogen an efficient process?</span>
-            <span class="pp-faq-toggle pp-faq-toggle--close" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
+    <div class="faq__list reveal">
+      {faq.map((item, i) => (
+        <div class:list={['faq-item', i === 0 && 'is-open']}>
+          <button class="faq-item__question" type="button" aria-expanded={String(i === 0)}>
+            <span>{item.question}</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7 7 17M7 7l10 10" /></svg>
           </button>
-          <div class="pp-faq-answer" style="max-height: 200px;">
-            <p data-i18n="product_page.faq.a1">Often this is seen as an inefficient process, but the 'loss' of energy is mostly heat. In the solution of Hermanos Energy, the waste heat is stored and used, for example for your daily warm showers or heating in the winter. By using heat and electricity there is not much energy loss.</p>
+          <div class="faq-item__answer">
+            <p class="body-text" set:html={item.answer} />
           </div>
         </div>
-
-        <div class="pp-faq-item pp-faq-item--open">
-          <button class="pp-faq-btn" aria-expanded="true">
-            <span data-i18n="product_page.faq.q2">Is storing energy with hydrogen better than a battery?</span>
-            <span class="pp-faq-toggle pp-faq-toggle--close" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-          </button>
-          <div class="pp-faq-answer" style="max-height: 300px;">
-            <p data-i18n="product_page.faq.a2">Hydrogen is not per se a better way of storing energy than a battery, but it has some different characteristics. Battery storage is a very good solution for short-term storage for example using your solar energy during the night in the summer. Hydrogen is one of the most cost-efficient methods to do seasonal storage and it can be used to heat your house. Hermanos Energy is offering a combination of hydrogen storage, thermal storage, and battery storage to make sure you can use the full-year green energy.</p>
-          </div>
-        </div>
-
-        <div class="pp-faq-item">
-          <button class="pp-faq-btn" aria-expanded="false">
-            <span data-i18n="product_page.faq.q3">Is hydrogen storage a safe solution?</span>
-            <span class="pp-faq-toggle pp-faq-toggle--open" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-          </button>
-          <div class="pp-faq-answer" style="max-height: 0;">
-            <p data-i18n="product_page.faq.a3">TODO: answer coming soon.</p>
-          </div>
-        </div>
-
-        <div class="pp-faq-item">
-          <button class="pp-faq-btn" aria-expanded="false">
-            <span data-i18n="product_page.faq.q4">Where is the hydrogen stored?</span>
-            <span class="pp-faq-toggle pp-faq-toggle--open" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-          </button>
-          <div class="pp-faq-answer" style="max-height: 0;">
-            <p data-i18n="product_page.faq.a4">The hydrogen produced by the electrolyzer is stored in gas bundles at 35 bar. If you add our compressor, it can be stored at up to 300 bar, allowing almost ten times as much energy to be stored in the same tanks.</p>
-          </div>
-        </div>
-
-        <div class="pp-faq-item">
-          <button class="pp-faq-btn" aria-expanded="false">
-            <span data-i18n="product_page.faq.q5">Can I use the hydrogen to replace my natural gas needs?</span>
-            <span class="pp-faq-toggle pp-faq-toggle--open" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-          </button>
-          <div class="pp-faq-answer" style="max-height: 0;">
-            <p data-i18n="product_page.faq.a5">TODO: answer coming soon.</p>
-          </div>
-        </div>
-
-      </div>
+      ))}
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       SECTION 6 — CTA
-  ══════════════════════════════════════════════ -->
-  <section class="pp-cta">
-    <div class="container">
-      <div class="pp-cta-inner">
-        <p class="pp-cta-body" data-i18n="product_page.cta.body">In 2030 90% of the annual energy demand in the Netherlands will be from renewable energy sources but to balance the energy grid and secure a stable power supply, 30% additional energy from fossil fuel is required. This is causing 9.000.000.000 in CO2 emissions.</p>
-        <a href={`${base}contact`} class="pp-cta-btn" data-i18n="product_page.cta.button">Contact us</a>
-      </div>
+  <!-- ── Statement ── -->
+  <section class="statement">
+    <div class="statement__inner reveal">
+      <h2 class="title statement__text" set:html="In 2030 90% of the annual energy demand in the Netherlands will be from renewable energy sources&nbsp;but to balance&nbsp;the energy grid and secure a stable power&nbsp;supply, 30%&nbsp;additional energy from fossil fuel is required. this is causing 9000.000.000 in CO2 emissions." />
+      <a class="button button--white button--shadow" href={url('contact')} target="_blank">Contact us</a>
     </div>
   </section>
-
 </Layout>
-
-<script>
-  document.querySelectorAll<HTMLButtonElement>('.pp-faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.pp-faq-item') as HTMLElement;
-      const answer = item.querySelector<HTMLElement>('.pp-faq-answer')!;
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-      const toggleIcon = btn.querySelector('.pp-faq-toggle')!;
-
-      if (isOpen) {
-        btn.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0';
-        toggleIcon.classList.remove('pp-faq-toggle--close');
-        toggleIcon.classList.add('pp-faq-toggle--open');
-        toggleIcon.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        toggleIcon.classList.remove('pp-faq-toggle--open');
-        toggleIcon.classList.add('pp-faq-toggle--close');
-        toggleIcon.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
-      }
-    });
-  });
-</script>

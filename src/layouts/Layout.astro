@@ -1,130 +1,42 @@
 ---
+// Shared page shell: <head>, header, footer, icon sprite and site-wide scripts.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import IconSprite from '../components/IconSprite.astro';
+import '../styles/base.css';
+
 interface Props {
   title: string;
   description: string;
-  pageCSS: string;
-  activeNav?: string;
+  current?: 'product' | 'aboutus' | 'contact';
+  icons?: string[];
 }
 
-const { title, description, pageCSS, activeNav } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const { title, description, current, icons = [] } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
-  <meta name="description" content={description} />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href={`${base}css/tokens.css`} />
-  <link rel="stylesheet" href={`${base}css/reset.css`} />
-  <link rel="stylesheet" href={`${base}css/global.css`} />
-  <link rel="stylesheet" href={`${base}css/pages/${pageCSS}`} />
+  <meta name="description" content={description}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap">
+  <!-- Lets CSS hide the fade-up blocks only when JavaScript runs -->
+  <script is:inline>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-
-  <!-- ══════════════════════════════════════════════
-       HEADER
-  ══════════════════════════════════════════════ -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-
-        <!-- Logo -->
-        <a href={base} class="header-logo" aria-label="Hermanos Energy - Home">
-          <img src={`${base}assets/images/Hermanos-Logo-Green.svg`} alt="Hermanos Energy" />
-        </a>
-
-        <!-- Desktop nav -->
-        <nav class="header-nav" aria-label="Main navigation">
-          <a href={`${base}product`} data-i18n="nav.product" class={activeNav === 'product' ? 'active' : ''}>Product</a>
-          <a href={`${base}aboutus`} data-i18n="nav.about" class={activeNav === 'about' ? 'active' : ''}>About Us</a>
-          <a href={`${base}contact`} data-i18n="nav.contact" class={activeNav === 'contact' ? 'active' : ''}>Contact Us</a>
-
-          <!-- Language switcher -->
-          <div class="lang-switcher" aria-label="Language">
-            <button data-lang-btn="en" onclick="I18n.switch('en')">EN</button>
-            <span class="lang-switcher-divider" aria-hidden="true"></span>
-            <button data-lang-btn="nl" onclick="I18n.switch('nl')">NL</button>
-          </div>
-
-          <!-- CTA -->
-          <a href="https://www.hermanos.energy/" target="_blank" rel="noopener" class="btn-sign-in" data-i18n="nav.sign_in">Sign in</a>
-        </nav>
-
-        <!-- Hamburger (mobile) -->
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-      </div>
-    </div>
-
-    <!-- Mobile nav drawer -->
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <a href={`${base}product`} data-i18n="nav.product">Product</a>
-      <a href={`${base}aboutus`} data-i18n="nav.about">About Us</a>
-      <a href={`${base}contact`} data-i18n="nav.contact">Contact Us</a>
-      <a href="https://www.hermanos.energy/" target="_blank" rel="noopener" class="btn-sign-in" data-i18n="nav.sign_in" style="align-self:flex-start; margin-top: var(--space-2);">Sign in</a>
-
-      <div class="lang-switcher" aria-label="Language">
-        <button data-lang-btn="en" onclick="I18n.switch('en')">EN</button>
-        <span class="lang-switcher-divider" aria-hidden="true"></span>
-        <button data-lang-btn="nl" onclick="I18n.switch('nl')">NL</button>
-      </div>
-    </nav>
-  </header>
-
-
-  <!-- ══════════════════════════════════════════════
-       PAGE CONTENT
-  ══════════════════════════════════════════════ -->
-  <main class="page-content">
+  <IconSprite names={icons} />
+  <Header current={current} />
+  <main>
     <slot />
   </main>
-
-
-  <!-- ══════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-
-      <!-- Logo -->
-      <a href={base} class="footer-logo" aria-label="Hermanos Energy - Home">
-        <img src={`${base}assets/images/Hermanos-Logo-Green.svg`} alt="Hermanos Energy" />
-      </a>
-
-      <!-- Nav links -->
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href={`${base}product`} data-i18n="nav.product">Product</a>
-        <a href={`${base}aboutus`} data-i18n="nav.about">About Us</a>
-        <a href={`${base}contact`} data-i18n="nav.contact">Contact Us</a>
-      </nav>
-
-      <!-- Address + copyright -->
-      <div class="footer-address">
-        <p data-i18n-html="footer.address">Address: Transistorstraat 151, 1322 CN Almere<br />Kvk nummer 91848946</p>
-        <p data-i18n="footer.copyright">Hermanos Energy 2025 © All rights reserved</p>
-      </div>
-
-    </div>
-  </footer>
-
-
-  <!-- Inject base URL so i18n.js can resolve locale paths correctly -->
-  <script define:vars={{ base }}>
-    window.__BASE__ = base;
+  <Footer current={current} />
+  <script>
+    import '../scripts/site.js';
   </script>
-
-  <!-- Scripts -->
-  <script src={`${base}js/i18n.js`}></script>
-  <script src={`${base}js/main.js`}></script>
-
 </body>
 </html>

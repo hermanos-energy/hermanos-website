@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power to Power — Hermanos Energy</title>
+  <meta name="description" content="A year round green electricity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="../shared/product-detail.css">
+  <link rel="stylesheet" href="power-to-power.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../shared/site.js" defer></script>
+</head>
+<body>
+
+  <!-- Icons (Phosphor set, as used on the live site). Coloured via currentColor. -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="icon-laptop" viewBox="0 0 256 256"><path d="M232,168h-8V72a24.1,24.1,0,0,0-24-24H56A24.1,24.1,0,0,0,32,72v96H24a8,8,0,0,0-8,8v16a24.1,24.1,0,0,0,24,24H216a24.1,24.1,0,0,0,24-24V176A8,8,0,0,0,232,168ZM112,72h32a8,8,0,0,1,0,16H112a8,8,0,0,1,0-16ZM224,192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8v-8H224Z"/></symbol>
+    <symbol id="icon-battery" viewBox="0 0 256 256"><path d="M248,88a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,248,88Z"/><path d="M200,48H48A24.1,24.1,0,0,0,24,72V184a24.1,24.1,0,0,0,24,24H200a24.1,24.1,0,0,0,24-24V72A24.1,24.1,0,0,0,200,48Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8Z"/><rect x="56" y="80" width="136" height="96" rx="8"/></symbol>
+    <symbol id="icon-cylinder" viewBox="0 0 256 256"><path d="M128,16C87.6,16,56,34.4,56,58V198c0,23.6,31.6,42,72,42s72-18.4,72-42V58C200,34.4,168.4,16,128,16Zm0,208c-33,0-56-13.7-56-26V84.7c13.1,9.4,33.1,15.3,56,15.3s42.9-5.9,56-15.3V198C184,210.3,161,224,128,224Z"/></symbol>
+    <symbol id="icon-thermometer" viewBox="0 0 256 256"><path d="M160,143.3V48a40,40,0,0,0-80,0v95.3A59.4,59.4,0,0,0,60,188a60,60,0,0,0,120,0A59.4,59.4,0,0,0,160,143.3ZM120,24a24.1,24.1,0,0,1,24,24v8H96V48A24.1,24.1,0,0,1,120,24Zm58.1,61.7a8,8,0,0,1,0-11.4,28,28,0,0,1,19.8-8.2,28.4,28.4,0,0,1,19.8,8.2,11.9,11.9,0,0,0,16.9,0,8,8,0,0,1,11.3,11.4,28,28,0,0,1-19.8,8.2,28.4,28.4,0,0,1-19.8-8.2,11.9,11.9,0,0,0-16.9,0A8,8,0,0,1,178.1,85.7Zm67.8,28.6a8,8,0,0,1,0,11.4,28,28,0,0,1-19.8,8.2,28.4,28.4,0,0,1-19.8-8.2,11.9,11.9,0,0,0-16.9,0,8,8,0,0,1-11.3-11.4,28,28,0,0,1,19.8-8.2,28.4,28.4,0,0,1,19.8,8.2,11.9,11.9,0,0,0,16.9,0A8,8,0,0,1,245.9,114.3Z"/></symbol>
+    <symbol id="icon-money" viewBox="0 0 256 256"><path d="M232,56H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H232a16,16,0,0,0,16-16V72A16,16,0,0,0,232,56ZM75,184,24,140.3V115.7L75,72H181l51,43.7v24.6L181,184Zm93-56a40,40,0,1,1-40-40A40,40,0,0,1,168,128Z"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 256 256"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></symbol>
+  </svg>
+
+  <!-- ── Header ── -->
+  <header class="site-header" data-menu="closed">
+    <div class="site-header__bar">
+      <a class="site-header__logo" href="../index.html" aria-label="Hermanos Energy home">
+        <img src="../shared/images/logo.svg" alt="" width="164" height="68">
+      </a>
+
+      <nav class="site-nav" aria-label="Main">
+        <a class="site-nav__link" href="../product/index.html">Product</a>
+        <a class="site-nav__link" href="../aboutus/index.html">About us</a>
+        <a class="site-nav__link" href="../contact/index.html">Contact us</a>
+        <a class="button button--green" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle__bar menu-toggle__bar--top"></span>
+        <span class="menu-toggle__bar menu-toggle__bar--mid"></span>
+        <span class="menu-toggle__bar menu-toggle__bar--bottom"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+      <a class="mobile-menu__link" href="../product/index.html">Product</a>
+      <a class="mobile-menu__link" href="../aboutus/index.html">About us</a>
+      <a class="mobile-menu__link" href="../contact/index.html">Contact</a>
+      <a class="button button--white" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="detail-hero">
+      <div class="detail-hero__text reveal">
+        <p class="label">PRODUCT</p>
+        <h1 class="page-title">Power to Power</h1>
+        <p class="page-subtitle">A year round green electricity.</p>
+      </div>
+      <div class="detail-hero__diagram reveal">
+        <img src="assets/images/diagram.jpg" alt="Power to power system diagram: own energy and grid feed the battery and electrolyser; a fuel cell turns stored hydrogen back into electricity and warm water for the home">
+      </div>
+    </section>
+
+    <!-- ── Key features ── -->
+    <section class="features">
+      <div class="features__inner">
+        <div class="features__intro reveal">
+          <p class="label">Key Features</p>
+          <h2 class="heading">This is what makes power to power unique.</h2>
+        </div>
+
+        <div class="features__grid">
+          <article class="feature-card feature-card--wide reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-laptop"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Personalised smart energy management</h3>
+              <p class="body-text">Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs.</p>
+            </div>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-battery"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Day and night storage</h3>
+              <p class="body-text">We store your electricity in a battery as a buffer for short-term imbalances between production and usage (such as day-night variations)</p>
+            </div>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-cylinder"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Seasonal storage</h3>
+              <p class="body-text">We use an electrolyzer to store electricity in the form of hydrogen as a buffer for imbalances over longer periods (summer-winter). A fuel cell converts it back to electricy. Hydrogen is 20 times cheaper then reqular batteries per stored kWh</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--wide reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-thermometer"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Mannaging heat</h3>
+              <p class="body-text">When converting betweem electricity and hydrogen, heat is released. This heat is often considered as "energy loss." In our system, the released heat is recovered and stored to deliver hot&nbsp; water at around 55 °C to your home or business.</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--full reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-money"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Good for profit and enviroment</h3>
+              <p class="body-text">With our storage solution, you can also significantly reduce your costs for grid electricity usage. Grid electricity prices vary from hour to hour, ranging from more than 60 cents per kwh to below zero. You can configure the software to stop drawing electricity from the grid once the price exceeds a certain level, and instead utilize the electricity stored in your system. And moments with high prices correlate with a lot of energy from fosil fuels, using your own stored green energy at those moments is much better for the enviroment as well.<br><br>Our solution can also be used when you are faced with net congestion, and can not expand. We make sure you can always run your bussines the way you want.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Seasons ── -->
+    <section class="seasons">
+      <div class="seasons__inner">
+        <h2 class="heading">A year-round solution</h2>
+        <p class="body-text">In summer there is an excess of solar power and at that time energy consumption is low. In winters the yield of solar panels is much less, and a lot of energy in the form of heating is used. Batteries have a limited storage capacity, they are great for day storage but we add hydrogen storage to it to deal with the imbalance in the seasons. Click through the pictures below to see how our system behaves during the different seasons.</p>
+
+        <div class="tabs">
+          <div class="tabs__buttons" role="tablist">
+            <button class="tabs__button" type="button" role="tab" aria-selected="true" aria-controls="tab-summer">Summer</button>
+            <button class="tabs__button" type="button" role="tab" aria-selected="false" aria-controls="tab-autumn">Autumn</button>
+            <button class="tabs__button" type="button" role="tab" aria-selected="false" aria-controls="tab-winter">Winter</button>
+          </div>
+
+          <div class="tab-panel" id="tab-summer" role="tabpanel">
+            <p class="body-text tab-panel__text reveal">During summer, solar panels often generate more energy than you consume. At these moments, we store the surplus energy in a battery for later use. Additionally, we convert the excess electricity into hydrogen, which can be utilized for heating your home during the winter months. Even if you don't have solar panels, you can still benefit from the green energy available on the grid.</p>
+            <div class="tab-panel__image card-border reveal">
+              <img src="assets/images/summer-2048.jpg" srcset="assets/images/summer-1024.jpg 1024w, assets/images/summer-2048.jpg 2048w" sizes="(min-width: 1200px) 1000px, 100vw" alt="The system in summer: surplus solar power charges the battery and makes hydrogen">
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-autumn" role="tabpanel" hidden>
+            <p class="body-text tab-panel__text">On windy and rainy autumn days, solar energy may not be readily accessible. However, thanks to the contribution of windmills, there is still an abundance of green energy. Our system continuously monitors the grid, keeping track of green energy availability and prices. When the electricity is sourced from renewable sources and prices are low, we seize the opportunity to charge the battery and produce hydrogen. Notably, the process of generating hydrogen also generates heat, which we harness to warm your home efficiently.</p>
+            <div class="tab-panel__image card-border">
+              <img src="assets/images/autumn-2048.jpg" srcset="assets/images/autumn-1024.jpg 1024w, assets/images/autumn-2048.jpg 2048w" sizes="(min-width: 1200px) 1000px, 100vw" alt="The system in autumn: green wind energy from the grid charges the battery" loading="lazy">
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-winter" role="tabpanel" hidden>
+            <p class="body-text tab-panel__text">During winter, when solar and wind energy are limited, our stored energy comes into play. We provide two of the shelf options for utilizing the stored hydrogen:<br>1. You can directly convert the stored hydrogen into heating using a boiler.<br>2. Alternatively, you can use a fuel cell to generate electricity once again. The electricity generation process itself generates heat, which we effectively utilize to warm your home.<br><br>Moreover, if you happen to store more energy than you need, we enable you to contribute the excess electricity back to the grid. This allows your neighbors to benefit from the surplus green electricity, while you enjoy the advantage of potentially high electricity prices in such scenarios. By implementing our comprehensive solution, you can optimize your energy consumption throughout the year, making the most of renewable resources while reducing your environmental footprint.</p>
+            <div class="tab-panel__image card-border">
+              <img src="assets/images/winter-2048.jpg" srcset="assets/images/winter-1024.jpg 1024w, assets/images/winter-2048.jpg 2048w" sizes="(min-width: 1200px) 1000px, 100vw" alt="The system in winter: stored hydrogen is turned back into electricity and heat" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── In action ── -->
+    <section class="in-action">
+      <div class="in-action__inner reveal">
+        <div class="in-action__photo">
+          <img src="assets/images/in-action-1024.jpg" srcset="assets/images/in-action-1024.jpg 1024w, assets/images/in-action-2048.jpg 2048w" sizes="(min-width: 1200px) 640px, 100vw" alt="Power to power installation at a farm">
+        </div>
+        <div class="in-action__text">
+          <h2 class="title">Power to Power in action</h2>
+          <p class="body-text">We’re always here to help. Contact us if you are experiencing issues with out product or have any questions.</p>
+          <a class="text-link" href="../contact/index.html">Get a demo <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-footer__logo" href="../index.html" aria-label="Hermanos Energy home">
+        <img src="../shared/images/logo.svg" alt="" width="134" height="56">
+      </a>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../product/index.html">Product</a>
+        <a href="../aboutus/index.html">About us</a>
+        <a href="../contact/index.html">Contact us</a>
+      </nav>
+      <div class="site-footer__legal">
+        <p>Address: Transistorstraat 151, 1322 CN Almere<br>Kvk nummer 91848946</p>
+        <p>Hermanos Energy 2025 © All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+/* =============================================================
+   Product detail template — Power to Heat / Drive / Power
+   Dark hero with diagram, key features (base.css), tabbed "seasons" section, "in action" section.
+   Per-page values (tab spacing and image heights) are set as custom properties in each page's CSS.
+   Measured from the live site: scratchpad/out/power-to-*
+   ============================================================= */
+
+/* ── Hero: label, title, subtitle and system diagram on a dark-to-white gradient ── */
+.detail-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 10px;
+  padding: 200px 100px 100px;
+  background: linear-gradient(0deg, var(--color-white) 2%, var(--color-navy) 65.6612%, var(--color-navy) 100%);
+  overflow: hidden;
+}
+
+.detail-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.detail-hero .label { color: var(--color-lilac); }
+.detail-hero .page-title { color: var(--color-white); }
+.detail-hero .page-subtitle { color: var(--color-sky); }
+
+.detail-hero__diagram {
+  width: 100%;
+  max-width: 1200px;
+  height: 700px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.detail-hero__diagram img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Tabs section: heading, intro, then buttons that switch text + image ── */
+.seasons {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.seasons__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.seasons__inner > .heading { text-align: center; }
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: var(--tabs-justify, flex-start);
+  gap: var(--tabs-gap);
+  width: 100%;
+  min-height: var(--tabs-min-height-desktop, 0);
+}
+
+.tabs__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tabs__button {
+  padding: 20px 30px;
+  border-radius: 10px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 1px var(--color-navy);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+.tabs__button[aria-selected="true"] {
+  background: var(--color-navy);
+  color: var(--color-lilac);
+}
+
+.tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  width: 100%;
+}
+
+.tab-panel[hidden] { display: none; }
+
+.tab-panel__text { min-height: 92px; }
+
+/* On the live site this panel's text box is 92px high on desktop and the text overflows it */
+.tab-panel__text--fixed { height: 92px; }
+
+.tab-panel__image {
+  height: var(--tab-image-desktop);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.tab-panel__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── In action: photo + title, text and a "Get a demo" link ── */
+.in-action {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  background: var(--color-brand);
+  overflow: hidden;
+}
+
+.in-action__inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.in-action__photo {
+  flex: none;
+  width: 640px;
+  height: 364px;
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.in-action__photo img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.in-action__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 400px;
+}
+
+.in-action__text .title,
+.in-action__text .body-text { color: var(--color-white); }
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  font-family: var(--font-legal);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.text-link svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Tablet (810–1199px) ── */
+@media (max-width: 1199px) {
+  .detail-hero { padding: 200px 50px 100px; }
+  .detail-hero__diagram { height: 445px; }
+
+  .seasons { padding: 100px 50px; }
+
+  .tabs {
+    width: var(--tabs-width-tablet, 100%);
+    min-height: var(--tabs-min-height-tablet, 0);
+  }
+
+  .tab-panel__text,
+  .tab-panel__text--fixed { height: auto; min-height: 0; }
+
+  .tab-panel__image { height: var(--tab-image-tablet); }
+
+  .in-action__inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  /* Text above the photo */
+  .in-action__text {
+    order: -1;
+    gap: 20px;
+    max-width: 515px;
+  }
+
+  .in-action__photo {
+    width: 711px;
+    height: 400px;
+  }
+}
+
+/* ── Mobile (<810px) ── */
+@media (max-width: 809px) {
+  .detail-hero {
+    gap: 55px;
+    margin-bottom: 0;
+    padding: 200px 50px 100px;
+    background: linear-gradient(0deg, var(--color-white) 2%, var(--color-navy) 29.6005%, var(--color-navy) 100%);
+  }
+
+  .detail-hero__diagram {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .seasons { padding: 50px 20px; }
+
+  .tabs {
+    width: 100%;
+    min-height: var(--tabs-min-height-mobile, 0);
+  }
+
+  .tabs__button { font-size: 16px; }
+
+  .tab-panel__image { height: var(--tab-image-mobile); }
+
+  /* The live site keeps 100px side padding here, leaving a 190px text column; the photo overflows and is cropped */
+  .in-action__text {
+    gap: 40px;
+    max-width: 400px;
+  }
+
+  .in-action__photo {
+    width: 640px;
+    height: 300px;
+  }
+}

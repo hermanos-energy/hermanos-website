@@ -1,0 +1,16 @@
+---
+// Renders the requested icons once per page as <symbol>s; use them with <svg><use href="#icon-name"/></svg>.
+import { icons } from '../data/icons';
+
+interface Props {
+  names: string[];
+}
+
+const { names } = Astro.props;
+---
+
+{names.length > 0 && (
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    {names.map((name) => <symbol id={`icon-${name}`} viewBox="0 0 256 256" set:html={icons[name]} />)}
+  </svg>
+)}

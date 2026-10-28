@@ -1,0 +1,42 @@
+---
+import { url } from '../lib/url';
+
+interface Props {
+  current?: 'product' | 'aboutus' | 'contact';
+}
+
+const { current } = Astro.props;
+const links = [
+  { page: 'product', label: 'Product', mobileLabel: 'Product' },
+  { page: 'aboutus', label: 'About us', mobileLabel: 'About us' },
+  { page: 'contact', label: 'Contact us', mobileLabel: 'Contact' },
+] as const;
+---
+
+<header class="site-header" data-menu="closed">
+  <div class="site-header__bar">
+    <a class="site-header__logo" href={url()} aria-label="Hermanos Energy home">
+      <img src={url('images/shared/logo.svg')} alt="" width="164" height="68">
+    </a>
+
+    <nav class="site-nav" aria-label="Main">
+      {links.map((link) => (
+        <a class="site-nav__link" href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
+      ))}
+      <a class="button button--green" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="menu-toggle__bar menu-toggle__bar--top"></span>
+      <span class="menu-toggle__bar menu-toggle__bar--mid"></span>
+      <span class="menu-toggle__bar menu-toggle__bar--bottom"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    {links.map((link) => (
+      <a class="mobile-menu__link" href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.mobileLabel}</a>
+    ))}
+    <a class="button button--white" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+  </nav>
+</header>
