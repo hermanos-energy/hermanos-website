@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GetInTouch from '../components/GetInTouch.astro';
+import Photo from '../components/Photo.astro';
 import { url, srcset } from '../lib/url';
 import '../styles/home.css';
 
@@ -9,7 +10,7 @@ const news = (name: string) => `images/home/news/${name}`;
 
 const visionCards = [
   { icon: 'icon-heat.svg', text: 'Using your summer sun to heat in the winter, with power to heat.' },
-  { icon: 'icon-power.svg', text: 'All year round green electricyty with power to power.' },
+  { icon: 'icon-power.svg', text: 'All year round green electricity with power to power.' },
   { icon: 'icon-drive.svg', text: 'Driving a vehicle on hydrogen. With power to drive.' },
 ];
 
@@ -23,12 +24,12 @@ const emsPoints = [
 
 <Layout
   title="Hermanos Energy"
-  description="We are dedicated to providing cutting-edge solutions for energy storage using hydrogen technology."
+  description="Hermanos Energy is dedicated to providing cutting-edge solutions for energy storage using hydrogen technology. As the world's energy demands continue to grow, it's crucial that we find sustainable and reliable ways to power our lives."
   icons={['check', 'arrow-right']}>
 
   <!-- ── Hero ── -->
   <section class="home-hero">
-    <img class="home-hero__background" src={url(img('hero-1920.png'))} srcset={srcset(img('hero'), [[1024, '-1024.png'], [1920, '-1920.png']])} sizes="100vw" alt="">
+    <Photo class="home-hero__background" src="home/hero.png" alt="" sizes="100vw" eager />
     <div class="home-hero__text">
       <h1 class="page-title">Endless clean energy.</h1>
       <p class="page-subtitle">We are dedicated to providing cutting-edge solutions for energy storage using hydrogen technology.</p>
@@ -41,10 +42,10 @@ const emsPoints = [
     <div class="split">
       <div class="split__text reveal">
         <h2 class="title">Looking to the future.</h2>
-        <p class="body-text">Renewable energy sources like wind power, and solar are increasing rapidly but to balance the energy grid and secure a stable power supply, the world is still counting on fossil fuel as a energy source. A year-round stable power supply without fossil fuels can only be achieved with local energy storage.</p>
+        <p class="body-text">Renewable energy sources like wind power, and solar are increasing rapidly but to balance the energy grid and secure a stable power supply, the world is still counting on fossil fuel as an energy source. A year-round stable power supply without fossil fuels can only be achieved with local energy storage.</p>
       </div>
       <div class="split__photo reveal">
-        <img src={url(img('future-1024.jpg'))} srcset={srcset(img('future'), [[1024, '-1024.jpg'], [2048, '-2048.jpg']])} sizes="(min-width: 1200px) 552px, 100vw" alt="Hermanos Energy installation next to a farm building with solar panels">
+        <Photo src="home/future.jpg" sizes="(min-width: 1200px) 552px, 100vw" alt="Hermanos Energy installation next to a farm building with solar panels" />
       </div>
     </div>
   </section>
@@ -104,7 +105,7 @@ const emsPoints = [
           </div>
           <div class="news-slide__media">
             <div class="news-slide__image reveal">
-              <img src={url(news('vakbeurs-1024.jpg'))} srcset={`${url(news('vakbeurs-1024.jpg'))} 1024w, ${url(news('vakbeurs.jpg'))} 1600w`} sizes="(min-width: 1200px) 1000px, 100vw" alt="Hermanos Energy giving a talk at Vakbeurs Energie">
+              <Photo src="home/news/vakbeurs.jpg" sizes="(min-width: 1200px) 1000px, 100vw" alt="Hermanos Energy giving a talk at Vakbeurs Energie" />
             </div>
           </div>
         </article>
@@ -116,7 +117,7 @@ const emsPoints = [
               <h3 class="title">Tank hydrogen at SAIL Amsterdam</h3>
               <p class="body-text">Powered by Hermanos Energy and XNRG.tech</p>
             </div>
-            <p class="body-text">SAIL Amsterdam is one of the biggest maritime events in the world, with more then 10.000 boats, and 2.3 million visitors a day. We are proud to power their fleet of hydrogen boats. XNRG.tech developed a series of hydrogen driven boats for the event which can transport up to 50 people. And while they are out for the day we produce hydrogen, so that they can refuel for the next day when they come back. News channel AT5 made a short video about our installation.</p>
+            <p class="body-text">SAIL Amsterdam is one of the biggest maritime events in the world, with more than 10.000 boats, and 2.3 million visitors a day. We are proud to power their fleet of hydrogen boats. XNRG.tech developed a series of hydrogen driven boats for the event which can transport up to 50 people. And while they are out for the day we produce hydrogen, so that they can refuel for the next day when they come back. News channel AT5 made a short video about our installation.</p>
             <div class="news-slide__logos">
               <img src={url(news('logo-hermanos.png'))} alt="Hermanos Energy" width="181" height="48">
               <img src={url(news('logo-sail.svg'))} alt="SAIL Amsterdam" width="201" height="48">
@@ -124,7 +125,11 @@ const emsPoints = [
             </div>
           </div>
           <div class="news-slide__media">
-            <iframe class="news-slide__video" src="https://www.youtube.com/embed/BQmDOf-xGaQ" title="AT5 about Hermanos Energy at SAIL Amsterdam" width="768" height="400" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <!-- Click-to-play: the YouTube player (3+ MB) only loads when a visitor starts the video -->
+            <button class="video-facade news-slide__video" type="button" data-youtube="BQmDOf-xGaQ" data-title="AT5 about Hermanos Energy at SAIL Amsterdam" aria-label="Play video: AT5 about Hermanos Energy at SAIL Amsterdam">
+              <Photo src="home/news/sail-video-thumbnail.jpg" alt="" sizes="(min-width: 810px) 768px, 406px" />
+              <span class="video-facade__play" aria-hidden="true"></span>
+            </button>
             <a class="small-link" href="https://www.sail.nl/nieuws/een-primeur-tijdens-sail-sloep-aftanken-met-waterstof">More about Hermanos Energy at sail <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
           </div>
         </article>
@@ -158,7 +163,7 @@ const emsPoints = [
               <h3 class="title">Power2You gets grant</h3>
               <p class="body-text">Co-financed by the European Union</p>
             </div>
-            <p class="body-text">We are proud to announce that we have been awarded a European grant through the EFRO programme <em>Kansen voor West III for our innovation program Power2You</em>. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making..</p>
+            <p class="body-text">We are proud to announce that we have been awarded a European grant through the EFRO programme <em>Kansen voor West III for our innovation program Power2You</em>. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making.</p>
             <div class="news-slide__logos">
               <img src={url(news('logo-kansen-voor-west.png'))} alt="Kansen voor West" width="212" height="48">
               <img src={url(news('logo-eu.png'))} alt="Co-funded by the European Union" width="247" height="48">
@@ -166,7 +171,7 @@ const emsPoints = [
           </div>
           <div class="news-slide__media">
             <div class="news-slide__image news-slide__image--tall reveal">
-              <img src={url(news('power2you-1024.png'))} srcset={`${url(news('power2you-1024.png'))} 1024w, ${url(news('power2you.png'))} 1522w`} sizes="(min-width: 1200px) 1000px, 100vw" alt="Power2You" loading="lazy">
+              <Photo src="home/news/power2you.png" sizes="(min-width: 1200px) 1000px, 100vw" alt="Power2You" />
             </div>
           </div>
         </article>
@@ -188,7 +193,7 @@ const emsPoints = [
           </div>
           <div class="news-slide__media">
             <div class="news-slide__image reveal">
-              <img src={url(news('award-768.jpg'))} srcset={`${url(news('award-768.jpg'))} 768w, ${url(news('award.jpg'))} 1280w`} sizes="(min-width: 1200px) 1000px, 100vw" alt="Hermanos Energy receiving the Hydrogen Innovation Award 2024" loading="lazy">
+              <Photo src="home/news/award.jpg" sizes="(min-width: 1200px) 1000px, 100vw" alt="Hermanos Energy receiving the Hydrogen Innovation Award 2024" />
             </div>
             <a class="small-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7252244767223214080/">Watch interview <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
           </div>
@@ -216,10 +221,10 @@ const emsPoints = [
         </ul>
       </div>
       <div class="ems__image reveal">
-        <img src={url(img('ems-1024.jpg'))} srcset={srcset(img('ems'), [[1024, '-1024.jpg'], [2048, '-2048.jpg']])} sizes="(min-width: 1200px) 575px, 100vw" alt="The Hermanos Energy dashboard on a laptop and tablet">
+        <Photo src="home/ems.jpg" sizes="(min-width: 1200px) 575px, 100vw" alt="The Hermanos Energy dashboard on a laptop and tablet" />
       </div>
     </div>
   </section>
 
-  <GetInTouch image="images/home/images/contact" alt="Hermanos Energy hydrogen refuelling station" stackedTablet />
+  <GetInTouch image="home/contact.jpg" alt="Hermanos Energy hydrogen refuelling station" stackedTablet />
 </Layout>

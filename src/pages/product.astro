@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Features from '../components/Features.astro';
+import Photo from '../components/Photo.astro';
 import { url } from '../lib/url';
 import '../styles/product.css';
 
@@ -23,15 +24,15 @@ const features = [
   { icon: 'laptop', size: 'wide' as const, title: 'Personalised smart energy management', text: "Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs." },
   { icon: 'battery', title: 'Battery included', text: 'We use a battery as a short term buffer for electricity. It allows us to react in seconds. And when the sun has gone your electrolyzer can keep on running on the green energy stored in the battery.' },
   { icon: 'cylinder', title: 'Local storage', text: 'The hydrogen produced by the electrolyzer is stored in gas bundles at 35 bar. If you add our compressor, it can be stored at up to 300 bar, allowing almost ten times as much energy to be stored in the same tanks.' },
-  { icon: 'thermometer', size: 'wide' as const, title: 'Mannaging heat', text: 'When converting betweem electricity and hydrogen, heat is released. This heat is often considered as "energy loss." In our system, the released heat is recovered and stored to deliver hot&nbsp; water at around 55 °C to your home or business.' },
-  { icon: 'money', size: 'full' as const, title: 'Good for profit and enviroment', text: 'Because all the hydrogen is produced locally, we can predict your energy needs and choose the perfect moments to produce it. Our battery can react in milliseconds, ensuring you never buy electricity at high prices instead, you use your own abundant solar energy. The energy used is green, affordable, and local. We produce hydrogen for around €3 per kilogram. While the current price at commercial fuel stations is around&nbsp; €20 per kilogram.' },
+  { icon: 'thermometer', size: 'wide' as const, title: 'Managing heat', text: 'When converting between electricity and hydrogen, heat is released. This heat is often considered as "energy loss." In our system, the released heat is recovered and stored to deliver hot water at around 55 °C to your home or business.' },
+  { icon: 'money', size: 'full' as const, title: 'Good for profit and environment', text: 'Because all the hydrogen is produced locally, we can predict your energy needs and choose the perfect moments to produce it. Our battery can react in milliseconds, ensuring you never buy electricity at high prices instead, you use your own abundant solar energy. The energy used is green, affordable, and local. We produce hydrogen for around €3 per kilogram. While the current price at commercial fuel stations is around €20 per kilogram.' },
 ];
 
 const faq = [
-  { question: 'Is converting electricity into hydrogen an efficient process?', answer: 'Often this is seen as an inefficient process, but the "loss\'\' of energy is mostly heat.<br>In the solution of Hermanos energy, the waste heat is stored and used, for example for your daily warm showers or heating in the winter. By using heat and electricity there is not much energy loss.' },
-  { question: 'Is storing energy with hydrogen better than a battery?', answer: 'Hydrogen is not per se a better way of storing energy than a battery, but it has some different characteristics. Battery storage is a very good solution for short-term storage for example using your solar energy during the night in the summer. Hydrogen is one of the most cost-efficient methods to do seasonal storage and it can be used to heat your house Hermanos Energy is offering a combination of hydrogen storage, thermal storage, and battery storage to make sure you can use the full-year green energy. Look at or power to power product to find out more.' },
+  { question: 'Is converting electricity into hydrogen an efficient process?', answer: 'Often this is seen as an inefficient process, but the "loss" of energy is mostly heat.<br>In the solution of Hermanos energy, the waste heat is stored and used, for example for your daily warm showers or heating in the winter. By using heat and electricity there is not much energy loss.' },
+  { question: 'Is storing energy with hydrogen better than a battery?', answer: 'Hydrogen is not per se a better way of storing energy than a battery, but it has some different characteristics. Battery storage is a very good solution for short-term storage for example using your solar energy during the night in the summer. Hydrogen is one of the most cost-efficient methods to do seasonal storage and it can be used to heat your house. Hermanos Energy is offering a combination of hydrogen storage, thermal storage, and battery storage to make sure you can use the full-year green energy. Look at our power to power product to find out more.' },
   { question: 'Is hydrogen storage a safe solution?', answer: 'Hydrogen is in terms of risk comparable with natural gas, although it has some different safety characteristics. Natural gas is heavier than air and will stay in your house or farm when there is a leakage, hydrogen is the lightest of all elements and will much easier disappear.' },
-  { question: 'Where is the hydrogen stored?', answer: 'The hydrogen is stored in gas bundels, we advise you to keep those outside. But the electrolyzer whic makes the hydrogen is best placed inside a well ventilated room, where rain or frost can not influence it.' },
+  { question: 'Where is the hydrogen stored?', answer: 'The hydrogen is stored in gas bundles, we advise you to keep those outside. But the electrolyzer which makes the hydrogen is best placed inside a well ventilated room, where rain or frost can not influence it.' },
   { question: 'Can I use the hydrogen to replace my natural gas needs?', answer: 'Yes, hydrogen is a very good solution for all your heating needs. With the solution that Hermanos Energy is offering you can use your solar energy from the summer to heat your house in the winter. This is one of the most environmentally friendly ways of heating your house. Heat pumps are usually used when there is only energy produced with fossil fuels available. Take a look at our power to heat product page to find out more.' },
 ];
 ---
@@ -67,7 +68,7 @@ const faq = [
     <p class="body-text hero__intro">The production of green electricity is rapidly increasing, but the yield is variable. Therefore, the bottleneck is no longer production but rather the storage of electricity. To create a buffer that balances production and consumption, storage is crucial.<br><br>As owners of solar panels have experienced, there has been no good and affordable solution for the storage problem until now. We offer energy storage solutions for agricultural businesses, and other small and medium-sized enterprises.<br><br>We create and store hydrogen locally. Our software monitors grid prices, as well as your own energy consumption and electricity production. This allows you to optimize the use of your green electricity by converting it to hydrogen during peak production times.<br>We often produce hydrogen when energy is free or when electricity prices are negative. That’s why our hydrogen is always green and very affordable. You can use it as a replacement for natural gas in any heating application, as fuel for a vehicle, or store it and convert it back into electricity when needed.<br><br>Whatever your choice, we provide a plug-and-play installation that covers the full cycle: locally produced, locally stored, and locally used. Everything is fully automated with software monitoring every step and ensuring the system is optimized for your needs.</p>
 
     <div class="hero__image reveal">
-      <img src={url('images/product/products.png')} alt="Power to heat, Power to drive and Power to power units" width="1866" height="1171">
+      <Photo src="product/products.png" alt="Power to heat, Power to drive and Power to power units" sizes="(min-width: 1200px) 1200px, 100vw" />
     </div>
   </section>
 
@@ -77,7 +78,7 @@ const faq = [
       <h2 class="title timeline__title">Seamless energy solutions, tailored to you</h2>
       <p class="body-text">Every energy challenge is unique, and so is the approach to solving it. Our structured yet flexible process ensures a smooth transition to clean energy, from understanding your needs to delivering a customized solution. Explore the timeline below to see how we turn your energy goals into reality.</p>
       <div class="timeline__image reveal">
-        <img src={url('images/product/timeline.png')} alt="Timeline: 1 Today, 2 In 2 weeks, 3 In 6 weeks, 4 In 7 weeks, 5 Within 3 months of signing" width="3840" height="920">
+        <Photo src="product/timeline.png" alt="Timeline: 1 Today, 2 In 2 weeks, 3 In 6 weeks, 4 In 7 weeks, 5 Within 3 months of signing" sizes="(min-width: 1200px) 1000px, 100vw" />
       </div>
     </div>
     <p class="body-text timeline__note">Due to high demand, we are working with building slots. We are fully booked for 2025, contact us to discuss possibilities for 2026 and to reserve a slot.</p>
@@ -110,7 +111,7 @@ const faq = [
   <!-- ── Statement ── -->
   <section class="statement">
     <div class="statement__inner reveal">
-      <h2 class="title statement__text" set:html="In 2030 90% of the annual energy demand in the Netherlands will be from renewable energy sources&nbsp;but to balance&nbsp;the energy grid and secure a stable power&nbsp;supply, 30%&nbsp;additional energy from fossil fuel is required. this is causing 9000.000.000 in CO2 emissions." />
+      <h2 class="title statement__text" set:html="In 2030 90% of the annual energy demand in the Netherlands will be from renewable energy sources&nbsp;but to balance&nbsp;the energy grid and secure a stable power&nbsp;supply, 30%&nbsp;additional energy from fossil fuel is required. This is causing 9000.000.000 in CO2 emissions." />
       <a class="button button--white button--shadow" href={url('contact')} target="_blank">Contact us</a>
     </div>
   </section>
