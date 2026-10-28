@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GetInTouch from '../components/GetInTouch.astro';
-import { url, srcset } from '../lib/url';
+import Photo from '../components/Photo.astro';
+import { url } from '../lib/url';
 import '../styles/aboutus.css';
 ---
 
@@ -19,11 +20,7 @@ import '../styles/aboutus.css';
         <p class="page-subtitle">We are at the forefront of the energy revolution, committed to delivering sustainable and efficient energy solutions through hydrogen-based energy storage.</p>
       </div>
       <div class="hero__photo card-border reveal">
-        <img
-          src={url('images/aboutus/founders-2048.jpg')}
-          srcset={srcset('images/aboutus/founders', [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
-          sizes="(min-width: 1200px) 1200px, 100vw"
-          alt="Maarten and Jan Hermanos Energy Founders">
+        <Photo src="aboutus/founders.jpg" alt="Maarten and Jan Hermanos Energy Founders" sizes="(min-width: 1200px) 1200px, 100vw" eager />
       </div>
     </div>
   </section>
@@ -47,7 +44,7 @@ import '../styles/aboutus.css';
     <div class="section__inner stack reveal">
       <p class="label">Co-financed by the European Union</p>
       <h2 class="heading">Power2You</h2>
-      <p class="body-text">We are proud to announce that we have been awarded a European grant through the EFRO programme Kansen voor West III for our innovation program Power2You. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making</p>
+      <p class="body-text">We are proud to announce that we have been awarded a European grant through the EFRO programme Kansen voor West III for our innovation program Power2You. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making.</p>
       <div class="efro-logos">
         <img class="efro-logos__kvw" src={url('images/aboutus/kansen-voor-west.png')} alt="Kansen voor West" width="337" height="175">
         <img class="efro-logos__eu" src={url('images/aboutus/eu-cofunded.png')} alt="Co-funded by the European Union" width="400" height="152">
@@ -61,10 +58,10 @@ import '../styles/aboutus.css';
     <div class="section__inner">
       <div class="mission reveal">
         <p class="label">Our mission</p>
-        <h2 class="heading">Hermanos Energy mission is to enable local users to be a full year in control of their green stable energy supply. In a world where local users have always green energy, there is no need and no place for fossil fuels.</h2>
+        <h2 class="heading">Hermanos Energy's mission is to enable local users to be a full year in control of their green stable energy supply. In a world where local users have always green energy, there is no need and no place for fossil fuels.</h2>
       </div>
     </div>
   </section>
 
-  <GetInTouch image="images/aboutus/preview" alt="Website examples" />
+  <GetInTouch image="aboutus/preview.jpg" alt="Website examples" />
 </Layout>

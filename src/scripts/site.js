@@ -129,6 +129,22 @@ document.querySelectorAll('.slider').forEach((slider) => {
   show(0);
 });
 
+// YouTube click-to-play: swap the thumbnail button for the (privacy-enhanced) player and start it
+document.querySelectorAll('.video-facade').forEach((facade) => {
+  facade.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.className = facade.className.replace('video-facade', '').trim();
+    iframe.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.youtube}?autoplay=1`;
+    iframe.title = facade.dataset.title;
+    iframe.width = '768';
+    iframe.height = '400';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    facade.replaceWith(iframe);
+    iframe.focus();
+  });
+});
+
 // Appear animation: reveal a block once its top passes 60% of the viewport height
 const observer = new IntersectionObserver((entries) => {
   for (const entry of entries) {

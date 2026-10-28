@@ -10,7 +10,10 @@ visually identical to the live site (measured, not guessed).
 ```
 src/
   layouts/Layout.astro        <head>, header, footer, icon sprite, site-wide scripts
-  components/                 Header, Footer, IconSprite, Features, GetInTouch, ProductDetail
+  components/                 Header, Footer, IconSprite, Features, GetInTouch, ProductDetail,
+                              Photo (optimised <picture>: AVIF/WebP in several widths)
+  assets/images/              photos, optimised at build time — use <Photo src="page/name.jpg">
+  assets/fonts/               self-hosted Rajdhani + Manrope (src/styles/fonts.css); no Google Fonts
   data/icons.ts               Phosphor icons used on the site
   data/productDetails.ts      content + measured layout values of the 3 product detail pages
   pages/                      index, product, aboutus, contact, power-to-heat, power-to-drive, power-to-power
@@ -18,7 +21,10 @@ src/
   scripts/site.js             mobile menu, FAQ, tabs, news slider (auto-pause), fade-up animation
   scripts/contact.js          contact form → Formspark (form ID NG4zIZy6, same as the live site)
   lib/url.ts                  url()/srcset() helpers that respect Astro's `base`
-public/images/<page>/         images downloaded from the live site
+public/images/<page>/         logos, icons and charts (served as-is)
+public/                       favicon.png, share-image.jpg (Open Graph)
+src/pages/sitemap.xml.ts, robots.txt.ts, 404.astro
+.github/workflows/deploy.yml  builds and publishes to GitHub Pages on every push to main
 scratchpad/                   measurement tools + the approved plain-HTML prototype (not deployed)
 ```
 
@@ -57,6 +63,8 @@ node scratchpad/smoke-astro.mjs      # links, menu, FAQ, tabs, slider, form (int
 ## Roadmap
 
 - [x] Astro site with all 7 pages, identical to the approved prototype
-- [ ] Production basics: meta/OG tags, favicon, sitemap, 404, WebP/AVIF images, self-hosted fonts
+- [x] Production basics: meta/OG tags, favicon, sitemap, 404, AVIF/WebP images, self-hosted fonts,
+      click-to-play YouTube, typo fixes, GitHub Actions deploy
 - [ ] Dutch version (`/nl/...`) built at compile time
-- [ ] GitHub Actions deploy to GitHub Pages, then switch the hermanosenergy.com domain
+- [ ] Switch the hermanosenergy.com domain (then set `site` to the domain and `base` to '/')
+- [ ] Visitor statistics (the Framer site used Framer's own analytics; nothing replaces it yet)

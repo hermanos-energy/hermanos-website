@@ -1,9 +1,10 @@
 ---
 // "Get in touch" section: label, heading and Contact button next to an image card.
-import { url, srcset } from '../lib/url';
+import Photo from './Photo.astro';
+import { url } from '../lib/url';
 
 interface Props {
-  image: string; // path prefix, expects <image>-1024.jpg and <image>-2048.jpg
+  image: string; // path inside src/assets/images
   alt: string;
   stackedTablet?: boolean; // Home: on tablet the text takes the full width and the card goes below it
 }
@@ -20,11 +21,7 @@ const { image, alt, stackedTablet = false } = Astro.props;
     </div>
     <div class="cta__card reveal">
       <div class="cta__image">
-        <img
-          src={url(`${image}-1024.jpg`)}
-          srcset={srcset(image, [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
-          sizes="(min-width: 1200px) 682px, 100vw"
-          alt={alt}>
+        <Photo src={image} alt={alt} sizes="(min-width: 1200px) 682px, 100vw" />
       </div>
     </div>
   </div>

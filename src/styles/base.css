@@ -37,6 +37,8 @@
   *, *::before, *::after { box-sizing: border-box; }
   * { margin: 0; padding: 0; }
   img, svg { display: block; max-width: 100%; }
+  /* Optimised photos are wrapped in <picture>; let the <img> inside lay out as if it were the direct child */
+  picture { display: contents; }
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: inherit; }
   body {
     background: var(--color-white);

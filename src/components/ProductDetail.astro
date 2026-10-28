@@ -2,14 +2,15 @@
 // Product detail template (Power to Heat / Drive / Power): dark hero with diagram, key features,
 // tabbed section that swaps text + image, and an "in action" section. Content comes from src/data/productDetails.ts.
 import Features from './Features.astro';
-import { url, srcset } from '../lib/url';
+import Photo from './Photo.astro';
+import { url } from '../lib/url';
 import type { ProductDetailData } from '../data/productDetails';
 import '../styles/product-detail.css';
 
 type Props = ProductDetailData;
 
 const { slug, title, subtitle, diagramAlt, features, tabs, inAction } = Astro.props;
-const img = (name: string) => `images/${slug}/${name}`;
+const img = (name: string) => `${slug}/${name}`;
 const tabVars = Object.entries(tabs.layout).map(([key, value]) => `--${key}: ${value}`).join('; ');
 ---
 
@@ -21,7 +22,7 @@ const tabVars = Object.entries(tabs.layout).map(([key, value]) => `--${key}: ${v
     <p class="page-subtitle">{subtitle}</p>
   </div>
   <div class="detail-hero__diagram reveal">
-    <img src={url(img('diagram.jpg'))} alt={diagramAlt}>
+    <Photo src={img('diagram.jpg')} alt={diagramAlt} sizes="(min-width: 1200px) 1200px, 100vw" eager />
   </div>
 </section>
 
@@ -44,12 +45,7 @@ const tabVars = Object.entries(tabs.layout).map(([key, value]) => `--${key}: ${v
         <div class="tab-panel" id={`tab-${tab.id}`} role="tabpanel" hidden={i > 0}>
           <p class:list={['body-text', 'tab-panel__text', tab.fixedText && 'tab-panel__text--fixed', i === 0 && 'reveal']} set:html={tab.text} />
           <div class:list={['tab-panel__image', 'card-border', i === 0 && 'reveal']}>
-            <img
-              src={url(img(`${tab.id}-2048.jpg`))}
-              srcset={srcset(img(tab.id), [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
-              sizes="(min-width: 1200px) 1000px, 100vw"
-              alt={tab.alt}
-              loading={i === 0 ? undefined : 'lazy'}>
+            <Photo src={img(`${tab.id}.jpg`)} alt={tab.alt} sizes="(min-width: 1200px) 1000px, 100vw" />
           </div>
         </div>
       ))}
@@ -61,15 +57,11 @@ const tabVars = Object.entries(tabs.layout).map(([key, value]) => `--${key}: ${v
 <section class:list={['in-action', inAction.wideOnMobile && 'in-action--wide-mobile']}>
   <div class="in-action__inner reveal">
     <div class="in-action__photo">
-      <img
-        src={url(img('in-action-1024.jpg'))}
-        srcset={srcset(img('in-action'), [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
-        sizes="(min-width: 1200px) 640px, 100vw"
-        alt={inAction.photoAlt}>
+      <Photo src={img('in-action.jpg')} alt={inAction.photoAlt} sizes="(min-width: 1200px) 640px, 100vw" />
     </div>
     <div class="in-action__text">
       <h2 class="title">{inAction.title}</h2>
-      <p class="body-text">We’re always here to help. Contact us if you are experiencing issues with out product or have any questions.</p>
+      <p class="body-text">We’re always here to help. Contact us if you are experiencing issues with our product or have any questions.</p>
       <a class="text-link" href={url('contact')}>Get a demo <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
     </div>
   </div>
