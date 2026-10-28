@@ -1,0 +1,413 @@
+{
+  "lang": {
+    "switchLabel": "Language"
+  },
+  "nav": {
+    "homeLabel": "Hermanos Energy home",
+    "mainLabel": "Main",
+    "mobileLabel": "Mobile",
+    "product": "Product",
+    "aboutus": "About us",
+    "contact": "Contact us",
+    "contactShort": "Contact",
+    "signIn": "Sign in",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "navLabel": "Footer",
+    "address": "Address: Transistorstraat 151, 1322 CN Almere<br>Kvk nummer 91848946",
+    "copyright": "Hermanos Energy 2025 © All rights reserved"
+  },
+  "common": {
+    "contactUs": "Contact us",
+    "learnMore": "Learn more",
+    "keyFeatures": "Key Features",
+    "euCofundedAlt": "Co-funded by the European Union"
+  },
+  "getInTouch": {
+    "label": "Book a demo, or ask for custom energy advice",
+    "heading": "Get in touch."
+  },
+  "home": {
+    "meta": {
+      "title": "Hermanos Energy",
+      "description": "Hermanos Energy is dedicated to providing cutting-edge solutions for energy storage using hydrogen technology. As the world's energy demands continue to grow, it's crucial that we find sustainable and reliable ways to power our lives."
+    },
+    "hero": {
+      "title": "Endless clean energy.",
+      "subtitle": "We are dedicated to providing cutting-edge solutions for energy storage using hydrogen technology."
+    },
+    "future": {
+      "title": "Looking to the future.",
+      "text": "Renewable energy sources like wind power, and solar are increasing rapidly but to balance the energy grid and secure a stable power supply, the world is still counting on fossil fuel as an energy source. A year-round stable power supply without fossil fuels can only be achieved with local energy storage.",
+      "photoAlt": "Hermanos Energy installation next to a farm building with solar panels"
+    },
+    "transition": {
+      "title": "You can help and benefit from the energy transition.",
+      "text": "On windy and sunny periods during the day the green energy supply exceeds the demand which is leading to very low prices, and sometimes even free electricity. Green energy is cheap energy! With the energy storage of Hermanos Energy you can benefit from the daily and seasonal price difference and contribute to net zero at the same time.",
+      "chartPricesAlt": "Bar chart: typical electricity prices over a day, lowest around midday",
+      "chartSolarWindAlt": "Bar chart: solar and wind electricity on the grid over a day, highest around midday"
+    },
+    "vision": {
+      "title": "One vision. Three products.",
+      "text": "It is our mission to use the abundance of green energy to replace fossil fuels wherever they are used. We always produce the hydrogen locally, at your home or business, and it can be used in various ways.",
+      "cards": {
+        "heat": "Using your summer sun to heat in the winter, with Power to Heat.",
+        "power": "All year round green electricity with Power to Power.",
+        "drive": "Driving a vehicle on hydrogen. With Power to Drive."
+      }
+    },
+    "news": {
+      "sectionLabel": "News",
+      "label": "NEWS",
+      "previous": "Previous news item",
+      "next": "Next news item",
+      "dot": "News item",
+      "vakbeurs": {
+        "title": "We attended Vakbeurs Energie",
+        "subtitle": "7/8/9 October Brabanthallen",
+        "text": "We had a great time at Vakbeurs Energie, where we gave daily talks on becoming self-sufficient with hydrogen storage. We also discussed the business case for long-term storage and how it differs from battery storage. Thank you to everyone who joined our sessions! If you missed us, you can still learn more about our solutions by contacting us directly.",
+        "photoAlt": "Hermanos Energy giving a talk at Vakbeurs Energie"
+      },
+      "sail": {
+        "title": "Tank hydrogen at SAIL Amsterdam",
+        "subtitle": "Powered by Hermanos Energy and XNRG.tech",
+        "text": "SAIL Amsterdam is one of the biggest maritime events in the world, with more than 10.000 boats, and 2.3 million visitors a day. We are proud to power their fleet of hydrogen boats. XNRG.tech developed a series of hydrogen driven boats for the event which can transport up to 50 people. And while they are out for the day we produce hydrogen, so that they can refuel for the next day when they come back. News channel AT5 made a short video about our installation.",
+        "videoTitle": "AT5 about Hermanos Energy at SAIL Amsterdam",
+        "playVideo": "Play video: AT5 about Hermanos Energy at SAIL Amsterdam",
+        "link": "More about Hermanos Energy at SAIL"
+      },
+      "erik": {
+        "title": "Erik Blaauw pioneers with hydrogen system",
+        "subtitle": "First green hydrogen production in Flevoland",
+        "text": "Our customer Erik Blaauw from Lelystad is the first to produce green hydrogen in the province of Flevoland. The NOS, Omroep Flevoland and Waterstof Magazine wrote about the opening event. Watch the video from Omroep Flevoland below or visit the NOS website to read their article.",
+        "link": "Read the NOS article"
+      },
+      "power2you": {
+        "title": "Power2You gets grant",
+        "subtitle": "Co-financed by the European Union",
+        "text": "We are proud to announce that we have been awarded a European grant through the EFRO programme <em>Kansen voor West III for our innovation program Power2You</em>. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making.",
+        "photoAlt": "Power2You"
+      },
+      "award": {
+        "title": "Hydrogen Innovation Award 2024",
+        "subtitle": "Presented by TKI Nieuw Gas",
+        "text": "Hermanos Energy has been recognised for an innovative hydrogen solution designed for local energy storage, catering to homes, farmers, and small businesses. Through the use of smart software and decentralised storage, the system ensures flexibility and affordable hydrogen prices.",
+        "photoAlt": "Hermanos Energy receiving the Hydrogen Innovation Award 2024",
+        "link": "Watch interview"
+      }
+    },
+    "ems": {
+      "label": "Our OWN EMS",
+      "heading": "The software behind it all.",
+      "text": "Green energy is all about timing, we make hydrogen when there is an abundance of green cheap electricity, and use it when you need it most, our software takes care of that.",
+      "points": [
+        "Makes predictions based on your historical data, and the weather",
+        "Live connected to your solar panels and consumption.",
+        "Can scale up and down in milliseconds",
+        "Picks the right moments based on day ahead prices"
+      ],
+      "photoAlt": "The Hermanos Energy dashboard on a laptop and tablet"
+    },
+    "getInTouchAlt": "Hermanos Energy hydrogen refuelling station"
+  },
+  "product": {
+    "meta": {
+      "title": "Product — Hermanos Energy",
+      "description": "The energy storage solution for local storage at farms and small and midsize companies."
+    },
+    "hero": {
+      "title": "Our three products.",
+      "subtitle": "The energy storage solution for local storage at farms and small and midsize companies."
+    },
+    "cards": {
+      "heat": {
+        "label": "Heating with locally produced hydrogen",
+        "points": ["Seasonal heat storage", "Can reach high temperatures", "Can replace or be mixed with gas", "Almost no energy loss"]
+      },
+      "drive": {
+        "label": "Driving a vehicle on your own hydrogen",
+        "points": ["Produce your own fuel", "50% cheaper than diesel", "€3/kg hydrogen", "Easy refuelling"]
+      },
+      "power": {
+        "label": "A year round green electricity",
+        "points": ["Day & night electricity storage", "Seasonal electricity storage", "Linked to day-ahead market", "Overcoming grid congestion"]
+      }
+    },
+    "intro": "The production of green electricity is rapidly increasing, but the yield is variable. Therefore, the bottleneck is no longer production but rather the storage of electricity. To create a buffer that balances production and consumption, storage is crucial.<br><br>As owners of solar panels have experienced, there has been no good and affordable solution for the storage problem until now. We offer energy storage solutions for agricultural businesses, and other small and medium-sized enterprises.<br><br>We create and store hydrogen locally. Our software monitors grid prices, as well as your own energy consumption and electricity production. This allows you to optimize the use of your green electricity by converting it to hydrogen during peak production times.<br>We often produce hydrogen when energy is free or when electricity prices are negative. That’s why our hydrogen is always green and very affordable. You can use it as a replacement for natural gas in any heating application, as fuel for a vehicle, or store it and convert it back into electricity when needed.<br><br>Whatever your choice, we provide a plug-and-play installation that covers the full cycle: locally produced, locally stored, and locally used. Everything is fully automated with software monitoring every step and ensuring the system is optimized for your needs.",
+    "productsAlt": "Power to Heat, Power to Drive and Power to Power units",
+    "timeline": {
+      "title": "Seamless energy solutions, tailored to you",
+      "text": "Every energy challenge is unique, and so is the approach to solving it. Our structured yet flexible process ensures a smooth transition to clean energy, from understanding your needs to delivering a customized solution. Explore the timeline below to see how we turn your energy goals into reality.",
+      "alt": "Timeline: 1 Today, 2 In 2 weeks, 3 In 6 weeks, 4 In 7 weeks, 5 Within 3 months of signing",
+      "note": "Due to high demand, we are working with building slots. We are fully booked for 2025, contact us to discuss possibilities for 2026 and to reserve a slot."
+    },
+    "features": {
+      "heading": "This is what all our products have in common.",
+      "items": {
+        "energyManagement": {
+          "title": "Personalised smart energy management",
+          "text": "Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs."
+        },
+        "battery": {
+          "title": "Battery included",
+          "text": "We use a battery as a short term buffer for electricity. It allows us to react in seconds. And when the sun has gone your electrolyzer can keep on running on the green energy stored in the battery."
+        },
+        "localStorage": {
+          "title": "Local storage",
+          "text": "The hydrogen produced by the electrolyzer is stored in gas bundles at 35 bar. If you add our compressor, it can be stored at up to 300 bar, allowing almost ten times as much energy to be stored in the same tanks."
+        },
+        "heat": {
+          "title": "Managing heat",
+          "text": "When converting between electricity and hydrogen, heat is released. This heat is often considered as \"energy loss.\" In our system, the released heat is recovered and stored to deliver hot water at around 55 °C to your home or business."
+        },
+        "profit": {
+          "title": "Good for profit and environment",
+          "text": "Because all the hydrogen is produced locally, we can predict your energy needs and choose the perfect moments to produce it. Our battery can react in milliseconds, ensuring you never buy electricity at high prices instead, you use your own abundant solar energy. The energy used is green, affordable, and local. We produce hydrogen for around €3 per kilogram. While the current price at commercial fuel stations is around €20 per kilogram."
+        }
+      }
+    },
+    "faq": {
+      "label": "FAQ",
+      "heading": "Got questions?",
+      "items": [
+        {
+          "question": "Is converting electricity into hydrogen an efficient process?",
+          "answer": "Often this is seen as an inefficient process, but the \"loss\" of energy is mostly heat.<br>In the solution of Hermanos Energy, the waste heat is stored and used, for example for your daily warm showers or heating in the winter. By using heat and electricity there is not much energy loss."
+        },
+        {
+          "question": "Is storing energy with hydrogen better than a battery?",
+          "answer": "Hydrogen is not per se a better way of storing energy than a battery, but it has some different characteristics. Battery storage is a very good solution for short-term storage for example using your solar energy during the night in the summer. Hydrogen is one of the most cost-efficient methods to do seasonal storage and it can be used to heat your house. Hermanos Energy is offering a combination of hydrogen storage, thermal storage, and battery storage to make sure you can use the full-year green energy. Look at our Power to Power product to find out more."
+        },
+        {
+          "question": "Is hydrogen storage a safe solution?",
+          "answer": "Hydrogen is in terms of risk comparable with natural gas, although it has some different safety characteristics. Natural gas is heavier than air and will stay in your house or farm when there is a leakage, hydrogen is the lightest of all elements and will much easier disappear."
+        },
+        {
+          "question": "Where is the hydrogen stored?",
+          "answer": "The hydrogen is stored in gas bundles, we advise you to keep those outside. But the electrolyzer which makes the hydrogen is best placed inside a well ventilated room, where rain or frost can not influence it."
+        },
+        {
+          "question": "Can I use the hydrogen to replace my natural gas needs?",
+          "answer": "Yes, hydrogen is a very good solution for all your heating needs. With the solution that Hermanos Energy is offering you can use your solar energy from the summer to heat your house in the winter. This is one of the most environmentally friendly ways of heating your house. Heat pumps are usually used when there is only energy produced with fossil fuels available. Take a look at our Power to Heat product page to find out more."
+        }
+      ]
+    },
+    "statement": "In 2030 90% of the annual energy demand in the Netherlands will be from renewable energy sources&nbsp;but to balance&nbsp;the energy grid and secure a stable power&nbsp;supply, 30%&nbsp;additional energy from fossil fuel is required. This is causing 9,000,000,000&nbsp;kg of CO2 emissions."
+  },
+  "aboutus": {
+    "meta": {
+      "title": "About Us — Hermanos Energy",
+      "description": "Pioneering the hydrogen revolution. We are dedicated to providing cutting-edge solutions for energy storage using hydrogen technology."
+    },
+    "hero": {
+      "label": "about us",
+      "title": "Pioneering the hydrogen revolution.",
+      "subtitle": "We are at the forefront of the energy revolution, committed to delivering sustainable and efficient energy solutions through hydrogen-based energy storage.",
+      "photoAlt": "Maarten and Jan, the founders of Hermanos Energy"
+    },
+    "story": {
+      "label": "OUR STORY",
+      "heading": "The energy transition is in full swing.",
+      "paragraphs": [
+        "It is no longer a question of if and when; it is happening now, and the only question is how fast we can go.",
+        "The new green era comes with its own challenges. There is plenty of solar and wind power, so much so that it's sometimes scaled down, but we still depend on fossil fuels for nights and winters. It is our mission to overcome that challenge. We strive towards a world where the energy from the summer sun is harnessed, storing its warmth to keep your home cozy during winter's cold and lighting your rooms when darkness falls.",
+        "Hermanos Energy was born from the shared vision of two brothers, fuelled not only by the pursuit of green energy but also by the power of brotherhood. Our dreams extend beyond a shift in energy sources. We envision a future where energy is shared among brothers, friends, and neighbours, a future where multinationals and foreign regimes hold no sway, for this precious resource belongs to all of us. We firmly believe that the energy transition should be driven by local initiatives, empowering communities and benefiting the many, rather than serving the interests of the few.",
+        "Just as farmers have long tended to their fields, nurturing crops throughout summer and reaping the harvest for the winter to come, Hermanos Energy seeks to apply this age-old principle to our modern world. By utilising innovative techniques, we strive to forge a future that meets our evolving needs."
+      ]
+    },
+    "efro": {
+      "label": "Co-financed by the European Union",
+      "heading": "Power2You",
+      "text": "We are proud to announce that we have been awarded a European grant through the EFRO programme Kansen voor West III for our innovation program Power2You. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making.",
+      "kansenVoorWestAlt": "Kansen voor West",
+      "goals": "The Power2You program runs for two years, from May 2025 to May 2027, and has the following goals:<br><br>1) Introducing Power2Drive and Power2Heat to the market, expanding our product range and enabling the use of green energy in sectors that are difficult to decarbonize through other methods.<br>2) Reducing the total cost of our product portfolio by investigating alternative electrolyzer and fuel cell stacks. And simplifying the product to reduce maintenance cost.<br>3) Improving the overall energy efficiency of the system by developing an efficient heat recovery solution.<br>4) Enhancing our smart algorithms and energy consumption forecasting to increase revenue for our customers."
+    },
+    "mission": {
+      "label": "Our mission",
+      "text": "Hermanos Energy's mission is to enable local users to be a full year in control of their green stable energy supply. In a world where local users have always green energy, there is no need and no place for fossil fuels."
+    },
+    "getInTouchAlt": "The Hermanos Energy dashboard on a laptop and tablet"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Hermanos Energy",
+      "description": "Get in touch with Hermanos Energy for a demo or a detailed calculation of which hardware solution fits your energy setup."
+    },
+    "label": "contact us",
+    "title": "Get in touch",
+    "lead": "If you're interested in the product, or want to learn more feel free to contact us for a demo. If you want to know if the product is for you then we will start by doing a detailed calculation of which hardware solution fits with your energy setup at home.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sent": "Message sent"
+    },
+    "address": {
+      "city": "Almere",
+      "lines": "Transistorstraat 151<br>1322 CN Almere<br>The Netherlands"
+    },
+    "connect": "CONNECT WITH US",
+    "linkedinLabel": "Hermanos Energy on LinkedIn"
+  },
+  "productDetails": {
+    "label": "PRODUCT",
+    "inActionSuffix": "in action",
+    "inActionText": "We’re always here to help. Contact us if you are experiencing issues with our product or have any questions.",
+    "getADemo": "Get a demo",
+    "heat": {
+      "subtitle": "Heating with locally produced hydrogen.",
+      "diagramAlt": "Power to Heat system diagram: own energy and grid feed the battery and electrolyser; hydrogen goes to H2 storage and an H2 boiler",
+      "features": {
+        "heading": "This is what makes Power to Heat unique.",
+        "items": {
+          "solarHeat": {
+            "title": "Solar heat in winter",
+            "text": "Throughout the year, the software continuously monitors grid prices, the availability of green energy, weather forecasts, and your specific circumstances. It uses this information to optimize the system's performance for your needs making sure you can store the surplus solar energy generated in summer and use it for heating in winter."
+          },
+          "replacesGas": {
+            "title": "Replaces gas",
+            "text": "Hydrogen is a gas with characteristics very similar to natural gas. With Power to Heat, we burn the hydrogen directly replacing your need for conventional gas."
+          },
+          "mixing": {
+            "title": "Mixing with gas",
+            "text": "Hydrogen is so similar to natural gas that it can be mixed with it, allowing you to start using hydrogen without needing to switch over completely right away."
+          },
+          "anyTemperature": {
+            "title": "Any temperature any usecase",
+            "text": "Burning hydrogen can generate very high temperatures, making it suitable for situations where heat pumps or electric heating are not viable.<br><br>There is a wide range of hydrogen boilers, gas mixers, and hydrogen-compatible heat pumps available for both industrial and domestic use. We work with a variety of suppliers to match your specific needs."
+          },
+          "energyLoss": {
+            "title": "Hardly any energy loss",
+            "text": "When converting between electricity and hydrogen, heat is released. This heat is often considered \"energy loss.\" In our system, however, the released heat is recovered and stored resulting in less than 15% energy loss and making the entire process highly efficient."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "A year-round solution",
+        "intro": "In summer, there is often an excess of solar power, while energy consumption is relatively low. In winter, days are shorter and temperatures lower most energy use then goes toward heating. With Power to Heat, we convert electricity from solar panels into hydrogen, which can be stored and used for heating in winter. Click through the pictures to see how the system behaves across different seasons.",
+        "items": {
+          "summer": {
+            "label": "Summer",
+            "text": "During summer, solar panels generate more energy than you consume. At these moments, we convert the excess electricity into hydrogen and store it in tanks for later use. The system includes a battery that balances your electricity usage throughout the day, ensuring only the surplus energy is converted into hydrogen while also extending the electrolyzer’s operating hours. While generating hydrogen, some heat is released and recovered. This heat can be used for hot water typically enough to provide showers for a family.",
+            "alt": "The system in summer: solar panels power the electrolyser"
+          },
+          "winter": {
+            "label": "Winter",
+            "text": "In winter we use the hydrogen to heat your home. We use hydrogen boilers making sure you are warm even if temperatures get very low. Electricity prices still vary a lot in the winter, and can still be negative. At those moments we still make hydrogen to keep your tanks filled.",
+            "alt": "The system in winter: stored hydrogen heats the building"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Power to Heat installation at a farm"
+    },
+    "drive": {
+      "subtitle": "Drive a boat or vehicle on your own hydrogen.",
+      "diagramAlt": "Power to Drive system diagram: own energy and grid feed the battery and electrolyser; hydrogen is compressed and used to refuel a vehicle",
+      "features": {
+        "heading": "This is what makes Power to Drive unique.",
+        "items": {
+          "neverOutOfFuel": {
+            "title": "Never out of fuel",
+            "text": "The hydrogen used to fuel your vehicle is produced on-site, so you don’t depend on external fuel suppliers, and your vehicle doesn’t need to leave the premises to refuel. Our software monitors grid prices, the availability of renewable energy, and the amount of fuel left in your tanks. It not only ensures you always have fuel but also chooses the most cost-effective moments to produce it."
+          },
+          "moreThanFuel": {
+            "title": "More than just fuel",
+            "text": "During hydrogen production, we recover waste heat and use a battery to extend the electrolyzer’s runtime."
+          },
+          "driveAnywhere": {
+            "title": "Drive anywhere",
+            "text": "Diesel-powered vehicles are not welcome in zero-emission zones like nature reserves. Battery-powered vehicles are often not feasible either, as their weight can cause them to sink in muddy terrain. In these cases, hydrogen-powered vehicles are the only practical option and they also offer a much greater range."
+          },
+          "easyRefueling": {
+            "title": "Easy refueling",
+            "text": "Our refueling station is easy to use, simple, and reliable. The experience is very similar to refueling with petrol or diesel.<br><br>We use the high pressure in the storage tanks to fill your vehicle, slowly releasing the gas to ensure safety and reliability. We can fuel vehicles up to 300 bar, and it takes around fifteen minutes to fill your vehicle.<br><br>We manage the entire process, from producing the hydrogen to compressing and refueling, so we can ensure the tanks are always at the right pressure to fill your vehicle efficiently."
+          },
+          "cheaper": {
+            "title": "50% cheaper than diesel",
+            "text": "Your own solar energy is by far the cheapest energy available. We use it to produce hydrogen for around €3 per kilogram. A typical car can drive approximately 100 km on just one kilogram of hydrogen. This makes hydrogen a much more affordable option than diesel as long as it's produced locally by you.<br><br>Buying hydrogen at a commercial fuel station cost around €21 per kilogram. Making your own is 7 times cheaper."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "Fuel is made while you use the vehicle",
+        "intro": "During a sunny summer day, energy is cheap and green but that’s often the exact moment you want to use your vehicle. We produce hydrogen when there’s an abundance of green energy and store it in tanks, so you can refuel later. Whether you have a vehicle you use daily or only during certain seasons, we always choose the right moments throughout the year to produce hydrogen ensuring it’s available when you need it. Click the pictures below to see how the system works at different times.",
+        "items": {
+          "day": {
+            "label": "Day",
+            "text": "While you're out working during the day and using your vehicle, the electrolyzer produces hydrogen using the energy generated by your solar panels. By the time you return from a hard day’s work, your hydrogen tanks are full and ready to use.",
+            "alt": "During the day the electrolyser makes hydrogen from solar power while the vehicle is in use"
+          },
+          "night": {
+            "label": "Night",
+            "text": "When the workday is over, the sun is down, and energy prices are high your vehicle is fueled by the green and cheap hydrogen produced during the day. Ready to go again tomorrow.",
+            "alt": "At night the vehicle is refuelled with the hydrogen made during the day"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Hydrogen refuelling station"
+    },
+    "power": {
+      "subtitle": "A year round green electricity.",
+      "diagramAlt": "Power to Power system diagram: own energy and grid feed the battery and electrolyser; a fuel cell turns stored hydrogen back into electricity and warm water for the home",
+      "features": {
+        "heading": "This is what makes Power to Power unique.",
+        "items": {
+          "energyManagement": {
+            "title": "Personalised smart energy management",
+            "text": "Throughout the year, the software continuously monitors grid prices, availability of green energy, weather predictions, and your specific circumstances. It leverages these inputs to optimize the system's performance for your needs."
+          },
+          "dayNightStorage": {
+            "title": "Day and night storage",
+            "text": "We store your electricity in a battery as a buffer for short-term imbalances between production and usage (such as day-night variations)."
+          },
+          "seasonalStorage": {
+            "title": "Seasonal storage",
+            "text": "We use an electrolyzer to store electricity in the form of hydrogen as a buffer for imbalances over longer periods (summer-winter). A fuel cell converts it back to electricity. Hydrogen is 20 times cheaper than regular batteries per stored kWh."
+          },
+          "heat": {
+            "title": "Managing heat",
+            "text": "When converting between electricity and hydrogen, heat is released. This heat is often considered as \"energy loss.\" In our system, the released heat is recovered and stored to deliver hot water at around 55 °C to your home or business."
+          },
+          "profit": {
+            "title": "Good for profit and environment",
+            "text": "With our storage solution, you can also significantly reduce your costs for grid electricity usage. Grid electricity prices vary from hour to hour, ranging from more than 60 cents per kWh to below zero. You can configure the software to stop drawing electricity from the grid once the price exceeds a certain level, and instead utilize the electricity stored in your system. And moments with high prices correlate with a lot of energy from fossil fuels, using your own stored green energy at those moments is much better for the environment as well.<br><br>Our solution can also be used when you are faced with net congestion, and can not expand. We make sure you can always run your business the way you want."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "A year-round solution",
+        "intro": "In summer there is an excess of solar power and at that time energy consumption is low. In winters the yield of solar panels is much less, and a lot of energy in the form of heating is used. Batteries have a limited storage capacity, they are great for day storage but we add hydrogen storage to it to deal with the imbalance in the seasons. Click through the pictures below to see how our system behaves during the different seasons.",
+        "items": {
+          "summer": {
+            "label": "Summer",
+            "text": "During summer, solar panels often generate more energy than you consume. At these moments, we store the surplus energy in a battery for later use. Additionally, we convert the excess electricity into hydrogen, which can be utilized for heating your home during the winter months. Even if you don't have solar panels, you can still benefit from the green energy available on the grid.",
+            "alt": "The system in summer: surplus solar power charges the battery and makes hydrogen"
+          },
+          "autumn": {
+            "label": "Autumn",
+            "text": "On windy and rainy autumn days, solar energy may not be readily accessible. However, thanks to the contribution of windmills, there is still an abundance of green energy. Our system continuously monitors the grid, keeping track of green energy availability and prices. When the electricity is sourced from renewable sources and prices are low, we seize the opportunity to charge the battery and produce hydrogen. Notably, the process of generating hydrogen also generates heat, which we harness to warm your home efficiently.",
+            "alt": "The system in autumn: green wind energy from the grid charges the battery"
+          },
+          "winter": {
+            "label": "Winter",
+            "text": "During winter, when solar and wind energy are limited, our stored energy comes into play. We provide two off-the-shelf options for utilizing the stored hydrogen:<br>1. You can directly convert the stored hydrogen into heating using a boiler.<br>2. Alternatively, you can use a fuel cell to generate electricity once again. The electricity generation process itself generates heat, which we effectively utilize to warm your home.<br><br>Moreover, if you happen to store more energy than you need, we enable you to contribute the excess electricity back to the grid. This allows your neighbors to benefit from the surplus green electricity, while you enjoy the advantage of potentially high electricity prices in such scenarios. By implementing our comprehensive solution, you can optimize your energy consumption throughout the year, making the most of renewable resources while reducing your environmental footprint.",
+            "alt": "The system in winter: stored hydrogen is turned back into electricity and heat"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Power to Power installation at a farm"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page not found — Hermanos Energy",
+      "description": "This page doesn't exist. Go back to the Hermanos Energy homepage."
+    },
+    "title": "Page not found.",
+    "text": "The page you are looking for doesn't exist or has moved.",
+    "button": "Back to the homepage"
+  }
+}

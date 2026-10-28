@@ -1,0 +1,20 @@
+---
+// Power to Heat / Drive / Power page: layout shell around the ProductDetail template.
+import Layout from '../layouts/Layout.astro';
+import ProductDetail from '../components/ProductDetail.astro';
+import { useTranslations, type Lang } from '../i18n';
+import { productNames } from '../data/products';
+import type { ProductDetailConfig } from '../data/productDetails';
+
+interface Props {
+  lang: Lang;
+  config: ProductDetailConfig;
+}
+
+const { lang, config } = Astro.props;
+const text = useTranslations(lang).productDetails[config.key];
+---
+
+<Layout lang={lang} page={config.slug} title={`${productNames[config.key]} — Hermanos Energy`} description={text.subtitle} icons={config.icons}>
+  <ProductDetail lang={lang} config={config} />
+</Layout>

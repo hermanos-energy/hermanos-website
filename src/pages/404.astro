@@ -1,15 +1,22 @@
 ---
-// Shown by GitHub Pages for any address that doesn't exist.
+// Shown by GitHub Pages for any address that doesn't exist. There is only one 404 page, so it shows both languages.
 import Layout from '../layouts/Layout.astro';
-import { url } from '../lib/url';
+import { localUrl, useTranslations } from '../i18n';
 import '../styles/not-found.css';
+
+const en = useTranslations('en').notFound;
+const nl = useTranslations('nl').notFound;
 ---
 
-<Layout title="Page not found — Hermanos Energy" description="This page doesn't exist. Go back to the Hermanos Energy homepage.">
+<Layout lang="en" title={en.meta.title} description={en.meta.description}>
   <section class="not-found">
     <p class="label">404</p>
-    <h1 class="page-title">Page not found.</h1>
-    <p class="page-subtitle">The page you are looking for doesn't exist or has moved.</p>
-    <a class="button button--white button--shadow" href={url()}>Back to the homepage</a>
+    <h1 class="page-title">{en.title}</h1>
+    <p class="page-subtitle">{en.text}</p>
+    <p class="page-subtitle" lang="nl">{nl.text}</p>
+    <div class="not-found__buttons">
+      <a class="button button--white button--shadow" href={localUrl('en')}>{en.button}</a>
+      <a class="button button--white button--shadow" href={localUrl('nl')} lang="nl">{nl.button}</a>
+    </div>
   </section>
 </Layout>

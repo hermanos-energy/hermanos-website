@@ -4,36 +4,47 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import IconSprite from '../components/IconSprite.astro';
 import { url } from '../lib/url';
+import { languages, localUrl, defaultLang, type Lang } from '../i18n';
+import type { Page } from '../data/pages';
 import '../styles/fonts.css';
 import '../styles/base.css';
 
 interface Props {
+  lang: Lang;
+  page?: Page; // omitted for pages that only exist once (404)
   title: string;
   description: string;
   current?: 'product' | 'aboutus' | 'contact';
   icons?: string[];
 }
 
-const { title, description, current, icons = [] } = Astro.props;
+const { lang, page, title, description, current, icons = [] } = Astro.props;
+const LOCALES: Record<Lang, string> = { en: 'en_US', nl: 'nl_NL' };
 
-// Absolute URLs (canonical + sharing image) are based on `site` in astro.config.mjs
+// Absolute URLs (canonical, language versions, sharing image) are based on `site` in astro.config.mjs
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const alternate = (l: Lang) => new URL(localUrl(l, page ? `${page}/` : ''), Astro.site).href;
 const shareImage = new URL(url('share-image.jpg'), Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
+  {page !== undefined && (Object.keys(languages) as Lang[]).map((l) => (
+    <link rel="alternate" hreflang={l} href={alternate(l)}>
+  ))}
+  {page !== undefined && <link rel="alternate" hreflang="x-default" href={alternate(defaultLang)}>}
   <link rel="icon" type="image/png" href={url('favicon.png')}>
 
   <!-- Sharing previews (LinkedIn, WhatsApp, X, …) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hermanos Energy">
+  <meta property="og:locale" content={LOCALES[lang]}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:url" content={canonical}>
@@ -44,16 +55,17 @@ const shareImage = new URL(url('share-image.jpg'), Astro.site).href;
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={shareImage}>
+
   <!-- Lets CSS hide the fade-up blocks only when JavaScript runs -->
   <script is:inline>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <IconSprite names={icons} />
-  <Header current={current} />
+  <Header lang={lang} page={page} current={current} />
   <main>
     <slot />
   </main>
-  <Footer current={current} />
+  <Footer lang={lang} current={current} />
   <script>
     import '../scripts/site.js';
   </script>

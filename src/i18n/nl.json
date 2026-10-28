@@ -1,0 +1,413 @@
+{
+  "lang": {
+    "switchLabel": "Taal"
+  },
+  "nav": {
+    "homeLabel": "Hermanos Energy home",
+    "mainLabel": "Hoofdmenu",
+    "mobileLabel": "Mobiel menu",
+    "product": "Product",
+    "aboutus": "Over ons",
+    "contact": "Contact",
+    "contactShort": "Contact",
+    "signIn": "Inloggen",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten"
+  },
+  "footer": {
+    "navLabel": "Footer",
+    "address": "Adres: Transistorstraat 151, 1322 CN Almere<br>KvK-nummer 91848946",
+    "copyright": "Hermanos Energy 2025 © Alle rechten voorbehouden"
+  },
+  "common": {
+    "contactUs": "Neem contact op",
+    "learnMore": "Meer informatie",
+    "keyFeatures": "Belangrijkste kenmerken",
+    "euCofundedAlt": "Medegefinancierd door de Europese Unie"
+  },
+  "getInTouch": {
+    "label": "Vraag een demo of persoonlijk energieadvies aan",
+    "heading": "Neem contact op."
+  },
+  "home": {
+    "meta": {
+      "title": "Hermanos Energy",
+      "description": "Hermanos Energy ontwikkelt innovatieve oplossingen voor energieopslag met waterstof. Nu de vraag naar energie wereldwijd blijft groeien, is het belangrijker dan ooit om duurzame en betrouwbare manieren te vinden om in onze energie te voorzien."
+    },
+    "hero": {
+      "title": "Eindeloos schone energie.",
+      "subtitle": "Wij ontwikkelen innovatieve oplossingen voor energieopslag met waterstoftechnologie."
+    },
+    "future": {
+      "title": "Klaar voor de toekomst.",
+      "text": "Duurzame energiebronnen zoals wind- en zonne-energie groeien snel. Maar om het elektriciteitsnet in balans te houden en een stabiele stroomvoorziening te garanderen, is de wereld nog steeds afhankelijk van fossiele brandstoffen. Een stabiele stroomvoorziening het hele jaar door, zonder fossiele brandstoffen, kan alleen met lokale energieopslag.",
+      "photoAlt": "Installatie van Hermanos Energy naast een boerderijschuur met zonnepanelen"
+    },
+    "transition": {
+      "title": "Help mee aan de energietransitie en profiteer ervan.",
+      "text": "Op zonnige en winderige momenten overdag is het aanbod van groene energie groter dan de vraag. Dat leidt tot zeer lage prijzen en soms zelfs tot gratis stroom. Groene energie is goedkope energie! Met de energieopslag van Hermanos Energy profiteer je van de prijsverschillen over de dag en tussen de seizoenen, en draag je tegelijk bij aan een CO2-neutrale toekomst.",
+      "chartPricesAlt": "Staafdiagram: gemiddelde stroomprijzen over een dag, het laagst rond het middaguur",
+      "chartSolarWindAlt": "Staafdiagram: zonne- en windstroom op het net over een dag, het hoogst rond het middaguur"
+    },
+    "vision": {
+      "title": "Eén visie. Drie producten.",
+      "text": "Onze missie is om het overschot aan groene energie te gebruiken om fossiele brandstoffen te vervangen, waar ze ook worden gebruikt. We produceren de waterstof altijd lokaal, bij jou thuis of op je bedrijf, en je kunt hem op verschillende manieren inzetten.",
+      "cards": {
+        "heat": "Met de zomerzon verwarmen in de winter, met Power to Heat.",
+        "power": "Het hele jaar groene stroom met Power to Power.",
+        "drive": "Rijden op waterstof. Met Power to Drive."
+      }
+    },
+    "news": {
+      "sectionLabel": "Nieuws",
+      "label": "NIEUWS",
+      "previous": "Vorig nieuwsbericht",
+      "next": "Volgend nieuwsbericht",
+      "dot": "Nieuwsbericht",
+      "vakbeurs": {
+        "title": "Wij waren op Vakbeurs Energie",
+        "subtitle": "7, 8 en 9 oktober, Brabanthallen",
+        "text": "We hebben een geweldige tijd gehad op Vakbeurs Energie, waar we dagelijks presentaties gaven over zelfvoorzienend worden met waterstofopslag. Ook bespraken we de businesscase van langetermijnopslag en het verschil met batterijopslag. Bedankt aan iedereen die erbij was! Heb je ons gemist? Neem dan gerust contact met ons op om meer te weten te komen over onze oplossingen.",
+        "photoAlt": "Hermanos Energy geeft een presentatie op Vakbeurs Energie"
+      },
+      "sail": {
+        "title": "Waterstof tanken op SAIL Amsterdam",
+        "subtitle": "Powered by Hermanos Energy en XNRG.tech",
+        "text": "SAIL Amsterdam is een van de grootste maritieme evenementen ter wereld, met meer dan 10.000 boten en 2,3 miljoen bezoekers per dag. We zijn trots dat wij hun vloot van waterstofboten van energie voorzien. XNRG.tech ontwikkelde voor het evenement een serie boten op waterstof die tot 50 personen kunnen vervoeren. Terwijl de boten de hele dag onderweg zijn, produceren wij waterstof, zodat ze bij terugkomst kunnen tanken voor de volgende dag. Nieuwszender AT5 maakte een korte video over onze installatie.",
+        "videoTitle": "AT5 over Hermanos Energy op SAIL Amsterdam",
+        "playVideo": "Video afspelen: AT5 over Hermanos Energy op SAIL Amsterdam",
+        "link": "Meer over Hermanos Energy op SAIL"
+      },
+      "erik": {
+        "title": "Erik Blaauw is pionier met waterstofsysteem",
+        "subtitle": "Eerste groene waterstofproductie in Flevoland",
+        "text": "Onze klant Erik Blaauw uit Lelystad is de eerste die groene waterstof produceert in de provincie Flevoland. De NOS, Omroep Flevoland en Waterstof Magazine schreven over de opening. Bekijk hieronder de video van Omroep Flevoland of lees het artikel op de website van de NOS.",
+        "link": "Lees het artikel van de NOS"
+      },
+      "power2you": {
+        "title": "Subsidie voor Power2You",
+        "subtitle": "Medegefinancierd door de Europese Unie",
+        "text": "We zijn trots dat we via het EFRO-programma <em>Kansen voor West III een Europese subsidie hebben ontvangen voor ons innovatieprogramma Power2You</em>. Deze bijdrage helpt ons als bedrijf te groeien en zorgt ervoor dat we de komende twee jaar tijd en energie kunnen blijven steken in technische innovatie. Het is ook een waardevolle erkenning van onze maatschappelijke impact.",
+        "photoAlt": "Power2You"
+      },
+      "award": {
+        "title": "Hydrogen Innovation Award 2024",
+        "subtitle": "Uitgereikt door TKI Nieuw Gas",
+        "text": "Hermanos Energy is onderscheiden voor een innovatieve waterstofoplossing voor lokale energieopslag, voor huishoudens, boeren en kleine bedrijven. Dankzij slimme software en decentrale opslag zorgt het systeem voor flexibiliteit en betaalbare waterstofprijzen.",
+        "photoAlt": "Hermanos Energy ontvangt de Hydrogen Innovation Award 2024",
+        "link": "Bekijk het interview"
+      }
+    },
+    "ems": {
+      "label": "Ons eigen EMS",
+      "heading": "De software achter alles.",
+      "text": "Bij groene energie draait alles om timing. We maken waterstof wanneer er een overschot is aan goedkope, groene stroom, en gebruiken die wanneer je hem het hardst nodig hebt. Onze software regelt dat voor je.",
+      "points": [
+        "Maakt voorspellingen op basis van je historische gegevens en het weer",
+        "Live verbonden met je zonnepanelen en je verbruik",
+        "Schaalt binnen milliseconden op en af",
+        "Kiest de juiste momenten op basis van de day-aheadprijzen"
+      ],
+      "photoAlt": "Het dashboard van Hermanos Energy op een laptop en tablet"
+    },
+    "getInTouchAlt": "Waterstoftankstation van Hermanos Energy"
+  },
+  "product": {
+    "meta": {
+      "title": "Product — Hermanos Energy",
+      "description": "De oplossing voor lokale energieopslag op boerderijen en bij kleine en middelgrote bedrijven."
+    },
+    "hero": {
+      "title": "Onze drie producten.",
+      "subtitle": "De oplossing voor lokale energieopslag op boerderijen en bij kleine en middelgrote bedrijven."
+    },
+    "cards": {
+      "heat": {
+        "label": "Verwarmen met je eigen waterstof",
+        "points": ["Seizoensopslag van warmte", "Bereikt hoge temperaturen", "Vervangt aardgas of mengt ermee", "Vrijwel geen energieverlies"]
+      },
+      "drive": {
+        "label": "Rijden op je eigen waterstof",
+        "points": ["Maak je eigen brandstof", "50% goedkoper dan diesel", "€3/kg waterstof", "Eenvoudig tanken"]
+      },
+      "power": {
+        "label": "Het hele jaar groene stroom",
+        "points": ["Opslag van stroom voor dag en nacht", "Seizoensopslag van stroom", "Gekoppeld aan de day-aheadmarkt", "Oplossing voor netcongestie"]
+      }
+    },
+    "intro": "De productie van groene stroom groeit snel, maar de opbrengst wisselt. Het knelpunt is daarom niet langer de productie, maar de opslag van stroom. Om productie en verbruik in balans te brengen, is opslag essentieel.<br><br>Wie zonnepanelen heeft, weet het: tot nu toe was er geen goede en betaalbare oplossing voor het opslagprobleem. Wij bieden energieopslag voor agrarische bedrijven en andere kleine en middelgrote ondernemingen.<br><br>We maken en slaan waterstof lokaal op. Onze software houdt de stroomprijzen in de gaten, net als je eigen energieverbruik en stroomproductie. Zo haal je het meeste uit je groene stroom door die tijdens productiepieken om te zetten in waterstof.<br>We produceren waterstof vaak wanneer energie gratis is of de stroomprijzen negatief zijn. Daardoor is onze waterstof altijd groen en zeer betaalbaar. Je kunt hem gebruiken als vervanger van aardgas in elke verwarmingstoepassing, als brandstof voor een voertuig, of je slaat hem op en zet hem weer om in stroom wanneer je die nodig hebt.<br><br>Wat je ook kiest, wij leveren een plug-and-play-installatie die de hele kringloop afdekt: lokaal geproduceerd, lokaal opgeslagen en lokaal gebruikt. Alles is volledig geautomatiseerd, met software die elke stap bewaakt en het systeem optimaal afstemt op jouw behoeften.",
+    "productsAlt": "De units van Power to Heat, Power to Drive en Power to Power",
+    "timeline": {
+      "title": "Naadloze energieoplossingen, op maat voor jou",
+      "text": "Elke energie-uitdaging is uniek, en dus ook de aanpak. Ons gestructureerde maar flexibele proces zorgt voor een soepele overstap naar schone energie: van het begrijpen van je wensen tot het opleveren van een oplossing op maat. Bekijk de tijdlijn hieronder om te zien hoe we jouw energiedoelen werkelijkheid maken.",
+      "alt": "Tijdlijn: 1 Vandaag, 2 Over 2 weken, 3 Over 6 weken, 4 Over 7 weken, 5 Binnen 3 maanden na ondertekening",
+      "note": "Door de grote vraag werken we met bouwslots. Voor 2025 zitten we vol. Neem contact met ons op om de mogelijkheden voor 2026 te bespreken en een slot te reserveren."
+    },
+    "features": {
+      "heading": "Dit hebben al onze producten gemeen.",
+      "items": {
+        "energyManagement": {
+          "title": "Persoonlijk, slim energiebeheer",
+          "text": "Het hele jaar door houdt de software de stroomprijzen, het aanbod van groene energie, de weersverwachting en jouw specifieke situatie in de gaten. Op basis daarvan stemt hij het systeem optimaal af op jouw behoeften."
+        },
+        "battery": {
+          "title": "Inclusief batterij",
+          "text": "We gebruiken een batterij als kortetermijnbuffer voor stroom. Daardoor kunnen we binnen seconden reageren. En als de zon weg is, draait je elektrolyser gewoon door op de groene energie uit de batterij."
+        },
+        "localStorage": {
+          "title": "Lokale opslag",
+          "text": "De waterstof uit de elektrolyser wordt opgeslagen in gasbundels van 35 bar. Met onze compressor kan dat tot 300 bar, waardoor je bijna tien keer zoveel energie kwijt kunt in dezelfde tanks."
+        },
+        "heat": {
+          "title": "Warmte benutten",
+          "text": "Bij het omzetten van stroom in waterstof en terug komt warmte vrij. Die warmte wordt vaak gezien als \"energieverlies\". In ons systeem wordt de vrijgekomen warmte teruggewonnen en opgeslagen, zodat je warm water van zo'n 55 °C krijgt voor je huis of bedrijf."
+        },
+        "profit": {
+          "title": "Goed voor je portemonnee en het milieu",
+          "text": "Omdat alle waterstof lokaal wordt geproduceerd, kunnen we je energiebehoefte voorspellen en de beste momenten kiezen om hem te maken. Onze batterij reageert binnen milliseconden, zodat je nooit stroom koopt tegen hoge prijzen, maar je eigen overvloedige zonne-energie gebruikt. De energie die je gebruikt is groen, betaalbaar en lokaal. Wij produceren waterstof voor zo'n €3 per kilo, terwijl je bij een tankstation momenteel rond de €20 per kilo betaalt."
+        }
+      }
+    },
+    "faq": {
+      "label": "FAQ",
+      "heading": "Vragen?",
+      "items": [
+        {
+          "question": "Is het omzetten van stroom in waterstof wel efficiënt?",
+          "answer": "Dit wordt vaak gezien als een inefficiënt proces, maar het \"verlies\" aan energie is vooral warmte.<br>In de oplossing van Hermanos Energy wordt die restwarmte opgeslagen en gebruikt, bijvoorbeeld voor je dagelijkse warme douche of om in de winter te verwarmen. Door zowel de warmte als de stroom te gebruiken, gaat er weinig energie verloren."
+        },
+        {
+          "question": "Is energie opslaan in waterstof beter dan in een batterij?",
+          "answer": "Waterstof is niet per se beter dan een batterij, maar heeft andere eigenschappen. Een batterij is een uitstekende oplossing voor opslag op korte termijn, bijvoorbeeld om in de zomer 's nachts je zonnestroom te gebruiken. Waterstof is een van de voordeligste manieren voor seizoensopslag en je kunt er je huis mee verwarmen. Hermanos Energy biedt een combinatie van waterstofopslag, warmteopslag en batterijopslag, zodat je het hele jaar groene energie gebruikt. Bekijk ons product Power to Power voor meer informatie."
+        },
+        {
+          "question": "Is waterstofopslag veilig?",
+          "answer": "Qua risico is waterstof vergelijkbaar met aardgas, al heeft het andere veiligheidseigenschappen. Aardgas is zwaarder dan lucht en blijft bij een lek in je huis of stal hangen. Waterstof is het lichtste element dat er is en vervliegt veel sneller."
+        },
+        {
+          "question": "Waar wordt de waterstof opgeslagen?",
+          "answer": "De waterstof wordt opgeslagen in gasbundels. We raden aan die buiten te plaatsen. De elektrolyser die de waterstof maakt, staat het best binnen, in een goed geventileerde ruimte waar regen en vorst er geen invloed op hebben."
+        },
+        {
+          "question": "Kan ik met waterstof mijn aardgasverbruik vervangen?",
+          "answer": "Ja, waterstof is een uitstekende oplossing voor al je warmtebehoeften. Met de oplossing van Hermanos Energy gebruik je de zonne-energie van de zomer om in de winter je huis te verwarmen. Dat is een van de meest milieuvriendelijke manieren om je huis te verwarmen. Warmtepompen worden meestal gebruikt wanneer er alleen energie uit fossiele bronnen beschikbaar is. Bekijk de pagina van Power to Heat voor meer informatie."
+        }
+      ]
+    },
+    "statement": "In 2030 komt 90% van de jaarlijkse energievraag in Nederland uit duurzame bronnen. Maar om het net in balans te houden en een stabiele stroomvoorziening te garanderen, is 30% extra energie uit fossiele brandstoffen nodig. Dat veroorzaakt 9.000.000.000&nbsp;kg aan CO2-uitstoot."
+  },
+  "aboutus": {
+    "meta": {
+      "title": "Over ons — Hermanos Energy",
+      "description": "Pioniers van de waterstofrevolutie. Wij ontwikkelen innovatieve oplossingen voor energieopslag met waterstoftechnologie."
+    },
+    "hero": {
+      "label": "over ons",
+      "title": "Pioniers van de waterstofrevolutie.",
+      "subtitle": "Wij staan vooraan in de energierevolutie en leveren duurzame en efficiënte energieoplossingen met energieopslag op basis van waterstof.",
+      "photoAlt": "Maarten en Jan, de oprichters van Hermanos Energy"
+    },
+    "story": {
+      "label": "ONS VERHAAL",
+      "heading": "De energietransitie is in volle gang.",
+      "paragraphs": [
+        "De vraag is niet langer óf en wanneer; het gebeurt nu. De enige vraag is hoe snel we kunnen gaan.",
+        "Het nieuwe groene tijdperk brengt zijn eigen uitdagingen. Er is volop zonne- en windenergie, soms zelfs zoveel dat de productie wordt teruggeschroefd, maar 's nachts en in de winter zijn we nog steeds afhankelijk van fossiele brandstoffen. Onze missie is om die uitdaging te overwinnen. We werken aan een wereld waarin de energie van de zomerzon wordt vastgehouden, zodat je huis warm blijft in de koude winter en je kamers verlicht zijn als het donker wordt.",
+        "Hermanos Energy is ontstaan uit de gedeelde visie van twee broers, gedreven door de zoektocht naar groene energie én door de kracht van broederschap. Onze dromen gaan verder dan een andere energiebron. We zien een toekomst voor ons waarin energie wordt gedeeld tussen broers, vrienden en buren; een toekomst waarin multinationals en buitenlandse regimes geen grip hebben, omdat deze kostbare bron van ons allemaal is. We geloven vast dat de energietransitie gedragen moet worden door lokale initiatieven, die gemeenschappen versterken en de velen ten goede komen in plaats van de belangen van enkelen te dienen.",
+        "Zoals boeren al eeuwenlang hun land bewerken, hun gewassen de hele zomer verzorgen en de oogst binnenhalen voor de winter, zo wil Hermanos Energy dit eeuwenoude principe toepassen op onze moderne wereld. Met innovatieve technieken bouwen we aan een toekomst die past bij wat we nodig hebben."
+      ]
+    },
+    "efro": {
+      "label": "Medegefinancierd door de Europese Unie",
+      "heading": "Power2You",
+      "text": "We zijn trots dat we via het EFRO-programma Kansen voor West III een Europese subsidie hebben ontvangen voor ons innovatieprogramma Power2You. Deze bijdrage helpt ons als bedrijf te groeien en zorgt ervoor dat we de komende twee jaar tijd en energie kunnen blijven steken in technische innovatie. Het is ook een waardevolle erkenning van onze maatschappelijke impact.",
+      "kansenVoorWestAlt": "Kansen voor West",
+      "goals": "Het Power2You-programma loopt twee jaar, van mei 2025 tot mei 2027, en heeft de volgende doelen:<br><br>1) Power2Drive en Power2Heat op de markt brengen, ons productaanbod uitbreiden en groene energie mogelijk maken in sectoren die op andere manieren lastig te verduurzamen zijn.<br>2) De totale kosten van ons productportfolio verlagen door alternatieve elektrolyser- en brandstofcelstacks te onderzoeken, en het product te vereenvoudigen om onderhoudskosten te besparen.<br>3) De totale energie-efficiëntie van het systeem verbeteren met een efficiënte oplossing voor warmteterugwinning.<br>4) Onze slimme algoritmes en verbruiksvoorspellingen verbeteren, zodat onze klanten meer opbrengst hebben."
+    },
+    "mission": {
+      "label": "Onze missie",
+      "text": "De missie van Hermanos Energy is om lokale gebruikers het hele jaar zelf de regie te geven over een groene, stabiele energievoorziening. In een wereld waarin lokale gebruikers altijd over groene energie beschikken, is er geen behoefte en geen plaats meer voor fossiele brandstoffen."
+    },
+    "getInTouchAlt": "Het dashboard van Hermanos Energy op een laptop en tablet"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Hermanos Energy",
+      "description": "Neem contact op met Hermanos Energy voor een demo of een gedetailleerde berekening van de oplossing die past bij jouw energiesituatie."
+    },
+    "label": "contact",
+    "title": "Neem contact op",
+    "lead": "Ben je geïnteresseerd in het product of wil je meer weten? Neem gerust contact met ons op voor een demo. Wil je weten of het product bij jou past? Dan beginnen we met een gedetailleerde berekening van de hardware-oplossing die past bij jouw energiesituatie.",
+    "form": {
+      "name": "Naam",
+      "email": "E-mail",
+      "message": "Bericht",
+      "send": "Verstuur bericht",
+      "sent": "Bericht verstuurd"
+    },
+    "address": {
+      "city": "Almere",
+      "lines": "Transistorstraat 151<br>1322 CN Almere<br>Nederland"
+    },
+    "connect": "VOLG ONS",
+    "linkedinLabel": "Hermanos Energy op LinkedIn"
+  },
+  "productDetails": {
+    "label": "PRODUCT",
+    "inActionSuffix": "in de praktijk",
+    "inActionText": "We helpen je graag. Neem contact met ons op als je problemen ervaart met ons product of als je vragen hebt.",
+    "getADemo": "Vraag een demo aan",
+    "heat": {
+      "subtitle": "Verwarmen met lokaal geproduceerde waterstof.",
+      "diagramAlt": "Systeemschema Power to Heat: eigen energie en het net voeden de batterij en de elektrolyser; de waterstof gaat naar de H2-opslag en een H2-ketel",
+      "features": {
+        "heading": "Dit maakt Power to Heat uniek.",
+        "items": {
+          "solarHeat": {
+            "title": "Zonnewarmte in de winter",
+            "text": "Het hele jaar door houdt de software de stroomprijzen, het aanbod van groene energie, de weersverwachting en jouw specifieke situatie in de gaten. Met die informatie stemt hij het systeem optimaal af op jouw behoeften, zodat je het overschot aan zonne-energie uit de zomer kunt opslaan en in de winter kunt gebruiken om te verwarmen."
+          },
+          "replacesGas": {
+            "title": "Vervangt aardgas",
+            "text": "Waterstof is een gas met eigenschappen die sterk lijken op die van aardgas. Met Power to Heat verbranden we de waterstof direct, zodat je geen aardgas meer nodig hebt."
+          },
+          "mixing": {
+            "title": "Mengen met aardgas",
+            "text": "Waterstof lijkt zo sterk op aardgas dat je het ermee kunt mengen. Zo kun je met waterstof beginnen zonder meteen volledig over te stappen."
+          },
+          "anyTemperature": {
+            "title": "Elke temperatuur, elke toepassing",
+            "text": "Door waterstof te verbranden kun je zeer hoge temperaturen bereiken. Daardoor is het geschikt voor situaties waarin een warmtepomp of elektrische verwarming geen optie is.<br><br>Er is een breed aanbod aan waterstofketels, gasmengers en waterstofgeschikte warmtepompen voor zowel industrieel als huishoudelijk gebruik. We werken samen met verschillende leveranciers om aan jouw specifieke wensen te voldoen."
+          },
+          "energyLoss": {
+            "title": "Vrijwel geen energieverlies",
+            "text": "Bij het omzetten van stroom in waterstof en terug komt warmte vrij. Die warmte wordt vaak gezien als \"energieverlies\". In ons systeem wordt de vrijgekomen warmte echter teruggewonnen en opgeslagen. Daardoor blijft het energieverlies onder de 15% en is het hele proces zeer efficiënt."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "Een oplossing voor het hele jaar",
+        "intro": "In de zomer is er vaak een overschot aan zonne-energie, terwijl het energieverbruik relatief laag is. In de winter zijn de dagen korter en de temperaturen lager, en gaat de meeste energie naar verwarming. Met Power to Heat zetten we stroom uit zonnepanelen om in waterstof, die je kunt opslaan en in de winter kunt gebruiken om te verwarmen. Klik door de afbeeldingen om te zien hoe het systeem werkt in de verschillende seizoenen.",
+        "items": {
+          "summer": {
+            "label": "Zomer",
+            "text": "In de zomer wekken zonnepanelen meer energie op dan je verbruikt. Op die momenten zetten we de overtollige stroom om in waterstof en slaan we die op in tanks voor later. Het systeem bevat een batterij die je stroomverbruik over de dag in balans houdt, zodat alleen echt overtollige energie wordt omgezet in waterstof. Tegelijk maakt de batterij langere draaiuren van de elektrolyser mogelijk. Bij het maken van waterstof komt warmte vrij die wordt teruggewonnen. Die warmte kun je gebruiken voor warm water, meestal genoeg om een gezin te laten douchen.",
+            "alt": "Het systeem in de zomer: zonnepanelen voeden de elektrolyser"
+          },
+          "winter": {
+            "label": "Winter",
+            "text": "In de winter gebruiken we de waterstof om je huis te verwarmen. We gebruiken waterstofketels, zodat je het ook bij strenge kou warm hebt. Ook in de winter schommelen de stroomprijzen sterk en kunnen ze negatief zijn. Op die momenten maken we nog steeds waterstof om je tanks gevuld te houden.",
+            "alt": "Het systeem in de winter: opgeslagen waterstof verwarmt het gebouw"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Installatie van Power to Heat op een boerderij"
+    },
+    "drive": {
+      "subtitle": "Vaar of rijd op je eigen waterstof.",
+      "diagramAlt": "Systeemschema Power to Drive: eigen energie en het net voeden de batterij en de elektrolyser; de waterstof wordt gecomprimeerd en gebruikt om een voertuig te tanken",
+      "features": {
+        "heading": "Dit maakt Power to Drive uniek.",
+        "items": {
+          "neverOutOfFuel": {
+            "title": "Nooit zonder brandstof",
+            "text": "De waterstof voor je voertuig wordt op je eigen terrein geproduceerd. Je bent dus niet afhankelijk van externe brandstofleveranciers en je voertuig hoeft het terrein niet af om te tanken. Onze software houdt de stroomprijzen, het aanbod van duurzame energie en de hoeveelheid brandstof in je tanks in de gaten. Zo heb je altijd brandstof en kiest het systeem ook de voordeligste momenten om die te produceren."
+          },
+          "moreThanFuel": {
+            "title": "Meer dan alleen brandstof",
+            "text": "Tijdens de productie van waterstof winnen we de restwarmte terug en gebruiken we een batterij om de elektrolyser langer te laten draaien."
+          },
+          "driveAnywhere": {
+            "title": "Overal rijden",
+            "text": "Dieselvoertuigen zijn niet welkom in zero-emissiezones zoals natuurgebieden. Elektrische voertuigen op een batterij zijn vaak ook geen optie, omdat ze door hun gewicht wegzakken in modderig terrein. In die gevallen zijn voertuigen op waterstof de enige praktische optie, en ze hebben ook nog eens een veel grotere actieradius."
+          },
+          "easyRefueling": {
+            "title": "Eenvoudig tanken",
+            "text": "Ons tankstation is gebruiksvriendelijk, eenvoudig en betrouwbaar. Tanken voelt vrijwel hetzelfde als tanken met benzine of diesel.<br><br>We gebruiken de hoge druk in de opslagtanks om je voertuig te vullen en laten het gas langzaam vrij voor een veilige en betrouwbare tankbeurt. We kunnen voertuigen tanken tot 300 bar, en het vullen van je voertuig duurt ongeveer een kwartier.<br><br>We regelen het hele proces, van het produceren en comprimeren van de waterstof tot het tanken. Zo zorgen we ervoor dat de tanks altijd op de juiste druk zijn om je voertuig efficiënt te vullen."
+          },
+          "cheaper": {
+            "title": "50% goedkoper dan diesel",
+            "text": "Je eigen zonne-energie is verreweg de goedkoopste energie die er is. Daarmee produceren we waterstof voor zo'n €3 per kilo. Een gemiddelde auto rijdt ongeveer 100 km op één kilo waterstof. Daarmee is waterstof een stuk voordeliger dan diesel, zolang je het zelf lokaal produceert.<br><br>Bij een tankstation kost waterstof rond de €21 per kilo. Zelf maken is dus 7 keer goedkoper."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "Brandstof maken terwijl je het voertuig gebruikt",
+        "intro": "Op een zonnige zomerdag is energie goedkoop en groen, maar juist dan wil je je voertuig vaak gebruiken. Wij produceren waterstof wanneer er volop groene energie is en slaan die op in tanks, zodat je later kunt tanken. Of je je voertuig nu dagelijks gebruikt of alleen in bepaalde seizoenen: we kiezen het hele jaar de juiste momenten om waterstof te produceren, zodat die beschikbaar is wanneer je hem nodig hebt. Klik op de afbeeldingen hieronder om te zien hoe het systeem op verschillende momenten werkt.",
+        "items": {
+          "day": {
+            "label": "Dag",
+            "text": "Terwijl jij overdag aan het werk bent en je voertuig gebruikt, produceert de elektrolyser waterstof met de energie van je zonnepanelen. Als je na een lange werkdag terugkomt, zijn je waterstoftanks vol en klaar voor gebruik.",
+            "alt": "Overdag maakt de elektrolyser waterstof met zonne-energie terwijl het voertuig in gebruik is"
+          },
+          "night": {
+            "label": "Nacht",
+            "text": "Als de werkdag voorbij is, de zon onder is en de energieprijzen hoog zijn, tank je je voertuig met de groene en goedkope waterstof die overdag is geproduceerd. Klaar voor morgen.",
+            "alt": "'s Nachts wordt het voertuig getankt met de waterstof die overdag is gemaakt"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Waterstoftankstation"
+    },
+    "power": {
+      "subtitle": "Het hele jaar groene stroom.",
+      "diagramAlt": "Systeemschema Power to Power: eigen energie en het net voeden de batterij en de elektrolyser; een brandstofcel zet opgeslagen waterstof weer om in stroom en warm water voor het huis",
+      "features": {
+        "heading": "Dit maakt Power to Power uniek.",
+        "items": {
+          "energyManagement": {
+            "title": "Persoonlijk, slim energiebeheer",
+            "text": "Het hele jaar door houdt de software de stroomprijzen, het aanbod van groene energie, de weersverwachting en jouw specifieke situatie in de gaten. Op basis daarvan stemt hij het systeem optimaal af op jouw behoeften."
+          },
+          "dayNightStorage": {
+            "title": "Opslag voor dag en nacht",
+            "text": "We slaan je stroom op in een batterij als buffer voor kortstondige verschillen tussen productie en verbruik (zoals tussen dag en nacht)."
+          },
+          "seasonalStorage": {
+            "title": "Seizoensopslag",
+            "text": "We gebruiken een elektrolyser om stroom op te slaan in de vorm van waterstof, als buffer voor verschillen over langere periodes (zomer en winter). Een brandstofcel zet de waterstof weer om in stroom. Per opgeslagen kWh is waterstof 20 keer goedkoper dan gewone batterijen."
+          },
+          "heat": {
+            "title": "Warmte benutten",
+            "text": "Bij het omzetten van stroom in waterstof en terug komt warmte vrij. Die warmte wordt vaak gezien als \"energieverlies\". In ons systeem wordt de vrijgekomen warmte teruggewonnen en opgeslagen, zodat je warm water van zo'n 55 °C krijgt voor je huis of bedrijf."
+          },
+          "profit": {
+            "title": "Goed voor je portemonnee en het milieu",
+            "text": "Met onze opslagoplossing kun je ook flink besparen op de kosten van stroom van het net. De stroomprijs verandert van uur tot uur, van meer dan 60 cent per kWh tot onder nul. Je kunt de software zo instellen dat hij stopt met stroom afnemen van het net zodra de prijs boven een bepaalde grens komt, en in plaats daarvan de stroom uit je eigen systeem gebruikt. Momenten met hoge prijzen vallen bovendien vaak samen met veel energie uit fossiele brandstoffen. Je eigen opgeslagen groene energie gebruiken is op die momenten dus ook veel beter voor het milieu.<br><br>Onze oplossing is ook geschikt als je te maken hebt met netcongestie en niet kunt uitbreiden. Wij zorgen ervoor dat je je bedrijf altijd kunt runnen zoals jij dat wilt."
+          }
+        }
+      },
+      "tabs": {
+        "heading": "Een oplossing voor het hele jaar",
+        "intro": "In de zomer is er een overschot aan zonne-energie, terwijl het energieverbruik dan laag is. In de winter leveren zonnepanelen veel minder op en gaat er veel energie naar verwarming. Batterijen hebben een beperkte opslagcapaciteit: ze zijn ideaal voor opslag over de dag, maar wij voegen daar waterstofopslag aan toe om het verschil tussen de seizoenen op te vangen. Klik door de afbeeldingen hieronder om te zien hoe ons systeem werkt in de verschillende seizoenen.",
+        "items": {
+          "summer": {
+            "label": "Zomer",
+            "text": "In de zomer wekken zonnepanelen vaak meer energie op dan je verbruikt. Op die momenten slaan we het overschot op in een batterij voor later gebruik. Daarnaast zetten we overtollige stroom om in waterstof, waarmee je in de wintermaanden je huis kunt verwarmen. Ook zonder zonnepanelen profiteer je van de groene energie die op het net beschikbaar is.",
+            "alt": "Het systeem in de zomer: overtollige zonnestroom laadt de batterij op en maakt waterstof"
+          },
+          "autumn": {
+            "label": "Herfst",
+            "text": "Op winderige en regenachtige herfstdagen is zonne-energie niet altijd beschikbaar. Maar dankzij windmolens is er dan nog steeds volop groene energie. Ons systeem houdt het net voortdurend in de gaten en volgt het aanbod en de prijs van groene energie. Wanneer de stroom uit duurzame bronnen komt en de prijzen laag zijn, grijpen we die kans om de batterij te laden en waterstof te produceren. Bij het maken van waterstof komt bovendien warmte vrij, die we benutten om je huis efficiënt te verwarmen.",
+            "alt": "Het systeem in de herfst: groene windenergie van het net laadt de batterij op"
+          },
+          "winter": {
+            "label": "Winter",
+            "text": "In de winter, wanneer er weinig zon en wind is, komt de opgeslagen energie van pas. We bieden twee kant-en-klare opties om de opgeslagen waterstof te gebruiken:<br>1. Je zet de opgeslagen waterstof met een ketel direct om in warmte.<br>2. Of je gebruikt een brandstofcel om er weer stroom van te maken. Bij dat proces komt ook warmte vrij, die we efficiënt benutten om je huis te verwarmen.<br><br>Heb je meer energie opgeslagen dan je nodig hebt? Dan kun je de overtollige stroom terugleveren aan het net. Zo profiteren je buren van je groene stroom, terwijl jij profiteert van de vaak hoge stroomprijzen op zulke momenten. Met onze complete oplossing haal je het hele jaar het meeste uit je energie: je benut duurzame bronnen optimaal en verkleint je ecologische voetafdruk.",
+            "alt": "Het systeem in de winter: opgeslagen waterstof wordt weer omgezet in stroom en warmte"
+          }
+        }
+      },
+      "inActionPhotoAlt": "Installatie van Power to Power op een boerderij"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Pagina niet gevonden — Hermanos Energy",
+      "description": "Deze pagina bestaat niet. Ga terug naar de homepage van Hermanos Energy."
+    },
+    "title": "Pagina niet gevonden.",
+    "text": "De pagina die je zoekt bestaat niet of is verplaatst.",
+    "button": "Terug naar de homepage"
+  }
+}

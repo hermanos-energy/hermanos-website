@@ -32,7 +32,8 @@ form.addEventListener('submit', async (event) => {
       body: JSON.stringify(Object.fromEntries(new FormData(form))),
     });
     if (!response.ok) throw new Error(response.status);
-    form.innerHTML = '<div class="contact-form__success" role="status" aria-label="Message sent"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7"/></svg></div>';
+    // The "message sent" label comes from the translation files via data-success-label on the form
+    form.innerHTML = `<div class="contact-form__success" role="status" aria-label="${form.dataset.successLabel}"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7"/></svg></div>`;
   } catch {
     button.disabled = false;
   }

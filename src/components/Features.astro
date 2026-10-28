@@ -9,18 +9,19 @@ export interface Feature {
 }
 
 interface Props {
+  label: string;
   heading: string;
   items: Feature[];
   class?: string;
 }
 
-const { heading, items, class: extraClass } = Astro.props;
+const { label, heading, items, class: extraClass } = Astro.props;
 ---
 
 <section class:list={['features', extraClass]}>
   <div class="features__inner">
     <div class="features__intro reveal">
-      <p class="label">Key Features</p>
+      <p class="label">{label}</p>
       <h2 class="heading">{heading}</h2>
     </div>
 

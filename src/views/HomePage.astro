@@ -1,0 +1,231 @@
+---
+// Homepage. Text comes from src/i18n/<lang>.json (home.*).
+import Layout from '../layouts/Layout.astro';
+import GetInTouch from '../components/GetInTouch.astro';
+import Photo from '../components/Photo.astro';
+import { url, srcset } from '../lib/url';
+import { localUrl, useTranslations, type Lang } from '../i18n';
+import '../styles/home.css';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const n = h.news;
+
+const img = (name: string) => `images/home/images/${name}`;
+const news = (name: string) => `images/home/news/${name}`;
+
+const visionCards = [
+  { icon: 'icon-heat.svg', text: h.vision.cards.heat },
+  { icon: 'icon-power.svg', text: h.vision.cards.power },
+  { icon: 'icon-drive.svg', text: h.vision.cards.drive },
+];
+---
+
+<Layout lang={lang} page="" title={h.meta.title} description={h.meta.description} icons={['check', 'arrow-right']}>
+
+  <!-- ── Hero ── -->
+  <section class="home-hero">
+    <Photo class="home-hero__background" src="home/hero.png" alt="" sizes="100vw" eager />
+    <div class="home-hero__text">
+      <h1 class="page-title">{h.hero.title}</h1>
+      <p class="page-subtitle">{h.hero.subtitle}</p>
+      <a class="button button--white button--large button--shadow" href={localUrl(lang, 'contact')} target="_blank">{t.common.contactUs}</a>
+    </div>
+  </section>
+
+  <!-- ── Looking to the future ── -->
+  <section class="section section--white future">
+    <div class="split">
+      <div class="split__text reveal">
+        <h2 class="title">{h.future.title}</h2>
+        <p class="body-text">{h.future.text}</p>
+      </div>
+      <div class="split__photo reveal">
+        <Photo src="home/future.jpg" sizes="(min-width: 1200px) 552px, 100vw" alt={h.future.photoAlt} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Energy transition ── -->
+  <section class="section section--purple transition">
+    <div class="split">
+      <div class="charts reveal">
+        <div class="charts__chart">
+          <img src={url(img('chart-prices-1024.png'))} srcset={srcset(img('chart-prices'), [[1024, '-1024.png'], [2048, '-2048.png']])} sizes="(min-width: 1200px) 552px, 100vw" alt={h.transition.chartPricesAlt}>
+        </div>
+        <div class="charts__chart">
+          <img src={url(img('chart-solar-wind-1024.png'))} srcset={srcset(img('chart-solar-wind'), [[1024, '-1024.png'], [2048, '-2048.png']])} sizes="(min-width: 1200px) 552px, 100vw" alt={h.transition.chartSolarWindAlt}>
+        </div>
+      </div>
+      <div class="split__text reveal">
+        <h2 class="title">{h.transition.title}</h2>
+        <p class="body-text">{h.transition.text}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── One vision, three products ── -->
+  <section class="section vision">
+    <div class="vision__inner">
+      <div class="vision__header reveal">
+        <h2 class="title vision__title">{h.vision.title}</h2>
+        <p class="body-text vision__text">{h.vision.text}</p>
+      </div>
+      <div class="vision__cards">
+        {visionCards.map((card) => (
+          <div class="vision-card">
+            <img src={url(img(card.icon))} alt="" width="115" height="79">
+            <h3>{card.text}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── News slider ── -->
+  <section class="news" aria-label={n.sectionLabel}>
+    <div class="slider" data-interval="8000" data-dot-label={n.dot} tabindex="0" aria-roledescription="carousel">
+      <div class="slider__track">
+
+        <article class="slider__slide news-slide">
+          <div class="news-slide__text">
+            <div class="news-slide__head" style="--head-width: 516px">
+              <p class="label">{n.label}</p>
+              <h3 class="title">{n.vakbeurs.title}</h3>
+              <p class="body-text">{n.vakbeurs.subtitle}</p>
+            </div>
+            <p class="body-text">{n.vakbeurs.text}</p>
+            <div class="news-slide__logos">
+              <img src={url(news('logo-vakbeurs.png'))} alt="Vakbeurs Energie" width="201" height="48">
+            </div>
+          </div>
+          <div class="news-slide__media">
+            <div class="news-slide__image reveal">
+              <Photo src="home/news/vakbeurs.jpg" sizes="(min-width: 1200px) 1000px, 100vw" alt={n.vakbeurs.photoAlt} />
+            </div>
+          </div>
+        </article>
+
+        <article class="slider__slide news-slide">
+          <div class="news-slide__text">
+            <div class="news-slide__head">
+              <p class="label">{n.label}</p>
+              <h3 class="title">{n.sail.title}</h3>
+              <p class="body-text">{n.sail.subtitle}</p>
+            </div>
+            <p class="body-text">{n.sail.text}</p>
+            <div class="news-slide__logos">
+              <img src={url(news('logo-hermanos.png'))} alt="Hermanos Energy" width="181" height="48">
+              <img src={url(news('logo-sail.svg'))} alt="SAIL Amsterdam" width="201" height="48">
+              <img src={url(news('logo-xnrg.png'))} alt="XNRG.tech" width="202" height="48">
+            </div>
+          </div>
+          <div class="news-slide__media">
+            <!-- Click-to-play: the YouTube player (3+ MB) only loads when a visitor starts the video -->
+            <button class="video-facade news-slide__video" type="button" data-youtube="BQmDOf-xGaQ" data-title={n.sail.videoTitle} aria-label={n.sail.playVideo}>
+              <Photo src="home/news/sail-video-thumbnail.jpg" alt="" sizes="(min-width: 810px) 768px, 406px" />
+              <span class="video-facade__play" aria-hidden="true"></span>
+            </button>
+            <a class="small-link" href="https://www.sail.nl/nieuws/een-primeur-tijdens-sail-sloep-aftanken-met-waterstof">{n.sail.link} <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
+          </div>
+        </article>
+
+        <article class="slider__slide news-slide">
+          <div class="news-slide__text">
+            <div class="news-slide__head">
+              <p class="label">{n.label}</p>
+              <h3 class="title">{n.erik.title}</h3>
+              <p class="body-text">{n.erik.subtitle}</p>
+            </div>
+            <p class="body-text">{n.erik.text}</p>
+            <div class="news-slide__logos">
+              <img src={url(news('logo-nos.png'))} alt="NOS" width="181" height="48">
+              <img class="news-slide__logo--cover" src={url(news('logo-omroep-flevoland.png'))} alt="Omroep Flevoland" width="201" height="48">
+              <img src={url(news('logo-waterstof-magazine.png'))} alt="Waterstof Magazine" width="202" height="48">
+            </div>
+          </div>
+          <div class="news-slide__media">
+            <video class="news-slide__video" width="706" height="430" controls muted playsinline preload="metadata">
+              <source src="https://d5ms27yy6exnf.cloudfront.net/video/middel/250613_WWW_Waterstof_00001HYI.mp4" type="video/mp4">
+            </video>
+            <a class="small-link" href="https://nos.nl/regio/flevoland/artikel/644485">{n.erik.link} <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
+          </div>
+        </article>
+
+        <article class="slider__slide news-slide">
+          <div class="news-slide__text">
+            <div class="news-slide__head">
+              <p class="label">{n.label}</p>
+              <h3 class="title">{n.power2you.title}</h3>
+              <p class="body-text">{n.power2you.subtitle}</p>
+            </div>
+            <p class="body-text" set:html={n.power2you.text} />
+            <div class="news-slide__logos">
+              <img src={url(news('logo-kansen-voor-west.png'))} alt="Kansen voor West" width="212" height="48">
+              <img src={url(news('logo-eu.png'))} alt={t.common.euCofundedAlt} width="247" height="48">
+            </div>
+          </div>
+          <div class="news-slide__media">
+            <div class="news-slide__image news-slide__image--tall reveal">
+              <Photo src="home/news/power2you.png" sizes="(min-width: 1200px) 1000px, 100vw" alt={n.power2you.photoAlt} />
+            </div>
+          </div>
+        </article>
+
+        <article class="slider__slide news-slide">
+          <div class="news-slide__text">
+            <div class="news-slide__head" style="--head-width: 516px">
+              <p class="label">{n.label}</p>
+              <h3 class="title">{n.award.title}</h3>
+              <p class="body-text">{n.award.subtitle}</p>
+            </div>
+            <p class="body-text">{n.award.text}</p>
+            <div class="news-slide__logos">
+              <img src={url(news('logo-nationale-energieweek.png'))} alt="Nationale Energieweek" width="181" height="48">
+              <img src={url(news('logo-vakbeurs.png'))} alt="Vakbeurs Energie" width="201" height="48">
+              <img src={url(news('logo-zero-emission.png'))} alt="Zero Emission Ecomobiel" width="202" height="48">
+              <img src={url(news('logo-industrial-heat-power.png'))} alt="Industrial Heat+Power" width="175" height="48">
+            </div>
+          </div>
+          <div class="news-slide__media">
+            <div class="news-slide__image reveal">
+              <Photo src="home/news/award.jpg" sizes="(min-width: 1200px) 1000px, 100vw" alt={n.award.photoAlt} />
+            </div>
+            <a class="small-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7252244767223214080/">{n.award.link} <svg aria-hidden="true"><use href="#icon-arrow-right" /></svg></a>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="slider__button slider__button--prev" type="button" aria-label={n.previous}>◀</button>
+      <button class="slider__button slider__button--next" type="button" aria-label={n.next}>▶</button>
+      <div class="slider__dots"></div>
+    </div>
+  </section>
+
+  <!-- ── Our own EMS ── -->
+  <section class="section ems">
+    <div class="ems__inner">
+      <div class="ems__text reveal">
+        <div class="ems__intro">
+          <p class="label">{h.ems.label}</p>
+          <h2 class="heading">{h.ems.heading}</h2>
+          <p class="body-text">{h.ems.text}</p>
+        </div>
+        <ul class="ems__list">
+          {h.ems.points.map((point) => <li><svg><use href="#icon-check" /></svg>{point}</li>)}
+        </ul>
+      </div>
+      <div class="ems__image reveal">
+        <Photo src="home/ems.jpg" sizes="(min-width: 1200px) 575px, 100vw" alt={h.ems.photoAlt} />
+      </div>
+    </div>
+  </section>
+
+  <GetInTouch lang={lang} image="home/contact.jpg" alt={h.getInTouchAlt} stackedTablet />
+</Layout>

@@ -1,31 +1,34 @@
 ---
 import { url } from '../lib/url';
+import { localUrl, useTranslations, type Lang } from '../i18n';
 
 interface Props {
+  lang: Lang;
   current?: 'product' | 'aboutus' | 'contact';
 }
 
-const { current } = Astro.props;
+const { lang, current } = Astro.props;
+const t = useTranslations(lang);
 const links = [
-  { page: 'product', label: 'Product' },
-  { page: 'aboutus', label: 'About us' },
-  { page: 'contact', label: 'Contact us' },
+  { page: 'product', label: t.nav.product },
+  { page: 'aboutus', label: t.nav.aboutus },
+  { page: 'contact', label: t.nav.contact },
 ] as const;
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <a class="site-footer__logo" href={url()} aria-label="Hermanos Energy home">
+    <a class="site-footer__logo" href={localUrl(lang)} aria-label={t.nav.homeLabel}>
       <img src={url('images/shared/logo.svg')} alt="" width="134" height="56">
     </a>
-    <nav class="site-footer__links" aria-label="Footer">
+    <nav class="site-footer__links" aria-label={t.footer.navLabel}>
       {links.map((link) => (
-        <a href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
+        <a href={localUrl(lang, link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
       ))}
     </nav>
     <div class="site-footer__legal">
-      <p>Address: Transistorstraat 151, 1322 CN Almere<br>Kvk nummer 91848946</p>
-      <p>Hermanos Energy 2025 © All rights reserved</p>
+      <p set:html={t.footer.address} />
+      <p>{t.footer.copyright}</p>
     </div>
   </div>
 </footer>

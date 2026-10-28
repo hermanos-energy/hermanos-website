@@ -1,0 +1,71 @@
+---
+// About Us page. Text comes from src/i18n/<lang>.json (aboutus.*).
+import Layout from '../layouts/Layout.astro';
+import GetInTouch from '../components/GetInTouch.astro';
+import Photo from '../components/Photo.astro';
+import { url } from '../lib/url';
+import { useTranslations, type Lang } from '../i18n';
+import '../styles/aboutus.css';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const a = t.aboutus;
+---
+
+<Layout lang={lang} page="aboutus" title={a.meta.title} description={a.meta.description} current="aboutus">
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__text reveal">
+        <p class="label">{a.hero.label}</p>
+        <h1 class="page-title">{a.hero.title}</h1>
+        <p class="page-subtitle">{a.hero.subtitle}</p>
+      </div>
+      <div class="hero__photo card-border reveal">
+        <Photo src="aboutus/founders.jpg" alt={a.hero.photoAlt} sizes="(min-width: 1200px) 1200px, 100vw" eager />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Our story ── -->
+  <section class="section section--white">
+    <div class="section__inner stack reveal">
+      <p class="label">{a.story.label}</p>
+      <h2 class="heading">{a.story.heading}</h2>
+      <div class="body-text">
+        {a.story.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EFRO / Power2You ── -->
+  <section class="section section--purple">
+    <div class="section__inner stack reveal">
+      <p class="label">{a.efro.label}</p>
+      <h2 class="heading">{a.efro.heading}</h2>
+      <p class="body-text">{a.efro.text}</p>
+      <div class="efro-logos">
+        <img class="efro-logos__kvw" src={url('images/aboutus/kansen-voor-west.png')} alt={a.efro.kansenVoorWestAlt} width="337" height="175">
+        <img class="efro-logos__eu" src={url('images/aboutus/eu-cofunded.png')} alt={t.common.euCofundedAlt} width="400" height="152">
+      </div>
+      <p class="body-text" set:html={a.efro.goals} />
+    </div>
+  </section>
+
+  <!-- ── Our mission ── -->
+  <section class="section section--white">
+    <div class="section__inner">
+      <div class="mission reveal">
+        <p class="label">{a.mission.label}</p>
+        <h2 class="heading">{a.mission.text}</h2>
+      </div>
+    </div>
+  </section>
+
+  <GetInTouch lang={lang} image="aboutus/preview.jpg" alt={a.getInTouchAlt} />
+</Layout>

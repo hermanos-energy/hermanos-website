@@ -179,6 +179,25 @@
     text-decoration: underline;
   }
 
+  /* Language switch (EN / NL): same type as the menu links, the inactive language dimmed */
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang-switch a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    text-decoration: none;
+    opacity: 0.6;
+  }
+
+  .lang-switch a[aria-current="true"] { opacity: 1; }
+  .lang-switch a:hover { opacity: 1; }
+
   .menu-toggle,
   .mobile-menu { display: none; }
 
@@ -486,6 +505,8 @@
     }
 
     .mobile-menu__link[aria-current="page"] { color: var(--color-lilac); }
+
+    .mobile-menu .lang-switch a { font-size: 16px; }
 
     .page-title { font-size: 40px; letter-spacing: -0.5px; }
     .page-subtitle { font-size: 18px; }
