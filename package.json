@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoloJan/hermanos-website.git"
+    "url": "git+https://github.com/hermanos-energy/hermanos-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SoloJan/hermanos-website/issues"
+    "url": "https://github.com/hermanos-energy/hermanos-website/issues"
   },
-  "homepage": "https://github.com/SoloJan/hermanos-website#readme",
+  "homepage": "https://github.com/hermanos-energy/hermanos-website#readme",
   "dependencies": {
     "astro": "^6.0.8"
   },

@@ -37,6 +37,8 @@ Routes match the live site: `/`, `/product`, `/aboutus`, `/contact`, `/power-to-
 5. **No frameworks/libraries** beyond Astro; vanilla JS and CSS only.
 6. **Never submit the contact form for real in tests** — intercept `https://submit-form.com/**` with Playwright.
 7. Run one plain shell command per call (no pipes, variables or `&&` chains) — those trigger approval prompts.
+8. **Never add AI attribution to commits or pull requests** — no `Co-Authored-By: Claude` trailer and no
+   "Generated with Claude Code" line. Plain commit messages only.
 
 ## Breakpoints
 
