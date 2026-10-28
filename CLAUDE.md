@@ -29,7 +29,7 @@ public/images/<page>/         logos, icons and charts (served as-is)
 public/                       favicon.png, share-image.jpg (Open Graph)
 src/pages/sitemap.xml.ts, robots.txt.ts, 404.astro
 .github/workflows/deploy.yml  builds and publishes to GitHub Pages on every push to main
-scratchpad/                   measurement tools + the approved plain-HTML prototype (not deployed)
+scratchpad/                   measurement and test tools (not deployed)
 ```
 
 Routes match the live site: `/`, `/product`, `/aboutus`, `/contact`, `/power-to-heat`, `/power-to-drive`, `/power-to-power`.
