@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Build the site with Astro
-        uses: withastro/action@v3
+        uses: withastro/action@v6
         with:
-          node-version: 22
+          node-version: 24
 
   deploy:
     needs: build
@@ -37,4 +37,4 @@ jobs:
     steps:
       - name: Publish to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
