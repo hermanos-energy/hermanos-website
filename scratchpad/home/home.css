@@ -1,0 +1,491 @@
+/* =============================================================
+   Home — page sections (shared styles live in ../shared/base.css)
+   Measured from the live site: scratchpad/out/home
+   ============================================================= */
+
+/* ── Large button (hero) ── */
+.button--large {
+  padding: 20px 30px;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+/* ── Hero: background image with centered title ── */
+.home-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200px 50px 150px;
+  overflow: hidden;
+}
+
+.home-hero__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 680px;
+  text-align: center;
+}
+
+.home-hero .page-title { color: var(--color-lilac); }
+.home-hero .page-subtitle { color: var(--color-mint); }
+
+/* ── Text next to a photo or charts ── */
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.split__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 1 530px;
+}
+
+.split__photo {
+  flex: none;
+  width: 46%;
+  aspect-ratio: 1.56977;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.split__photo img,
+.charts__chart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Energy transition charts ── */
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: none;
+  width: 46%;
+}
+
+.charts__chart {
+  height: 251px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.charts__chart img { object-fit: contain; }
+
+/* ── One vision, three products ── */
+.vision { background: var(--color-navy); }
+
+.vision__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.vision__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.vision__title {
+  max-width: 70%;
+  color: var(--color-lilac);
+}
+
+.vision__text {
+  max-width: 92%;
+  color: var(--color-sky);
+}
+
+.vision__cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.vision-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 235px;
+  height: 203px;
+  padding: 30px;
+  border-radius: 10px;
+  background: var(--color-green);
+  overflow: hidden;
+}
+
+.vision-card img {
+  flex: none;
+  width: 115px;
+  height: 79px;
+  object-fit: contain;
+}
+
+.vision-card h3 {
+  flex: none;
+  width: 189px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-navy);
+  opacity: 0.7;
+}
+
+/* ── News slider ── */
+.news {
+  display: flex;
+  justify-content: center;
+  height: 1084px;
+  background: var(--color-lilac);
+  overflow: hidden;
+}
+
+/* The slider is 1200px high; the section cuts it off at 1084px, hiding the dots, as on the live site */
+.slider {
+  position: relative;
+  flex: none;
+  width: 100%;
+  max-width: 1200px;
+  height: 1200px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.44s ease;
+}
+
+.slider__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.slider__button {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 1px 6px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  color: var(--color-white);
+  font-size: 12px;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.slider { outline: none; }
+
+.slider__button--prev { left: 10px; }
+.slider__button--next { right: 10px; }
+
+.slider__dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 0.6;
+}
+
+.slider__dot[aria-current="true"] {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* One news item */
+.news-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 100px;
+}
+
+.news-slide__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Titles wrap at the same width as on the live site (516 or 539px depending on the item) */
+.news-slide__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--head-width, 539px);
+}
+
+.news-slide__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.news-slide__logos img {
+  height: 48px;
+  object-fit: contain;
+}
+
+.news-slide__logos .news-slide__logo--cover { object-fit: cover; }
+
+.news-slide__media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.news-slide__image {
+  width: 100%;
+  height: 460px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.news-slide__image--tall { height: 500px; }
+
+.news-slide__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-slide__video {
+  flex: none;
+  max-width: none;
+  border: 0;
+}
+
+.small-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-legal);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-label);
+  text-decoration: none;
+}
+
+.small-link svg {
+  width: 13px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Our own EMS ── */
+.ems { background: var(--color-mint); }
+
+.ems__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.ems__text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1 0 0;
+}
+
+.ems__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 530px;
+}
+
+.ems__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 428px;
+  list-style: none;
+}
+
+.ems__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000;
+}
+
+.ems__list svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  color: var(--color-label);
+}
+
+.ems__image {
+  flex: 1 0 0;
+  aspect-ratio: 1.51515;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.ems__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Tablet (810–1199px) ── */
+@media (max-width: 1199px) {
+  .split { flex-direction: column; }
+
+  .split__text {
+    flex: none;
+    max-width: 530px;
+    text-align: center;
+  }
+
+  .split__photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* The live site shows the photo at a fixed 711×515 inside its frame on tablet */
+  .split__photo img {
+    flex: none;
+    width: 711px;
+    height: 515px;
+  }
+
+  /* Text above the charts */
+  .transition .split__text { order: -1; }
+  .transition { padding-top: 50px; }
+
+  .charts {
+    width: 100%;
+    max-width: 710px;
+  }
+
+  .charts__chart { height: 320px; }
+
+  .vision__inner { gap: 25px; }
+  .vision__cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vision-card { height: auto; }
+
+  .ems { background: var(--color-white); }
+  .ems__inner { flex-direction: column; }
+  .ems__text { flex: none; width: 100%; }
+  .ems__image { flex: none; width: 100%; }
+
+  /* On the homepage the text spans the full width and the image card goes below it */
+  .cta--stacked-tablet .cta__text { width: 100%; }
+}
+
+/* ── Mobile (<810px) ── */
+@media (max-width: 809px) {
+  .home-hero { padding: 150px 20px 150px; }
+
+  .future { background: var(--color-lilac); }
+
+  .split__text { text-align: left; }
+
+  .split__photo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .charts { max-width: none; }
+  .charts__chart { height: 159.5px; }
+
+  .vision-card {
+    height: 203px;
+  }
+
+  .vision-card h3 { font-size: 16px; }
+
+  .news { height: 1152px; }
+  .slider { height: 1152px; }
+
+  .news-slide { padding: 40px; }
+
+  .news-slide__image,
+  .news-slide__image--tall { height: 160px; }
+
+  .news-slide__image img { object-fit: contain; }
+
+  .news-slide__video {
+    width: 406px;
+    height: 300px;
+  }
+
+  .ems__list li { font-size: 16px; }
+}

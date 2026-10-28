@@ -1,0 +1,39 @@
+---
+// "Key features" section: label + heading, then a 3-column grid of icon cards
+// (wide = 2 columns, full = 3 columns on desktop; one column on tablet and mobile).
+export interface Feature {
+  icon: string;
+  title: string;
+  text: string; // HTML (may contain <br>)
+  size?: 'wide' | 'full';
+}
+
+interface Props {
+  heading: string;
+  items: Feature[];
+  class?: string;
+}
+
+const { heading, items, class: extraClass } = Astro.props;
+---
+
+<section class:list={['features', extraClass]}>
+  <div class="features__inner">
+    <div class="features__intro reveal">
+      <p class="label">Key Features</p>
+      <h2 class="heading">{heading}</h2>
+    </div>
+
+    <div class="features__grid">
+      {items.map((item) => (
+        <article class:list={['feature-card', item.size && `feature-card--${item.size}`, 'reveal']}>
+          <div class="feature-card__icon"><svg><use href={`#icon-${item.icon}`} /></svg></div>
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">{item.title}</h3>
+            <p class="body-text" set:html={item.text} />
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

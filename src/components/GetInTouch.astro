@@ -1,0 +1,31 @@
+---
+// "Get in touch" section: label, heading and Contact button next to an image card.
+import { url, srcset } from '../lib/url';
+
+interface Props {
+  image: string; // path prefix, expects <image>-1024.jpg and <image>-2048.jpg
+  alt: string;
+  stackedTablet?: boolean; // Home: on tablet the text takes the full width and the card goes below it
+}
+
+const { image, alt, stackedTablet = false } = Astro.props;
+---
+
+<section class="section section--brand">
+  <div class:list={['section__inner', 'cta', stackedTablet && 'cta--stacked-tablet']}>
+    <div class="cta__text reveal">
+      <p class="label label--light">Book a demo, or ask for custom energy advice</p>
+      <h2 class="heading heading--light">Get in touch.</h2>
+      <a class="button button--white button--shadow" href={url('contact')} target="_blank">Contact us</a>
+    </div>
+    <div class="cta__card reveal">
+      <div class="cta__image">
+        <img
+          src={url(`${image}-1024.jpg`)}
+          srcset={srcset(image, [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
+          sizes="(min-width: 1200px) 682px, 100vw"
+          alt={alt}>
+      </div>
+    </div>
+  </div>
+</section>

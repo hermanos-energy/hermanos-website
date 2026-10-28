@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power to Drive — Hermanos Energy</title>
+  <meta name="description" content="Drive a boat or vehicle on your own hydrogen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="../shared/product-detail.css">
+  <link rel="stylesheet" href="power-to-drive.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../shared/site.js" defer></script>
+</head>
+<body>
+
+  <!-- Icons (Phosphor set, as used on the live site). Coloured via currentColor. -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="icon-laptop" viewBox="0 0 256 256"><path d="M232,168h-8V72a24.1,24.1,0,0,0-24-24H56A24.1,24.1,0,0,0,32,72v96H24a8,8,0,0,0-8,8v16a24.1,24.1,0,0,0,24,24H216a24.1,24.1,0,0,0,24-24V176A8,8,0,0,0,232,168ZM112,72h32a8,8,0,0,1,0,16H112a8,8,0,0,1,0-16ZM224,192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8v-8H224Z"/></symbol>
+    <symbol id="icon-waves" viewBox="0 0 256 256"><path d="M33.7,77A8,8,0,0,1,35,65.8,81.8,81.8,0,0,1,64.1,52.2c16.1-4,41.1-5,68.3,13.1,42.4,28.3,77.2,1.6,78.6.4A8.2,8.2,0,0,1,222.3,67,8,8,0,0,1,221,78.2a81.8,81.8,0,0,1-29.1,13.6,81,81,0,0,1-19.7,2.4c-14,0-30.8-3.7-48.6-15.5C81.2,50.4,46.4,77.1,45,78.3A8.2,8.2,0,0,1,33.7,77ZM211,121.7c-1.4,1.2-36.2,27.9-78.6-.4-27.2-18.1-52.2-17.1-68.3-13.1A81.8,81.8,0,0,0,35,121.8,8,8,0,0,0,33.7,133,8.2,8.2,0,0,0,45,134.3c1.4-1.2,36.2-27.9,78.6.4,17.8,11.8,34.6,15.5,48.6,15.5a81,81,0,0,0,19.7-2.4A81.8,81.8,0,0,0,221,134.2a8,8,0,0,0,1.3-11.2A8.2,8.2,0,0,0,211,121.7Zm0,56c-1.4,1.2-36.2,27.9-78.6-.4-27.2-18.1-52.2-17.1-68.3-13.1A81.8,81.8,0,0,0,35,177.8,8,8,0,0,0,33.7,189,8.2,8.2,0,0,0,45,190.3c1.4-1.2,36.2-27.9,78.6.4,17.8,11.8,34.6,15.5,48.6,15.5a82.6,82.6,0,0,0,48.8-16,8,8,0,0,0,1.3-11.2A8.2,8.2,0,0,0,211,177.7Z"/></symbol>
+    <symbol id="icon-tree" viewBox="0 0 256 256"><path d="M128,187.9h0a91.6,91.6,0,0,1-8,4.6V232a8,8,0,0,0,16,0V192.5a91.6,91.6,0,0,1-8-4.6Z"/><path d="M198.1,62.6a76,76,0,0,0-140.2,0A72.3,72.3,0,0,0,16,127.8C15.9,166.6,47.4,199,86.1,200a71.9,71.9,0,0,0,33.9-7.5V156.9L76.4,135.2a8,8,0,1,1,7.2-14.4L120,139.1V88a8,8,0,0,1,16,0v27.1l36.4-18.3a8,8,0,0,1,7.2,14.4L136,132.9v59.6a72,72,0,0,0,32,7.5h1.9c38.7-1,70.2-33.4,70.1-72.2A72.3,72.3,0,0,0,198.1,62.6Z"/></symbol>
+    <symbol id="icon-gas-pump" viewBox="0 0 256 256"><path d="M241,69.7,221.7,50.3a8.1,8.1,0,0,0-11.4,11.4L229.7,81a7.9,7.9,0,0,1,2.3,5.6V168a8,8,0,0,1-16,0V128a24.1,24.1,0,0,0-24-24H176V56a24.1,24.1,0,0,0-24-24H72A24.1,24.1,0,0,0,48,56V208H32a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16H176V120h16a8,8,0,0,1,8,8v40a24,24,0,0,0,48,0V86.6A23.8,23.8,0,0,0,241,69.7ZM144,120H80a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Z"/></symbol>
+    <symbol id="icon-money" viewBox="0 0 256 256"><path d="M232,56H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H232a16,16,0,0,0,16-16V72A16,16,0,0,0,232,56ZM75,184,24,140.3V115.7L75,72H181l51,43.7v24.6L181,184Zm93-56a40,40,0,1,1-40-40A40,40,0,0,1,168,128Z"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 256 256"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></symbol>
+  </svg>
+
+  <!-- ── Header ── -->
+  <header class="site-header" data-menu="closed">
+    <div class="site-header__bar">
+      <a class="site-header__logo" href="../index.html" aria-label="Hermanos Energy home">
+        <img src="../shared/images/logo.svg" alt="" width="164" height="68">
+      </a>
+
+      <nav class="site-nav" aria-label="Main">
+        <a class="site-nav__link" href="../product/index.html">Product</a>
+        <a class="site-nav__link" href="../aboutus/index.html">About us</a>
+        <a class="site-nav__link" href="../contact/index.html">Contact us</a>
+        <a class="button button--green" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle__bar menu-toggle__bar--top"></span>
+        <span class="menu-toggle__bar menu-toggle__bar--mid"></span>
+        <span class="menu-toggle__bar menu-toggle__bar--bottom"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+      <a class="mobile-menu__link" href="../product/index.html">Product</a>
+      <a class="mobile-menu__link" href="../aboutus/index.html">About us</a>
+      <a class="mobile-menu__link" href="../contact/index.html">Contact</a>
+      <a class="button button--white" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="detail-hero">
+      <div class="detail-hero__text reveal">
+        <p class="label">PRODUCT</p>
+        <h1 class="page-title">Power to Drive</h1>
+        <p class="page-subtitle">Drive a boat or vehicle on your own hydrogen.</p>
+      </div>
+      <div class="detail-hero__diagram reveal">
+        <img src="assets/images/diagram.jpg" alt="Power to drive system diagram: own energy and grid feed the battery and electrolyser; hydrogen is compressed and used to refuel a vehicle">
+      </div>
+    </section>
+
+    <!-- ── Key features ── -->
+    <section class="features">
+      <div class="features__inner">
+        <div class="features__intro reveal">
+          <p class="label">Key Features</p>
+          <h2 class="heading">This is what makes power to drive unique.</h2>
+        </div>
+
+        <div class="features__grid">
+          <article class="feature-card feature-card--wide reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-laptop"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Never out of fuel</h3>
+              <p class="body-text">The hydrogen used to fuel your vehicle is produced on-site, so you don’t depend on external fuel suppliers, and your vehicle doesn’t need to leave the premises to refuel. Our software monitors grid prices, the availability of renewable energy, and the amount of fuel left in your tanks. It not only ensures you always have fuel but also chooses the most cost-effective moments to produce it.</p>
+            </div>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-waves"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">More than just fuel</h3>
+              <p class="body-text">During hydrogen production, we recover waste heat and use a battery to extend the electrolyzer’s runtime.</p>
+            </div>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-tree"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Drive anywhere</h3>
+              <p class="body-text">Diesel-powered vehicles are not welcome in zero-emission zones like nature reserves. Battery-powered vehicles are often not feasible either, as their weight can cause them to sink in muddy terrain. In these cases, hydrogen-powered vehicles are the only practical option and they also offer a much greater range.</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--wide reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-gas-pump"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">Easy refueling</h3>
+              <p class="body-text">Our refueling station is easy to use, simple, and reliable. The experience is very similar to refueling with petrol or diesel.<br><br>We use the high pressure in the storage tanks to fill your vehicle, slowly releasing the gas to ensure safety and reliability. We can fuel vehicles up to 300 bar, and it takes around fifteen minutes to fill your vehicle.<br><br>We manage the entire process, from producing the hydrogen to compressing and refueling, so we can ensure the tanks are always at the right pressure to fill your vehicle efficiently</p>
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--full reveal">
+            <div class="feature-card__icon"><svg><use href="#icon-money"/></svg></div>
+            <div class="feature-card__text">
+              <h3 class="feature-card__title">50% cheapter than diesel</h3>
+              <p class="body-text">Your own solar energy is by far the cheapest energy available. We use it to produce hydrogen for around €3 per kilogram. A typical car can drive approximately 100 km on just one kilogram of hydrogen. This makes hydrogen a much more affordable option then diesel as long as it's produced locally by you.<br><br>Buying hydrogen at a commercial fuel station cost around €21 per kilogram.&nbsp; Making your own is 7 times cheapter.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Day / night ── -->
+    <section class="seasons">
+      <div class="seasons__inner">
+        <h2 class="heading">Fuel is made while you use the vehicle</h2>
+        <p class="body-text">During a sunny summer day, energy is cheap and green but that’s often the exact moment you want to use your vehicle. We produce hydrogen when there’s an abundance of green energy and store it in tanks, so you can refuel later. Whether you have a vehicle you use daily or only during certain seasons, we always choose the right moments throughout the year to produce hydrogen ensuring it’s available when you need it. Click the pictures below to see how the system works at different times</p>
+
+        <div class="tabs">
+          <div class="tabs__buttons" role="tablist">
+            <button class="tabs__button" type="button" role="tab" aria-selected="true" aria-controls="tab-day">Day</button>
+            <button class="tabs__button" type="button" role="tab" aria-selected="false" aria-controls="tab-night">Night</button>
+          </div>
+
+          <div class="tab-panel" id="tab-day" role="tabpanel">
+            <p class="body-text tab-panel__text reveal">While you're out working during the day and using your vehicle, the electrolyzer produces hydrogen using the energy generated by your solar panels. By the time you return from a hard day’s work, your hydrogen tanks are full and ready to use.</p>
+            <div class="tab-panel__image card-border reveal">
+              <img src="assets/images/day-2048.jpg" srcset="assets/images/day-1024.jpg 1024w, assets/images/day-2048.jpg 2048w" sizes="(min-width: 1200px) 1000px, 100vw" alt="During the day the electrolyser makes hydrogen from solar power while the vehicle is in use">
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-night" role="tabpanel" hidden>
+            <p class="body-text tab-panel__text">When the workday is over, the sun is down, and energy prices are high your vehicle is fueled by the green and cheap hydrogen produced during the day. Ready to go again tomorrow.</p>
+            <div class="tab-panel__image card-border">
+              <img src="assets/images/night-2048.jpg" srcset="assets/images/night-1024.jpg 1024w, assets/images/night-2048.jpg 2048w" sizes="(min-width: 1200px) 1000px, 100vw" alt="At night the vehicle is refuelled with the hydrogen made during the day" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── In action ── -->
+    <section class="in-action">
+      <div class="in-action__inner reveal">
+        <div class="in-action__photo">
+          <img src="assets/images/in-action-1024.jpg" srcset="assets/images/in-action-1024.jpg 1024w, assets/images/in-action-2048.jpg 2048w" sizes="(min-width: 1200px) 640px, 100vw" alt="Hydrogen refuelling station">
+        </div>
+        <div class="in-action__text">
+          <h2 class="title">Power to drive in action</h2>
+          <p class="body-text">We’re always here to help. Contact us if you are experiencing issues with out product or have any questions.</p>
+          <a class="text-link" href="../contact/index.html">Get a demo <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-footer__logo" href="../index.html" aria-label="Hermanos Energy home">
+        <img src="../shared/images/logo.svg" alt="" width="134" height="56">
+      </a>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../product/index.html">Product</a>
+        <a href="../aboutus/index.html">About us</a>
+        <a href="../contact/index.html">Contact us</a>
+      </nav>
+      <div class="site-footer__legal">
+        <p>Address: Transistorstraat 151, 1322 CN Almere<br>Kvk nummer 91848946</p>
+        <p>Hermanos Energy 2025 © All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

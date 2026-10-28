@@ -3,3 +3,6 @@ dist/
 .astro/
 .idea/
 *.lnk
+
+# Regenerable measurement output (screenshots, extracted styles)
+scratchpad/out/

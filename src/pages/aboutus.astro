@@ -1,104 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+import GetInTouch from '../components/GetInTouch.astro';
+import { url, srcset } from '../lib/url';
+import '../styles/aboutus.css';
 ---
 
 <Layout
   title="About Us — Hermanos Energy"
   description="Pioneering the hydrogen revolution. We are dedicated to providing cutting-edge solutions for energy storage using hydrogen technology."
-  pageCSS="aboutus.css"
-  activeNav="about"
->
+  current="aboutus">
 
-  <!-- ══════════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════ -->
-  <section class="au-hero">
-    <div class="container">
-      <div class="au-hero-text">
-        <p class="au-hero-label" data-i18n="aboutus.hero.label">about us</p>
-        <h1 class="au-hero-title" data-i18n="aboutus.hero.title">Pioneering the hydrogen revolution.</h1>
-        <p class="au-hero-subtitle" data-i18n="aboutus.hero.subtitle">We are at the forefront of the energy revolution, committed to delivering sustainable and efficient energy solutions through hydrogen-based energy storage.</p>
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__text reveal">
+        <p class="label">about us</p>
+        <h1 class="page-title">Pioneering the hydrogen revolution.</h1>
+        <p class="page-subtitle">We are at the forefront of the energy revolution, committed to delivering sustainable and efficient energy solutions through hydrogen-based energy storage.</p>
       </div>
-      <div class="au-hero-photo">
+      <div class="hero__photo card-border reveal">
         <img
-          src={`${base}assets/images/aboutus/founders.avif`}
-          alt="Maarten and Jan Hermanos Energy Founders"
-        />
+          src={url('images/aboutus/founders-2048.jpg')}
+          srcset={srcset('images/aboutus/founders', [[1024, '-1024.jpg'], [2048, '-2048.jpg']])}
+          sizes="(min-width: 1200px) 1200px, 100vw"
+          alt="Maarten and Jan Hermanos Energy Founders">
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       OUR STORY
-  ══════════════════════════════════════════════ -->
-  <section class="au-story">
-    <div class="container">
-      <div class="au-story-inner">
-        <p class="au-label au-label--purple" data-i18n="aboutus.story.label">OUR STORY</p>
-        <h2 class="au-section-title" data-i18n="aboutus.story.title">The energy transition is in full swing.</h2>
-        <div class="au-story-body">
-          <p data-i18n="aboutus.story.p1">It is no longer a question of if and when; it is happening now, and the only question is how fast we can go.</p>
-          <p data-i18n="aboutus.story.p2">The new green era comes with its own challenges. There is plenty of solar and wind power, so much so that it's sometimes scaled down, but we still depend on fossil fuels for nights and winters. It is our mission to overcome that challenge. We strive towards a world where the energy from the summer sun is harnessed, storing its warmth to keep your home cozy during winter's cold and lighting your rooms when darkness falls.</p>
-          <p data-i18n="aboutus.story.p3">Hermanos Energy was born from the shared vision of two brothers, fuelled not only by the pursuit of green energy but also by the power of brotherhood. Our dreams extend beyond a shift in energy sources. We envision a future where energy is shared among brothers, friends, and neighbours, a future where multinationals and foreign regimes hold no sway, for this precious resource belongs to all of us. We firmly believe that the energy transition should be driven by local initiatives, empowering communities and benefiting the many, rather than serving the interests of the few.</p>
-          <p data-i18n="aboutus.story.p4">Just as farmers have long tended to their fields, nurturing crops throughout summer and reaping the harvest for the winter to come, Hermanos Energy seeks to apply this age-old principle to our modern world. By utilising innovative techniques, we strive to forge a future that meets our evolving needs.</p>
-        </div>
+  <!-- ── Our story ── -->
+  <section class="section section--white">
+    <div class="section__inner stack reveal">
+      <p class="label">OUR STORY</p>
+      <h2 class="heading">The energy transition is in full swing.</h2>
+      <div class="body-text">
+        <p>It is no longer a question of if and when; it is happening now, and the only question is how fast we can go.</p>
+        <p>The new green era comes with its own challenges. There is plenty of solar and wind power, so much so that it's sometimes scaled down, but we still depend on fossil fuels for nights and winters. It is our mission to overcome that challenge. We strive towards a world where the energy from the summer sun is harnessed, storing its warmth to keep your home cozy during winter's cold and lighting your rooms when darkness falls.</p>
+        <p>Hermanos Energy was born from the shared vision of two brothers, fuelled not only by the pursuit of green energy but also by the power of brotherhood. Our dreams extend beyond a shift in energy sources. We envision a future where energy is shared among brothers, friends, and neighbours, a future where multinationals and foreign regimes hold no sway, for this precious resource belongs to all of us. We firmly believe that the energy transition should be driven by local initiatives, empowering communities and benefiting the many, rather than serving the interests of the few.</p>
+        <p>Just as farmers have long tended to their fields, nurturing crops throughout summer and reaping the harvest for the winter to come, Hermanos Energy seeks to apply this age-old principle to our modern world. By utilising innovative techniques, we strive to forge a future that meets our evolving needs.</p>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       EFRO / POWER2YOU
-  ══════════════════════════════════════════════ -->
-  <section class="au-efro">
-    <div class="container">
-      <div class="au-efro-inner">
-        <p class="au-label au-label--white" data-i18n="aboutus.efro.label">Co-financed by the European Union</p>
-        <h2 class="au-section-title au-section-title--white" data-i18n="aboutus.efro.title">Power2You</h2>
-        <p class="au-efro-body" data-i18n="aboutus.efro.body">We are proud to announce that we have been awarded a European grant through the EFRO programme Kansen voor West III for our innovation program Power2You. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making.</p>
-        <div class="au-efro-logos">
-          <img src={`${base}assets/images/aboutus/eu-flag.png`} alt="European Union flag" class="au-efro-logo" />
-          <img src={`${base}assets/images/aboutus/efro-logo.png`} alt="EFRO Kansen voor West" class="au-efro-logo" />
-        </div>
-        <p class="au-efro-goals-intro" data-i18n="aboutus.efro.goals_intro">The Power2You program runs for two years, from May 2025 to May 2027, and has the following goals:</p>
-        <ol class="au-efro-goals">
-          <li data-i18n="aboutus.efro.g1">Introducing Power2Drive and Power2Heat to the market, expanding our product range and enabling the use of green energy in sectors that are difficult to decarbonize through other methods.</li>
-          <li data-i18n="aboutus.efro.g2">Reducing the total cost of our product portfolio by investigating alternative electrolyzer and fuel cell stacks. And simplifying the product to reduce maintenance cost.</li>
-          <li data-i18n="aboutus.efro.g3">Improving the overall energy efficiency of the system by developing an efficient heat recovery solution.</li>
-          <li data-i18n="aboutus.efro.g4">Enhancing our smart algorithms and energy consumption forecasting to increase revenue for our customers.</li>
-        </ol>
+  <!-- ── EFRO / Power2You ── -->
+  <section class="section section--purple">
+    <div class="section__inner stack reveal">
+      <p class="label">Co-financed by the European Union</p>
+      <h2 class="heading">Power2You</h2>
+      <p class="body-text">We are proud to announce that we have been awarded a European grant through the EFRO programme Kansen voor West III for our innovation program Power2You. This contribution enables us as a company to grow and ensures that we can continue to invest time and energy into technical innovation over the next two years. It is also a valuable recognition of the social impact we are making</p>
+      <div class="efro-logos">
+        <img class="efro-logos__kvw" src={url('images/aboutus/kansen-voor-west.png')} alt="Kansen voor West" width="337" height="175">
+        <img class="efro-logos__eu" src={url('images/aboutus/eu-cofunded.png')} alt="Co-funded by the European Union" width="400" height="152">
+      </div>
+      <p class="body-text">The Power2You program runs for two years, from May 2025 to May 2027, and has the following goals:<br><br>1) Introducing Power2Drive and Power2Heat to the market, expanding our product range and enabling the use of green energy in sectors that are difficult to decarbonize through other methods.<br>2) Reducing the total cost of our product portfolio by investigating alternative electrolyzer and fuel cell stacks. And simplifying the product to reduce maintenance cost.<br>3) Improving the overall energy efficiency of the system by developing an efficient heat recovery solution.<br>4) Enhancing our smart algorithms and energy consumption forecasting to increase revenue for our customers.</p>
+    </div>
+  </section>
+
+  <!-- ── Our mission ── -->
+  <section class="section section--white">
+    <div class="section__inner">
+      <div class="mission reveal">
+        <p class="label">Our mission</p>
+        <h2 class="heading">Hermanos Energy mission is to enable local users to be a full year in control of their green stable energy supply. In a world where local users have always green energy, there is no need and no place for fossil fuels.</h2>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       OUR MISSION
-  ══════════════════════════════════════════════ -->
-  <section class="au-mission">
-    <div class="container">
-      <div class="au-mission-inner">
-        <p class="au-label au-label--purple" data-i18n="aboutus.mission.label">Our mission</p>
-        <p class="au-mission-body" data-i18n="aboutus.mission.body">Hermanos Energy mission is to enable local users to be a full year in control of their green stable energy supply. In a world where local users have always green energy, there is no need and no place for fossil fuels.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       CTA: GET IN TOUCH
-  ══════════════════════════════════════════════ -->
-  <section class="au-cta">
-    <div class="container">
-      <div class="au-cta-inner">
-        <div class="au-cta-text">
-          <p class="au-label au-label--white" data-i18n="aboutus.cta.label">Book a demo, or ask for custom energy advice</p>
-          <h2 class="au-section-title au-section-title--white" data-i18n="aboutus.cta.title">Get in touch.</h2>
-          <a href={`${base}contact`} class="au-cta-btn" data-i18n="aboutus.cta.button">Contact us</a>
-        </div>
-        <div class="au-cta-image">
-          <img src={`${base}assets/images/aboutus/preview.avif`} alt="Website examples" />
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <GetInTouch image="images/aboutus/preview" alt="Website examples" />
 </Layout>

@@ -1,0 +1,22 @@
+/* =============================================================
+   Power to Drive — page values for the product detail template (../shared/product-detail.css)
+   Measured from the live site: scratchpad/out/power-to-drive
+   ============================================================= */
+
+.tabs {
+  --tabs-gap: 41px;
+  --tabs-min-height-desktop: 744px;
+  --tab-image-desktop: 502px;
+  --tab-image-tablet: 357px;
+  --tab-image-mobile: 190px;
+}
+
+/* On mobile this page uses normal side padding, with the photo below the text */
+@media (max-width: 809px) {
+  .in-action { padding: 100px 20px 50px; }
+
+  .in-action__photo {
+    width: 356px;
+    height: 238px;
+  }
+}

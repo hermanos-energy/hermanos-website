@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductDetail from '../components/ProductDetail.astro';
+import { powerToPower as page } from '../data/productDetails';
+---
+
+<Layout title={`${page.title} — Hermanos Energy`} description={page.description} icons={page.icons}>
+  <ProductDetail {...page} />
+</Layout>

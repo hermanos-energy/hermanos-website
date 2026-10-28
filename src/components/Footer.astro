@@ -1,0 +1,31 @@
+---
+import { url } from '../lib/url';
+
+interface Props {
+  current?: 'product' | 'aboutus' | 'contact';
+}
+
+const { current } = Astro.props;
+const links = [
+  { page: 'product', label: 'Product' },
+  { page: 'aboutus', label: 'About us' },
+  { page: 'contact', label: 'Contact us' },
+] as const;
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a class="site-footer__logo" href={url()} aria-label="Hermanos Energy home">
+      <img src={url('images/shared/logo.svg')} alt="" width="134" height="56">
+    </a>
+    <nav class="site-footer__links" aria-label="Footer">
+      {links.map((link) => (
+        <a href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
+      ))}
+    </nav>
+    <div class="site-footer__legal">
+      <p>Address: Transistorstraat 151, 1322 CN Almere<br>Kvk nummer 91848946</p>
+      <p>Hermanos Energy 2025 © All rights reserved</p>
+    </div>
+  </div>
+</footer>
