@@ -10,6 +10,13 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-label', open ? header.dataset.closeLabel : header.dataset.openLabel);
 });
 
+// Language switch: remember the visitor's choice, so the browser-language redirect (Layout.astro) stops
+document.querySelectorAll('.lang-switch a').forEach((link) => {
+  link.addEventListener('click', () => {
+    try { localStorage.setItem('lang', link.hreflang); } catch (e) { /* private mode: not remembered */ }
+  });
+});
+
 // FAQ: each question opens and closes independently
 document.querySelectorAll('.faq-item__question').forEach((question) => {
   question.addEventListener('click', () => {

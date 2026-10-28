@@ -42,6 +42,19 @@ check('language switch points to the same page in the other language', wrongSwit
 await desk.goto(`${base}/nl/contact`);
 check('Dutch contact form is translated', await desk.evaluate(() => document.querySelector('input[name=name]').placeholder === 'Naam' && document.querySelector('.contact-form__submit').textContent === 'Verstuur bericht'));
 
+// Browser language: a Dutch browser lands on the Dutch page, until it picks English with the switch
+const dutchBrowser = await b.newContext({ locale: 'nl-NL', viewport: { width: 1440, height: 900 } });
+const nlPage = await dutchBrowser.newPage();
+await nlPage.goto(`${base}/product`);
+check('Dutch browser is sent to the Dutch page', nlPage.url().endsWith('/nl/product/'), nlPage.url());
+await nlPage.click('.site-nav .lang-switch a[hreflang="en"]');
+await nlPage.waitForLoadState();
+await nlPage.goto(`${base}/aboutus`);
+check('chosen language (EN) is remembered', nlPage.url().endsWith('/aboutus'), nlPage.url());
+await dutchBrowser.close();
+await desk.goto(`${base}/product`);
+check('English browser stays on the English page', desk.url().endsWith('/product'), desk.url());
+
 // FAQ
 await desk.goto(`${base}/product`);
 await desk.click('.faq-item:nth-child(2) .faq-item__question');
