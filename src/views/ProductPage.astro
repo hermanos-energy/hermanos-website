@@ -55,7 +55,7 @@ const features = [
           <ul class="checklist">
             {p.cards[card.key].points.map((point) => <li><svg><use href="#icon-check" /></svg>{point}</li>)}
           </ul>
-          <a class="button button--white button--shadow" href={localUrl(lang, card.link)} target="_blank">{t.common.learnMore}</a>
+          <a class="button button--white button--shadow" href={localUrl(lang, card.link)}>{t.common.learnMore}</a>
         </article>
       ))}
     </div>
@@ -110,7 +110,7 @@ const features = [
   <section class="statement">
     <div class="statement__inner reveal">
       <h2 class="title statement__text" set:html={p.statement} />
-      <a class="button button--white button--shadow" href={localUrl(lang, 'contact')} target="_blank">{t.common.contactUs}</a>
+      <a class="button button--white button--shadow" href={localUrl(lang, 'contact')}>{t.common.contactUs}</a>
     </div>
   </section>
 </Layout>

@@ -58,6 +58,18 @@ const shareImage = new URL(url('share-image.jpg'), Astro.site).href;
 
   <!-- Lets CSS hide the fade-up blocks only when JavaScript runs -->
   <script is:inline>document.documentElement.classList.add('js');</script>
+
+  <!-- Browser language: visitors whose browser prefers Dutch over English go to the Dutch page, unless they picked a
+       language with the EN/NL switch (remembered in localStorage by site.js). Only English → Dutch, so search engines
+       (which browse in English) still see both versions. -->
+  {lang === defaultLang && page !== undefined && (
+    <script is:inline define:vars={{ dutchUrl: localUrl('nl', page ? `${page}/` : '') }}>
+      try {
+        const preferred = navigator.languages.map((l) => l.slice(0, 2).toLowerCase()).find((l) => l === 'en' || l === 'nl');
+        if (!localStorage.getItem('lang') && preferred === 'nl') location.replace(dutchUrl + location.search + location.hash);
+      } catch (e) { /* no localStorage (private mode): stay on English */ }
+    </script>
+  )}
 </head>
 <body>
   <IconSprite names={icons} />
