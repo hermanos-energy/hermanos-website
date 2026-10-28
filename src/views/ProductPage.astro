@@ -1,0 +1,116 @@
+---
+// Product overview page. Text comes from src/i18n/<lang>.json (product.*); product names from src/data/products.ts.
+import Layout from '../layouts/Layout.astro';
+import Features from '../components/Features.astro';
+import Photo from '../components/Photo.astro';
+import { localUrl, useTranslations, type Lang } from '../i18n';
+import { productNames } from '../data/products';
+import '../styles/product.css';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.product;
+
+const cards = [
+  { key: 'heat', variant: 'light', link: 'power-to-heat' },
+  { key: 'drive', variant: 'navy', link: 'power-to-drive' },
+  { key: 'power', variant: 'purple', link: 'power-to-power' },
+] as const;
+
+const features = [
+  { id: 'energyManagement', icon: 'laptop', size: 'wide' },
+  { id: 'battery', icon: 'battery' },
+  { id: 'localStorage', icon: 'cylinder' },
+  { id: 'heat', icon: 'thermometer', size: 'wide' },
+  { id: 'profit', icon: 'money', size: 'full' },
+] as const;
+---
+
+<Layout
+  lang={lang}
+  page="product"
+  title={p.meta.title}
+  description={p.meta.description}
+  current="product"
+  icons={['check', 'laptop', 'battery', 'cylinder', 'thermometer', 'money']}>
+
+  <!-- ── Hero: title, product cards, intro, product image ── -->
+  <section class="hero">
+    <div class="hero__text reveal">
+      <h1 class="page-title">{p.hero.title}</h1>
+      <p class="page-subtitle">{p.hero.subtitle}</p>
+    </div>
+
+    <div class="product-cards reveal">
+      {cards.map((card) => (
+        <article class={`product-card product-card--${card.variant} reveal`}>
+          <div class="product-card__label-row">
+            <p class="label product-card__label">{p.cards[card.key].label}</p>
+          </div>
+          <h2 class="title product-card__title">{productNames[card.key]}</h2>
+          <ul class="checklist">
+            {p.cards[card.key].points.map((point) => <li><svg><use href="#icon-check" /></svg>{point}</li>)}
+          </ul>
+          <a class="button button--white button--shadow" href={localUrl(lang, card.link)} target="_blank">{t.common.learnMore}</a>
+        </article>
+      ))}
+    </div>
+
+    <p class="body-text hero__intro" set:html={p.intro} />
+
+    <div class="hero__image reveal">
+      <Photo src="product/products.png" alt={p.productsAlt} sizes="(min-width: 1200px) 1200px, 100vw" />
+    </div>
+  </section>
+
+  <!-- ── Timeline ── -->
+  <section class="timeline">
+    <div class="timeline__inner">
+      <h2 class="title timeline__title">{p.timeline.title}</h2>
+      <p class="body-text">{p.timeline.text}</p>
+      <div class="timeline__image reveal">
+        <Photo src="product/timeline.png" alt={p.timeline.alt} sizes="(min-width: 1200px) 1000px, 100vw" />
+      </div>
+    </div>
+    <p class="body-text timeline__note">{p.timeline.note}</p>
+  </section>
+
+  <Features
+    label={t.common.keyFeatures}
+    heading={p.features.heading}
+    items={features.map((f) => ({ icon: f.icon, size: 'size' in f ? f.size : undefined, ...p.features.items[f.id] }))} />
+
+  <!-- ── FAQ ── -->
+  <section class="faq">
+    <div class="faq__intro reveal">
+      <p class="label">{p.faq.label}</p>
+      <h2 class="heading">{p.faq.heading}</h2>
+    </div>
+
+    <div class="faq__list reveal">
+      {p.faq.items.map((item, i) => (
+        <div class:list={['faq-item', i === 0 && 'is-open']}>
+          <button class="faq-item__question" type="button" aria-expanded={String(i === 0)}>
+            <span>{item.question}</span>
+            <svg class="faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7 7 17M7 7l10 10" /></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p class="body-text" set:html={item.answer} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── Statement ── -->
+  <section class="statement">
+    <div class="statement__inner reveal">
+      <h2 class="title statement__text" set:html={p.statement} />
+      <a class="button button--white button--shadow" href={localUrl(lang, 'contact')} target="_blank">{t.common.contactUs}</a>
+    </div>
+  </section>
+</Layout>

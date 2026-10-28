@@ -1,0 +1,59 @@
+---
+// Contact page. Text comes from src/i18n/<lang>.json (contact.*).
+import Layout from '../layouts/Layout.astro';
+import { useTranslations, type Lang } from '../i18n';
+import '../styles/contact.css';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const c = t.contact;
+---
+
+<Layout lang={lang} page="contact" title={c.meta.title} description={c.meta.description} current="contact" icons={['map-pin', 'linkedin']}>
+
+  <section class="contact">
+    <div class="contact__inner">
+      <div class="contact__intro reveal">
+        <p class="label">{c.label}</p>
+        <h1 class="page-title">{c.title}</h1>
+        <p class="contact__lead">{c.lead}</p>
+      </div>
+
+      <div class="contact__row">
+        <!-- Sends to the same Formspark form as the live site; contact.js submits it without leaving the page -->
+        <form class="contact-form reveal" action="https://submit-form.com/NG4zIZy6" method="POST" novalidate data-success-label={c.form.sent}>
+          <div class="contact-form__row">
+            <input class="contact-form__field" type="text" name="name" placeholder={c.form.name} aria-label={c.form.name} autocomplete="name">
+            <input class="contact-form__field" type="email" name="email" placeholder={c.form.email} aria-label={c.form.email} autocomplete="email">
+          </div>
+          <textarea class="contact-form__field contact-form__message" name="message" placeholder={c.form.message} aria-label={c.form.message}></textarea>
+          <button class="contact-form__submit" type="submit">{c.form.send}</button>
+        </form>
+
+        <aside class="contact__aside reveal">
+          <div class="feature-card contact__card">
+            <div class="feature-card__icon"><svg><use href="#icon-map-pin" /></svg></div>
+            <div class="feature-card__text">
+              <h2 class="feature-card__title">{c.address.city}</h2>
+              <p class="body-text" set:html={c.address.lines} />
+            </div>
+          </div>
+          <div class="contact__connect">
+            <p class="label">{c.connect}</p>
+            <a class="contact__linkedin" href="https://www.linkedin.com/company/hermanos-energy/" target="_blank" rel="noopener" aria-label={c.linkedinLabel}>
+              <svg aria-hidden="true"><use href="#icon-linkedin" /></svg>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/contact.js';
+</script>

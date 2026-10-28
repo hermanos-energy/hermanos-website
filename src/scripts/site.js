@@ -6,7 +6,8 @@ toggle.addEventListener('click', () => {
   const open = header.dataset.menu !== 'open';
   header.dataset.menu = open ? 'open' : 'closed';
   toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  // Labels come from the translation files via data attributes on the header
+  toggle.setAttribute('aria-label', open ? header.dataset.closeLabel : header.dataset.openLabel);
 });
 
 // FAQ: each question opens and closes independently
@@ -48,7 +49,7 @@ document.querySelectorAll('.slider').forEach((slider) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'slider__dot';
-    dot.setAttribute('aria-label', `News item ${i + 1}`);
+    dot.setAttribute('aria-label', `${slider.dataset.dotLabel} ${i + 1}`);
     dot.addEventListener('click', () => show(i));
     dots.append(dot);
   }

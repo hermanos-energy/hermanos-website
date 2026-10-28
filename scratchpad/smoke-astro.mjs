@@ -12,15 +12,35 @@ const check = (name, ok, detail = '') => results.push(`${ok ? 'PASS' : 'FAIL'}  
 const desk = await b.newPage({ viewport: { width: 1440, height: 900 } });
 const broken = [];
 desk.on('response', (r) => { if (r.status() >= 400 && r.url().startsWith(base.replace(/\/hermanos-website$/, ''))) broken.push(`${r.status()} ${r.url()}`); });
-for (const page of ['', 'product', 'aboutus', 'contact', 'power-to-heat', 'power-to-drive', 'power-to-power']) {
-  await desk.goto(`${base}/${page}`, { waitUntil: 'networkidle' });
-  const links = await desk.evaluate(() => [...document.querySelectorAll('a[href^="/"]')].map((a) => a.href));
-  for (const link of [...new Set(links)]) {
-    const res = await desk.request.get(link);
-    if (!res.ok()) broken.push(`${res.status()} ${link} (linked from /${page})`);
+const PAGES = ['', 'product', 'aboutus', 'contact', 'power-to-heat', 'power-to-drive', 'power-to-power'];
+const wrongLang = [];
+const wrongSwitch = [];
+for (const prefix of ['', 'nl/']) {
+  for (const page of PAGES) {
+    await desk.goto(`${base}/${prefix}${page}`, { waitUntil: 'networkidle' });
+    const info = await desk.evaluate(() => ({
+      lang: document.documentElement.lang,
+      links: [...document.querySelectorAll('a[href^="/"]')].map((a) => a.href),
+      nav: [...document.querySelectorAll('.site-nav__link')].map((a) => new URL(a.href).pathname),
+      switchTo: Object.fromEntries([...document.querySelectorAll('.site-nav .lang-switch a')].map((a) => [a.hreflang, new URL(a.href).pathname])),
+    }));
+    const expectedLang = prefix ? 'nl' : 'en';
+    if (info.lang !== expectedLang || info.nav.some((p) => prefix && !p.includes('/nl/'))) wrongLang.push(`/${prefix}${page}`);
+    const strip = (p) => p.replace(/\/$/, '');
+    if (strip(info.switchTo.en) !== strip(`/hermanos-website/${page}`) || strip(info.switchTo.nl) !== strip(`/hermanos-website/nl/${page}`)) wrongSwitch.push(`/${prefix}${page}`);
+    for (const link of [...new Set(info.links)]) {
+      const res = await desk.request.get(link);
+      if (!res.ok()) broken.push(`${res.status()} ${link} (linked from /${prefix}${page})`);
+    }
   }
 }
-check('all internal links, images, CSS and JS load', broken.length === 0, broken.slice(0, 5).join(', '));
+check('all internal links, images, CSS and JS load (en + nl)', broken.length === 0, broken.slice(0, 5).join(', '));
+check('<html lang> and menu links match the page language', wrongLang.length === 0, wrongLang.join(', '));
+check('language switch points to the same page in the other language', wrongSwitch.length === 0, wrongSwitch.join(', '));
+
+// Dutch contact form shows Dutch labels
+await desk.goto(`${base}/nl/contact`);
+check('Dutch contact form is translated', await desk.evaluate(() => document.querySelector('input[name=name]').placeholder === 'Naam' && document.querySelector('.contact-form__submit').textContent === 'Verstuur bericht'));
 
 // FAQ
 await desk.goto(`${base}/product`);

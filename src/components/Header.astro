@@ -1,42 +1,60 @@
 ---
 import { url } from '../lib/url';
+import { languages, localUrl, useTranslations, type Lang } from '../i18n';
+import type { Page } from '../data/pages';
 
 interface Props {
+  lang: Lang;
+  page?: Page; // used by the language switch to link to the same page in the other language
   current?: 'product' | 'aboutus' | 'contact';
 }
 
-const { current } = Astro.props;
+const { lang, page, current } = Astro.props;
+const t = useTranslations(lang);
 const links = [
-  { page: 'product', label: 'Product', mobileLabel: 'Product' },
-  { page: 'aboutus', label: 'About us', mobileLabel: 'About us' },
-  { page: 'contact', label: 'Contact us', mobileLabel: 'Contact' },
+  { page: 'product', label: t.nav.product, mobileLabel: t.nav.product },
+  { page: 'aboutus', label: t.nav.aboutus, mobileLabel: t.nav.aboutus },
+  { page: 'contact', label: t.nav.contact, mobileLabel: t.nav.contactShort },
 ] as const;
+const switchLinks = (Object.entries(languages) as [Lang, string][]).map(([code, label]) => ({
+  code, label, href: localUrl(code, page ?? ''),
+}));
 ---
 
-<header class="site-header" data-menu="closed">
+<header class="site-header" data-menu="closed" data-open-label={t.nav.openMenu} data-close-label={t.nav.closeMenu}>
   <div class="site-header__bar">
-    <a class="site-header__logo" href={url()} aria-label="Hermanos Energy home">
+    <a class="site-header__logo" href={localUrl(lang)} aria-label={t.nav.homeLabel}>
       <img src={url('images/shared/logo.svg')} alt="" width="164" height="68">
     </a>
 
-    <nav class="site-nav" aria-label="Main">
+    <nav class="site-nav" aria-label={t.nav.mainLabel}>
       {links.map((link) => (
-        <a class="site-nav__link" href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
+        <a class="site-nav__link" href={localUrl(lang, link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.label}</a>
       ))}
-      <a class="button button--green" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+      <div class="lang-switch" role="group" aria-label={t.lang.switchLabel}>
+        {switchLinks.map((l) => (
+          <a href={l.href} hreflang={l.code} lang={l.code} aria-current={l.code === lang ? 'true' : undefined}>{l.label}</a>
+        ))}
+      </div>
+      <a class="button button--green" href="https://www.hermanos.energy" target="_blank" rel="noopener">{t.nav.signIn}</a>
     </nav>
 
-    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <button class="menu-toggle" type="button" aria-label={t.nav.openMenu} aria-expanded="false" aria-controls="mobile-menu">
       <span class="menu-toggle__bar menu-toggle__bar--top"></span>
       <span class="menu-toggle__bar menu-toggle__bar--mid"></span>
       <span class="menu-toggle__bar menu-toggle__bar--bottom"></span>
     </button>
   </div>
 
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+  <nav class="mobile-menu" id="mobile-menu" aria-label={t.nav.mobileLabel}>
     {links.map((link) => (
-      <a class="mobile-menu__link" href={url(link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.mobileLabel}</a>
+      <a class="mobile-menu__link" href={localUrl(lang, link.page)} aria-current={current === link.page ? 'page' : undefined}>{link.mobileLabel}</a>
     ))}
-    <a class="button button--white" href="https://www.hermanos.energy" target="_blank" rel="noopener">Sign in</a>
+    <div class="lang-switch" role="group" aria-label={t.lang.switchLabel}>
+      {switchLinks.map((l) => (
+        <a href={l.href} hreflang={l.code} lang={l.code} aria-current={l.code === lang ? 'true' : undefined}>{l.label}</a>
+      ))}
+    </div>
+    <a class="button button--white" href="https://www.hermanos.energy" target="_blank" rel="noopener">{t.nav.signIn}</a>
   </nav>
 </header>

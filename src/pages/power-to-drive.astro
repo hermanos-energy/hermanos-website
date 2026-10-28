@@ -1,9 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProductDetail from '../components/ProductDetail.astro';
-import { powerToDrive as page } from '../data/productDetails';
+import ProductDetailPage from '../views/ProductDetailPage.astro';
+import { powerToDrive } from '../data/productDetails';
 ---
 
-<Layout title={`${page.title} — Hermanos Energy`} description={page.description} icons={page.icons}>
-  <ProductDetail {...page} />
-</Layout>
+<ProductDetailPage lang="en" config={powerToDrive} />
